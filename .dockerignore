@@ -1,0 +1,7 @@
+.git
+node_modules
+coverage
+data
+*.db
+*.db-shm
+*.db-wal

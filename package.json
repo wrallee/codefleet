@@ -4,7 +4,17 @@
   "private": true,
   "description": "Multi-repository code intelligence service for AI agents",
   "type": "module",
+  "scripts": {
+    "start": "node src/server.ts",
+    "test": "node --test",
+    "typecheck": "tsc",
+    "check": "npm run typecheck && npm test"
+  },
   "engines": {
     "node": ">=24"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.5",
+    "typescript": "^7.0.2"
   }
 }

@@ -308,6 +308,8 @@ src/
     routes.ts                # 관리 화면과 관리 API
   codegraph/
     client.ts                # CodeGraph 자식 프로세스 실행
+  config/
+    environment.ts           # 환경 변수 검증과 기본값
   mcp/
     server.ts                # MCP 도구와 전송 계층
   registry/
@@ -315,6 +317,9 @@ src/
   repositories/
     service.ts               # 저장소 생명주기와 동기화 조정
 test/
+  environment.test.ts
+  registry.test.ts
+  server.test.ts
 Dockerfile
 package.json
 tsconfig.json
