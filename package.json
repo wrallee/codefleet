@@ -1,0 +1,10 @@
+{
+  "name": "codefleet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-repository code intelligence service for AI agents",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  }
+}
