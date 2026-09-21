@@ -156,6 +156,7 @@ test("start는 설정된 데이터 디렉터리로 서버를 시작한다", asyn
     graphifyBinary: process.execPath,
     apiToken: "test-token",
     port: 0,
+    maxConcurrentQueries: 4,
   });
 
   try {

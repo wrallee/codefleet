@@ -10,7 +10,15 @@ test("필수 토큰과 함께 기본 실행 설정을 반환한다", () => {
     graphifyBinary: "graphify",
     apiToken: "secret",
     port: 3000,
+    maxConcurrentQueries: 4,
   });
+});
+
+test("동시 Graphify 검색 상한을 1부터 64로 제한한다", () => {
+  assert.equal(loadEnvironment({ CODEFLEET_API_TOKEN: "secret", CODEFLEET_MAX_CONCURRENT_QUERIES: "64" }).maxConcurrentQueries, 64);
+  for (const value of ["", "0", "65", "1.5", "unknown"]) {
+    assert.throws(() => loadEnvironment({ CODEFLEET_API_TOKEN: "secret", CODEFLEET_MAX_CONCURRENT_QUERIES: value }), /CODEFLEET_MAX_CONCURRENT_QUERIES/);
+  }
 });
 
 test("비어 있는 API 토큰을 거부한다", () => {

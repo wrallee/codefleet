@@ -106,7 +106,7 @@ test("새 generation 게시 실패와 재색인 뒤에도 이전 색인을 보�
     assert.equal(existsSync(join(fixture.registry.repositoriesDirectory, "orders", "generations", oldGeneration, "graphify-out", "graph.json")), true);
     assert.equal(fixture.registry.listRepositories()[0]?.indexedCommit, "abc123");
     fixture.graphify.query = async () => { throw Object.assign(new Error("timeout"), { code: "PROCESS_TIMEOUT" }); };
-    assert.equal((await service.search("redis", ["orders"])).warnings[0]?.code, "PROCESS_TIMEOUT");
+    assert.equal((await service.search("redis", ["orders"])).warnings[0]?.code, "GRAPHIFY_TIMEOUT");
     fixture.graphify.query = async () => "NODE Redis";
     assert.deepEqual((await service.search("redis", ["orders"])).results.map(({ repositoryId }) => repositoryId), ["orders"]);
   } finally {
@@ -194,6 +194,28 @@ test("generations symlink를 따라가지 않는다", async () => {
 
     assert.equal(fixture.registry.listRepositories()[0]?.indexedCommit, "abc123");
     assert.equal(existsSync(join(outside, "def456", "graphify-out", "graph.json")), false);
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
+
+test("Git과 Graphify 프로세스 오류를 공개 코드로 변환한다", async () => {
+  const fixture = createFixture();
+  const config = [{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }];
+
+  try {
+    fixture.runCommand = async () => { throw Object.assign(new Error("https://github.com/secret/path stderr"), { code: "PROCESS_TIMEOUT" }); };
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand: fixture.runCommand });
+    await service.syncAll(config);
+    assert.equal(fixture.registry.listRepositories()[0]?.lastError, "GIT_TIMEOUT");
+
+    const token = fixture.registry.beginSync("orders");
+    fixture.registry.markReady("orders", token, "main", config[0].cloneUrl, "abc123", "generation", "2026-09-22T00:00:00.000Z");
+    fixture.graphify.query = async () => { throw Object.assign(new Error("/private/path stderr"), { code: "PROCESS_OUTPUT_LIMIT" }); };
+    const warning = (await service.search("redis", ["orders"])).warnings[0];
+    assert.deepEqual(warning, { repositoryId: "orders", code: "GRAPHIFY_OUTPUT_LIMIT", message: "코드 그래프 검색 출력이 제한을 초과함" });
+    assert.doesNotMatch(JSON.stringify(warning), /private|stderr|https:/);
   } finally {
     fixture.registry.close();
     rmSync(fixture.directory, { recursive: true, force: true });

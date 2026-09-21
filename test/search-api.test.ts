@@ -77,7 +77,7 @@ test("검색 입력을 검증하고 저장소별 부분 실패를 보존한다",
       { query: "" },
       { query: "x".repeat(1_001) },
       { query: "redis", repositoryIds: "orders" },
-      { query: "redis", repositoryIds: ["unknown"] },
+      { query: "redis", repositoryIds: Array.from({ length: 65 }, (_, index) => `repository-${index}`) },
     ]) {
       const response = await fetch(`${baseUrl}/search`, { method: "POST", headers, body: JSON.stringify(body) });
       assert.equal(response.status, 400);
@@ -88,6 +88,33 @@ test("검색 입력을 검증하고 저장소별 부분 실패를 보존한다",
       query: "redis",
       results: [{ repositoryId: "orders", indexedCommit: "abc", indexedAt, output: "NODE Redis" }],
       warnings: [{ repositoryId: "catalog", code: "GRAPHIFY_TIMEOUT", message: "코드 그래프 검색 시간이 초과됨" }],
+    });
+  } finally {
+    await close(value.server);
+    value.registry.close();
+    rmSync(value.directory, { recursive: true, force: true });
+  }
+});
+
+test("중복 ID는 한 번만 검색하고 알 수 없는 ID는 warning으로 반환한다", async () => {
+  const calls: string[][] = [];
+  const value = fixture(async (_query, ids) => {
+    calls.push([...ids ?? []]);
+    return { results: [], warnings: [{ repositoryId: "unknown", code: "REPOSITORY_NOT_FOUND", message: "등록되지 않은 저장소" }] };
+  });
+
+  try {
+    const baseUrl = await listen(value.server);
+    const response = await fetch(`${baseUrl}/search`, {
+      method: "POST",
+      headers: { authorization: "Bearer secret", "content-type": "application/json" },
+      body: JSON.stringify({ query: "redis", repositoryIds: ["orders", "orders", "unknown"] }),
+    });
+    assert.equal(response.status, 503);
+    assert.deepEqual(calls, [["orders", "unknown"]]);
+    assert.deepEqual(await response.json(), {
+      error: { code: "REPOSITORY_NOT_FOUND", message: "등록되지 않은 저장소", retryable: false },
+      warnings: [{ repositoryId: "unknown", code: "REPOSITORY_NOT_FOUND", message: "등록되지 않은 저장소" }],
     });
   } finally {
     await close(value.server);
@@ -107,6 +134,10 @@ test("모든 저장소 검색이 실패하면 503을 반환한다", async () => 
       body: JSON.stringify({ query: "redis" }),
     });
     assert.equal(response.status, 503);
+    assert.deepEqual(await response.json(), {
+      error: { code: "GRAPHIFY_TIMEOUT", message: "코드 그래프 검색 시간이 초과됨", retryable: true },
+      warnings: [{ repositoryId: "orders", code: "GRAPHIFY_TIMEOUT", message: "코드 그래프 검색 시간이 초과됨" }],
+    });
   } finally {
     await close(value.server);
     value.registry.close();

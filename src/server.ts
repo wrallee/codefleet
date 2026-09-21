@@ -99,15 +99,31 @@ function readJsonBody(request: IncomingMessage): Promise<unknown> {
   });
 }
 
-function validateSearch(value: unknown, knownIds: ReadonlySet<string>): { query: string; repositoryIds?: string[] } {
+function validateSearch(value: unknown): { query: string; repositoryIds?: string[] } {
   if (typeof value !== "object" || value === null || Array.isArray(value)) throw new RequestError(400);
   const { query, repositoryIds } = value as Record<string, unknown>;
   if (typeof query !== "string" || query.trim() === "" || query.length > 1_000) throw new RequestError(400);
   if (repositoryIds === undefined) return { query };
-  if (!Array.isArray(repositoryIds) || repositoryIds.some((id) => typeof id !== "string" || !knownIds.has(id))) {
+  if (!Array.isArray(repositoryIds) || repositoryIds.some((id) => typeof id !== "string")) {
     throw new RequestError(400);
   }
-  return { query, repositoryIds };
+  const uniqueIds = [...new Set(repositoryIds)];
+  if (uniqueIds.length > 64) throw new RequestError(400);
+  return { query, repositoryIds: uniqueIds };
+}
+
+function unavailable(outcome: SearchOutcome) {
+  const codes = [...new Set(outcome.warnings.map(({ code }) => code))];
+  const code = codes.length === 1 ? codes[0]! : "SEARCH_UNAVAILABLE";
+  const warning = codes.length === 1 ? outcome.warnings[0] : undefined;
+  return {
+    error: {
+      code,
+      message: warning?.message ?? "코드 그래프 검색을 완료할 수 없음",
+      retryable: code !== "REPOSITORY_NOT_FOUND" && code !== "SEARCH_ABORTED",
+    },
+    warnings: outcome.warnings,
+  };
 }
 
 export function createServer(dependencies: ServerDependencies) {
@@ -148,10 +164,10 @@ export function createServer(dependencies: ServerDependencies) {
     request.once("close", () => { if (!request.complete) abort(); });
     response.once("close", () => { if (!response.writableEnded) abort(); });
     try {
-      const input = validateSearch(await readJsonBody(request), new Set(dependencies.registry.listRepositories().map(({ id }) => id)));
+      const input = validateSearch(await readJsonBody(request));
       const outcome = await dependencies.repositories.search(input.query, input.repositoryIds, controller.signal);
       if (outcome.results.length === 0) {
-        writeJson(response, 503, { error: { code: "SEARCH_UNAVAILABLE", message: "코드 그래프 검색을 완료할 수 없음", retryable: true } });
+        writeJson(response, 503, unavailable(outcome));
         return;
       }
       writeJson(response, 200, { query: input.query, ...outcome });
@@ -180,7 +196,7 @@ export async function start(config = loadEnvironment(process.env)): Promise<Appl
     }
     const server = createServer({
       registry,
-      repositories: createRepositoryService({ registry, graphify, dataDirectory: config.dataDirectory, runCommand }),
+      repositories: createRepositoryService({ registry, graphify, dataDirectory: config.dataDirectory, runCommand, maxConcurrentQueries: config.maxConcurrentQueries }),
       apiToken: config.apiToken,
       isGraphifyReady: () => graphifyReady,
     });

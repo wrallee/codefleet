@@ -5,6 +5,7 @@ import { join, relative, resolve } from "node:path";
 import type { RepositoryConfig } from "../config/repositories.ts";
 import type { CommandResult, RunCommandOptions } from "../process/run.ts";
 import type { Registry, RepositoryRecord } from "../registry/database.ts";
+import { createQueryLimit } from "./query-limit.ts";
 
 type RunCommand = (options: RunCommandOptions) => Promise<CommandResult>;
 
@@ -27,13 +28,37 @@ function childEnvironment(): NodeJS.ProcessEnv {
   );
 }
 
+const messages: Record<string, string> = {
+  GIT_TIMEOUT: "Git 동기화 시간이 초과됨",
+  GIT_OUTPUT_LIMIT: "Git 동기화 출력이 제한을 초과함",
+  GIT_UNAVAILABLE: "Git을 시작할 수 없음",
+  GIT_FAILED: "Git 동기화에 실패함",
+  GRAPHIFY_TIMEOUT: "코드 그래프 검색 시간이 초과됨",
+  GRAPHIFY_OUTPUT_LIMIT: "코드 그래프 검색 출력이 제한을 초과함",
+  GRAPHIFY_UNAVAILABLE: "코드 그래프 검색을 시작할 수 없음",
+  GRAPHIFY_FAILED: "코드 그래프 검색에 실패함",
+  SEARCH_ABORTED: "검색이 취소됨",
+  REPOSITORY_NOT_READY: "준비되지 않은 저장소",
+  REPOSITORY_NOT_FOUND: "등록되지 않은 저장소",
+};
+
 function errorCode(error: unknown): string {
   if (typeof error === "object" && error !== null && "code" in error && typeof error.code === "string") return error.code;
   return "REPOSITORY_SYNC_FAILED";
 }
 
 function errorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : "저장소 작업에 실패함";
+  return messages[errorCode(error)] ?? "저장소 작업에 실패함";
+}
+
+function publicError(kind: "GIT" | "GRAPHIFY", error: unknown): Error & { code: string } {
+  const processCode = errorCode(error);
+  if (messages[processCode]) return Object.assign(new Error(messages[processCode]), { code: processCode });
+  const code = processCode === "PROCESS_ABORTED" ? "SEARCH_ABORTED" : processCode === "PROCESS_TIMEOUT" ? `${kind}_TIMEOUT`
+    : processCode === "PROCESS_OUTPUT_LIMIT" ? `${kind}_OUTPUT_LIMIT`
+      : processCode === "PROCESS_SPAWN_FAILED" ? `${kind}_UNAVAILABLE`
+        : processCode === "PROCESS_EXIT_FAILURE" ? `${kind}_FAILED` : `${kind}_FAILED`;
+  return Object.assign(new Error(messages[code] ?? "저장소 작업에 실패함"), { code });
 }
 
 function isInside(root: string, candidate: string): boolean {
@@ -59,19 +84,27 @@ export function createRepositoryService(options: Readonly<{
   graphify: GraphifyClient;
   dataDirectory: string;
   runCommand: RunCommand;
+  maxConcurrentQueries?: number;
 }>) {
   const { registry, graphify, runCommand } = options;
   const dataDirectory = resolve(registry.dataDirectory);
   const repositoriesDirectory = registry.repositoriesDirectory;
   const stagingDirectory = registry.stagingDirectory;
-  const git = (args: readonly string[], cwd?: string) => runCommand({
+  const queryLimit = createQueryLimit(options.maxConcurrentQueries ?? 4);
+  const git = async (args: readonly string[], cwd?: string) => {
+    try {
+      return await runCommand({
     executable: "git",
     args,
     cwd,
     env: childEnvironment(),
     timeoutMs: 600_000,
     maxOutputBytes: 1_048_576,
-  });
+      });
+    } catch (error) {
+      throw publicError("GIT", error);
+    }
+  };
   const managedDirectory = async (path: string) => {
     const entry = await lstat(path);
     if (entry.isSymbolicLink() || !entry.isDirectory()) throw new Error("managed directory must not be a symlink");
@@ -99,7 +132,11 @@ export function createRepositoryService(options: Readonly<{
       await managedDirectory(staging);
       await git(["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", branch, "--", config.cloneUrl, staging]);
       const commit = (await git(["-C", staging, "rev-parse", "HEAD"])).stdout.trim();
-      await graphify.extract(staging);
+      try {
+        await graphify.extract(staging);
+      } catch (error) {
+        throw publicError("GRAPHIFY", error);
+      }
       await access(join(staging, "graphify-out", "graph.json"));
 
       const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, config.id));
@@ -127,9 +164,10 @@ export function createRepositoryService(options: Readonly<{
     async search(query: string, repositoryIds?: readonly string[], signal?: AbortSignal): Promise<SearchOutcome> {
       const records = registry.listRepositories();
       const byId = new Map(records.map((record) => [record.id, record]));
-      const selected = repositoryIds ? repositoryIds.map((id) => byId.get(id)).filter((record): record is RepositoryRecord => record !== undefined) : records;
+      const selectedIds = repositoryIds && [...new Set(repositoryIds)];
+      const selected = selectedIds ? selectedIds.map((id) => byId.get(id)).filter((record): record is RepositoryRecord => record !== undefined) : records;
       const warnings: Array<{ repositoryId: string; code: string; message: string }> = [];
-      for (const id of repositoryIds ?? []) {
+      for (const id of selectedIds ?? []) {
         if (!byId.has(id)) warnings.push({ repositoryId: id, code: "REPOSITORY_NOT_FOUND", message: "등록되지 않은 저장소" });
       }
       const outcomes = await Promise.all(selected.map(async (record) => {
@@ -141,7 +179,12 @@ export function createRepositoryService(options: Readonly<{
           const indexRoot = current.activeGeneration
             ? join(repositoriesDirectory, current.id, "generations", current.activeGeneration)
             : join(repositoriesDirectory, current.id);
-          const output = await graphify.query(join(indexRoot, "graphify-out", "graph.json"), query, signal);
+          let output: string;
+          try {
+            output = await queryLimit.run(() => graphify.query(join(indexRoot, "graphify-out", "graph.json"), query, signal), signal);
+          } catch (error) {
+            throw publicError("GRAPHIFY", error);
+          }
           return { repositoryId: current.id, indexedCommit: current.indexedCommit, indexedAt: current.indexedAt, output };
         } catch (error) {
           warnings.push({ repositoryId: record.id, code: errorCode(error), message: errorMessage(error) });

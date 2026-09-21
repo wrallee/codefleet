@@ -16,11 +16,17 @@ export function loadEnvironment(env: NodeJS.ProcessEnv) {
     throw new Error("PORT는 1부터 65535 사이의 정수여야 함");
   }
 
+  const maxConcurrentQueries = env.CODEFLEET_MAX_CONCURRENT_QUERIES === undefined ? 4 : Number(env.CODEFLEET_MAX_CONCURRENT_QUERIES);
+  if (!Number.isInteger(maxConcurrentQueries) || maxConcurrentQueries < 1 || maxConcurrentQueries > 64) {
+    throw new Error("CODEFLEET_MAX_CONCURRENT_QUERIES는 1부터 64 사이의 정수여야 함");
+  }
+
   return {
     dataDirectory,
     repositoriesFile,
     graphifyBinary,
     apiToken,
     port,
+    maxConcurrentQueries,
   };
 }
