@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "searchoutcome",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "src_server_application",
@@ -27,7 +27,7 @@
       "file_type": "code",
       "norm_label": "application",
       "source_file": "src/server.ts",
-      "source_location": "L167"
+      "source_location": "L201"
     },
     {
       "id": "src_server_repositorysearch",
@@ -53,7 +53,7 @@
       "file_type": "code",
       "norm_label": "requesterror",
       "source_file": "src/server.ts",
-      "source_location": "L26"
+      "source_location": "L44"
     },
     {
       "id": "src_server_serverdependencies",
@@ -69,30 +69,30 @@
       "source_location": "L19"
     },
     {
-      "id": "test_fixtures_catalog_src_cacherepository_cacherepository",
-      "label": "CacheRepository",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "CacheRepository",
-      "file_type": "code",
-      "norm_label": "cacherepository",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_config_repositories_repositoryconfig",
       "label": "RepositoryConfig",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "repositoryconfig",
       "source_file": "src/config/repositories.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "src_registry_database_repositoryindexrecord",
+      "label": "RepositoryIndexRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "repositoryindexrecord",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L18"
     },
     {
       "id": "src_registry_database_repositoryrecord",
@@ -101,7 +101,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "repositoryrecord",
       "source_file": "src/registry/database.ts",
@@ -114,11 +114,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "repositoryrow",
       "source_file": "src/registry/database.ts",
-      "source_location": "L18"
+      "source_location": "L20"
+    },
+    {
+      "id": "src_repositories_service_graphifyclient",
+      "label": "GraphifyClient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "graphifyclient",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_repositories_service_runcommand",
+      "label": "RunCommand",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "runcommand",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L10"
     },
     {
       "id": "src_registry_database_registry",
@@ -131,7 +157,7 @@
       "file_type": "code",
       "norm_label": "registry",
       "source_file": "src/registry/database.ts",
-      "source_location": "L163"
+      "source_location": "L212"
     },
     {
       "id": "src_graphify_client_runcommand",
@@ -199,43 +225,55 @@
       "source_location": "L4"
     },
     {
+      "id": "test_fixtures_catalog_src_cacherepository_cacherepository",
+      "label": "CacheRepository",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "code",
+      "norm_label": "cacherepository",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "test_fixtures_orders_src_redisconfig_redisconfig",
       "label": "RedisConfig",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "code",
       "norm_label": "redisconfig",
       "source_file": "test/fixtures/orders/src/RedisConfig.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_repositories_service_graphifyclient",
-      "label": "GraphifyClient",
+      "id": "src_repositories_query_limit_queued",
+      "label": "Queued",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "graphifyclient",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L11"
+      "norm_label": "queued",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L1"
     },
     {
-      "id": "src_repositories_service_runcommand",
-      "label": "RunCommand",
+      "id": "src_registry_database_openregistry",
+      "label": "openRegistry()",
       "_callable": true,
-      "_callable_class": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
-      "norm_label": "runcommand",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L9"
+      "norm_label": "openregistry()",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L56"
     },
     {
       "id": "src_server_authenticate",
@@ -247,7 +285,19 @@
       "file_type": "code",
       "norm_label": "authenticate()",
       "source_file": "src/server.ts",
-      "source_location": "L44"
+      "source_location": "L62"
+    },
+    {
+      "id": "src_server_createreadinessprobe",
+      "label": "createReadinessProbe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "createreadinessprobe()",
+      "source_file": "src/server.ts",
+      "source_location": "L26"
     },
     {
       "id": "src_server_createserver",
@@ -259,7 +309,7 @@
       "file_type": "code",
       "norm_label": "createserver()",
       "source_file": "src/server.ts",
-      "source_location": "L113"
+      "source_location": "L147"
     },
     {
       "id": "src_server_readjsonbody",
@@ -271,7 +321,7 @@
       "file_type": "code",
       "norm_label": "readjsonbody()",
       "source_file": "src/server.ts",
-      "source_location": "L59"
+      "source_location": "L77"
     },
     {
       "id": "src_server_requesterror_constructor",
@@ -283,7 +333,31 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/server.ts",
-      "source_location": "L29"
+      "source_location": "L47"
+    },
+    {
+      "id": "src_server_start",
+      "label": "start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "start()",
+      "source_file": "src/server.ts",
+      "source_location": "L203"
+    },
+    {
+      "id": "src_server_unavailable",
+      "label": "unavailable()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "unavailable()",
+      "source_file": "src/server.ts",
+      "source_location": "L133"
     },
     {
       "id": "src_server_validatesearch",
@@ -295,7 +369,7 @@
       "file_type": "code",
       "norm_label": "validatesearch()",
       "source_file": "src/server.ts",
-      "source_location": "L102"
+      "source_location": "L120"
     },
     {
       "id": "src_server_writejson",
@@ -307,7 +381,7 @@
       "file_type": "code",
       "norm_label": "writejson()",
       "source_file": "src/server.ts",
-      "source_location": "L35"
+      "source_location": "L53"
     },
     {
       "id": "src_server_writerequesterror",
@@ -319,63 +393,15 @@
       "file_type": "code",
       "norm_label": "writerequesterror()",
       "source_file": "src/server.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "test_fixtures_catalog_src_cacherepository_cacherepository_getendpoint",
-      "label": ".getEndpoint()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "CacheRepository",
-      "file_type": "code",
-      "norm_label": ".getendpoint()",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_config_repositories_isrecord",
-      "label": "isRecord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "isrecord()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_config_repositories_loadrepositories",
-      "label": "loadRepositories()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "loadrepositories()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "test_repositories_config_test_writeconfig",
-      "label": "writeConfig()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "writeconfig()",
-      "source_file": "test/repositories-config.test.ts",
-      "source_location": "L9"
+      "source_location": "L58"
     },
     {
       "id": "test_repository_service_test_createfixture",
       "label": "createFixture()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "createfixture()",
       "source_file": "test/repository-service.test.ts",
@@ -386,8 +412,8 @@
       "label": "close()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "close()",
       "source_file": "test/search-api.test.ts",
@@ -398,8 +424,8 @@
       "label": "fixture()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "fixture()",
       "source_file": "test/search-api.test.ts",
@@ -410,8 +436,8 @@
       "label": "listen()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "listen()",
       "source_file": "test/search-api.test.ts",
@@ -422,8 +448,8 @@
       "label": "close()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "close()",
       "source_file": "test/server.test.ts",
@@ -434,8 +460,8 @@
       "label": "listen()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "listen()",
       "source_file": "test/server.test.ts",
@@ -446,8 +472,8 @@
       "label": "requestPath()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "requestpath()",
       "source_file": "test/server.test.ts",
@@ -458,8 +484,8 @@
       "label": "testServer()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "testserver()",
       "source_file": "test/server.test.ts",
@@ -470,24 +496,204 @@
       "label": "waitForListening()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "file_type": "code",
       "norm_label": "waitforlistening()",
       "source_file": "test/server.test.ts",
       "source_location": "L26"
     },
     {
+      "id": "src_config_environment_commonenvironment",
+      "label": "commonEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "code",
+      "norm_label": "commonenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_config_environment_loadenvironment",
       "label": "loadEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "code",
+      "norm_label": "loadenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_config_environment_loadsyncenvironment",
+      "label": "loadSyncEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "code",
+      "norm_label": "loadsyncenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_registry_database_isinside",
+      "label": "isInside()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "isinside()",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_registry_database_manageddirectory",
+      "label": "managedDirectory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "manageddirectory()",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_registry_database_torecord",
+      "label": "toRecord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "torecord()",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_repositories_service_childenvironment",
+      "label": "childEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "childenvironment()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_repositories_service_createrepositoryservice",
+      "label": "createRepositoryService()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "createrepositoryservice()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "src_repositories_service_defaultbranch",
+      "label": "defaultBranch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "defaultbranch()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L78"
+    },
+    {
+      "id": "src_repositories_service_errorcode",
+      "label": "errorCode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "errorcode()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_repositories_service_errormessage",
+      "label": "errorMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "errormessage()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "src_repositories_service_exists",
+      "label": "exists()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "exists()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L69"
+    },
+    {
+      "id": "src_repositories_service_isinside",
+      "label": "isInside()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "isinside()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "src_repositories_service_publicerror",
+      "label": "publicError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "publicerror()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_config_repositories_isrecord",
+      "label": "isRecord()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "community_name": "graphify-integration.test.ts",
       "file_type": "code",
-      "norm_label": "loadenvironment()",
-      "source_file": "src/config/environment.ts",
-      "source_location": "L1"
+      "norm_label": "isrecord()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_config_repositories_loadrepositories",
+      "label": "loadRepositories()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "graphify-integration.test.ts",
+      "file_type": "code",
+      "norm_label": "loadrepositories()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_graphify_client_childenvironment",
@@ -538,30 +744,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_registry_database_openregistry",
-      "label": "openRegistry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "openregistry()",
-      "source_file": "src/registry/database.ts",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_server_start",
-      "label": "start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "start()",
-      "source_file": "src/server.ts",
-      "source_location": "L169"
-    },
-    {
       "id": "src_sync_sync",
       "label": "sync()",
       "_callable": true,
@@ -598,112 +780,52 @@
       "source_location": "L16"
     },
     {
-      "id": "src_repositories_lock_withrepositorylock",
-      "label": "withRepositoryLock()",
+      "id": "test_fixtures_catalog_src_cacherepository_cacherepository_getendpoint",
+      "label": ".getEndpoint()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "code",
-      "norm_label": "withrepositorylock()",
-      "source_file": "src/repositories/lock.ts",
+      "norm_label": ".getendpoint()",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
       "source_location": "L4"
     },
     {
-      "id": "src_repositories_service_childenvironment",
-      "label": "childEnvironment()",
+      "id": "src_repositories_query_limit_aborted",
+      "label": "aborted()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "childenvironment()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L22"
+      "norm_label": "aborted()",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L9"
     },
     {
-      "id": "src_repositories_service_createrepositoryservice",
-      "label": "createRepositoryService()",
+      "id": "src_repositories_query_limit_createquerylimit",
+      "label": "createQueryLimit()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "createrepositoryservice()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L63"
+      "norm_label": "createquerylimit()",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L13"
     },
     {
-      "id": "src_repositories_service_defaultbranch",
-      "label": "defaultBranch()",
+      "id": "test_repositories_config_test_writeconfig",
+      "label": "writeConfig()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "defaultbranch()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L59"
-    },
-    {
-      "id": "src_repositories_service_ensuredirectory",
-      "label": "ensureDirectory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
-      "file_type": "code",
-      "norm_label": "ensuredirectory()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_repositories_service_errorcode",
-      "label": "errorCode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
-      "file_type": "code",
-      "norm_label": "errorcode()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_repositories_service_errormessage",
-      "label": "errorMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
-      "file_type": "code",
-      "norm_label": "errormessage()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_repositories_service_exists",
-      "label": "exists()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
-      "file_type": "code",
-      "norm_label": "exists()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L46"
-    },
-    {
-      "id": "src_repositories_service_isinside",
-      "label": "isInside()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "service.ts",
-      "file_type": "code",
-      "norm_label": "isinside()",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L41"
+      "norm_label": "writeconfig()",
+      "source_file": "test/repositories-config.test.ts",
+      "source_location": "L9"
     },
     {
       "id": "package",
@@ -1115,6 +1237,28 @@
       "source_location": "L1"
     },
     {
+      "id": "test_search_api_test",
+      "label": "search-api.test.ts",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "search-api.test.ts",
+      "source_file": "test/search-api.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_server_test",
+      "label": "server.test.ts",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "server.test.ts",
+      "source_file": "test/server.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "docs_plans_2026_09_21_graphify_api_implementation_task_4_\uc778\uc99d\ub41c_\ub2e4\uc911_\uc800\uc7a5\uc18c_http_\uac80\uc0c9_api",
       "label": "Task 4: \uc778\uc99d\ub41c \ub2e4\uc911 \uc800\uc7a5\uc18c HTTP \uac80\uc0c9 API",
       "_origin": "ast",
@@ -1148,7 +1292,7 @@
       "node_kind": "heading",
       "norm_label": "api",
       "source_file": "README.md",
-      "source_location": "L43"
+      "source_location": "L47"
     },
     {
       "id": "readme_codefleet",
@@ -1196,18 +1340,101 @@
       "node_kind": "heading",
       "norm_label": "verification",
       "source_file": "README.md",
-      "source_location": "L57"
+      "source_location": "L61"
     },
     {
-      "id": "test_fixtures_catalog_src_cacherepository",
-      "label": "CacheRepository.ts",
+      "id": "src_config_environment",
+      "label": "environment.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "CacheRepository",
+      "community_name": "environment.ts",
       "file_type": "code",
-      "norm_label": "cacherepository.ts",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
+      "norm_label": "environment.ts",
+      "source_file": "src/config/environment.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "test_environment_test",
+      "label": "environment.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "code",
+      "norm_label": "environment.test.ts",
+      "source_file": "test/environment.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening",
+      "label": "2026-09-22-graphify-api-hardening.md",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-22-graphify-api-hardening.md",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uad6c\ud604_\uacc4\ud68d",
+      "label": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uad6c\ud604 \uacc4\ud68d",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "graphify api \u110b\u116e\u11ab\u110b\u1167\u11bc \u110b\u1161\u11ab\u110c\u1165\u11ab\u1109\u1165\u11bc \u1107\u1169\u1100\u1161\u11bc \u1100\u116e\u1112\u1167\u11ab \u1100\u1168\u1112\u116c\u11a8",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
+      "label": "Task 2: \uac80\uc0c9 \uc0c1\ud55c\uacfc \uc548\uc815\uc801\uc778 \uc624\ub958 \uacc4\uc57d",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 2: \u1100\u1165\u11b7\u1109\u1162\u11a8 \u1109\u1161\u11bc\u1112\u1161\u11ab\u1100\u116a \u110b\u1161\u11ab\u110c\u1165\u11bc\u110c\u1165\u11a8\u110b\u1175\u11ab \u110b\u1169\u1105\u1172 \u1100\u1168\u110b\u1163\u11a8",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
+      "label": "Task 3: readiness, sync \uc124\uc815, non-root \ub7f0\ud0c0\uc784",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 3: readiness, sync \u1109\u1165\u11af\u110c\u1165\u11bc, non-root \u1105\u1165\u11ab\u1110\u1161\u110b\u1175\u11b7",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L227"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "label": "\uac80\ud1a0 \uc911\uc810",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1100\u1165\u11b7\u1110\u1169 \u110c\u116e\u11bc\u110c\u1165\u11b7",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_\uacf5\ud1b5_\uc81c\uc57d",
+      "label": "\uacf5\ud1b5 \uc81c\uc57d",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "environment.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1100\u1169\u11bc\u1110\u1169\u11bc \u110c\u1166\u110b\u1163\u11a8",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L13"
     },
     {
       "id": "third_party_notices",
@@ -1246,69 +1473,47 @@
       "source_location": "L1"
     },
     {
-      "id": "src_config_repositories",
-      "label": "repositories.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repositories.ts",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_registry_database",
       "label": "database.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "database.ts",
       "source_file": "src/registry/database.ts",
       "source_location": "L1"
     },
     {
-      "id": "test_environment_test",
-      "label": "environment.test.ts",
+      "id": "src_repositories_service",
+      "label": "service.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
-      "norm_label": "environment.test.ts",
-      "source_file": "test/environment.test.ts",
+      "norm_label": "service.ts",
+      "source_file": "src/repositories/service.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_repositories_service_messages",
+      "label": "messages",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "service.ts",
+      "file_type": "code",
+      "norm_label": "messages",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L31"
     },
     {
       "id": "test_registry_test",
       "label": "registry.test.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "registry.test.ts",
       "source_file": "test/registry.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_repositories_config_test",
-      "label": "repositories-config.test.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repositories-config.test.ts",
-      "source_file": "test/repositories-config.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_repository_lock_test",
-      "label": "repository-lock.test.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repository-lock.test.ts",
-      "source_file": "test/repository-lock.test.ts",
       "source_location": "L1"
     },
     {
@@ -1316,33 +1521,23 @@
       "label": "repository-service.test.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "file_type": "code",
       "norm_label": "repository-service.test.ts",
       "source_file": "test/repository-service.test.ts",
       "source_location": "L1"
     },
     {
-      "id": "test_search_api_test",
-      "label": "search-api.test.ts",
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
+      "label": "Task 1: \ubd88\ubcc0 generation\uacfc \uc815\ud655\ud55c \uc0c9\uc778 provenance",
       "_origin": "ast",
       "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "search-api.test.ts",
-      "source_file": "test/search-api.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_server_test",
-      "label": "server.test.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "server.test.ts",
-      "source_file": "test/server.test.ts",
-      "source_location": "L1"
+      "community_name": "service.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 1: \u1107\u116e\u11af\u1107\u1167\u11ab generation\u1100\u116a \u110c\u1165\u11bc\u1112\u116a\u11a8\u1112\u1161\u11ab \u1109\u1162\u11a8\u110b\u1175\u11ab provenance",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L33"
     },
     {
       "id": "docs_plans_2026_09_17_runtime_registry_foundation",
@@ -1681,14 +1876,14 @@
       "source_location": "L180"
     },
     {
-      "id": "src_config_environment",
-      "label": "environment.ts",
+      "id": "src_config_repositories",
+      "label": "repositories.ts",
       "_origin": "ast",
       "community": 5,
       "community_name": "graphify-integration.test.ts",
       "file_type": "code",
-      "norm_label": "environment.ts",
-      "source_file": "src/config/environment.ts",
+      "norm_label": "repositories.ts",
+      "source_file": "src/config/repositories.ts",
       "source_location": "L1"
     },
     {
@@ -1767,39 +1962,6 @@
       "norm_label": "fixtureroot",
       "source_file": "test/graphify-integration.test.ts",
       "source_location": "L14"
-    },
-    {
-      "id": "test_process_runner_test",
-      "label": "process-runner.test.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "process-runner.test.ts",
-      "source_file": "test/process-runner.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_process_runner_test_environment",
-      "label": "environment",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "environment",
-      "source_file": "test/process-runner.test.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "test_process_runner_test_fixture",
-      "label": "fixture",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "fixture",
-      "source_file": "test/process-runner.test.ts",
-      "source_location": "L7"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design",
@@ -1895,7 +2057,7 @@
       "node_kind": "heading",
       "norm_label": "\u1100\u1165\u11b7\u110c\u1173\u11bc",
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L264"
+      "source_location": "L260"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design_\uad6c\uc131",
@@ -1919,7 +2081,7 @@
       "node_kind": "heading",
       "norm_label": "\u1103\u1169\u11bc\u1109\u1175\u1109\u1165\u11bc\u1100\u116a \u1103\u1166\u1103\u1173\u1105\u1161\u11a8 \u1107\u1161\u11bc\u110c\u1175",
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L231"
+      "source_location": "L233"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design_\ubaa9\uc801",
@@ -1967,7 +2129,7 @@
       "node_kind": "heading",
       "norm_label": "\u110b\u1168\u1109\u1161\u11bc \u1111\u1173\u1105\u1169\u110c\u1166\u11a8\u1110\u1173 \u1100\u116e\u110c\u1169",
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L282"
+      "source_location": "L278"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design_\uc624\ub958_\uacc4\uc57d",
@@ -1979,7 +2141,7 @@
       "node_kind": "heading",
       "norm_label": "\u110b\u1169\u1105\u1172 \u1100\u1168\u110b\u1163\u11a8",
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L247"
+      "source_location": "L243"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design_\uc800\uc7a5\uc18c_\uc124\uc815",
@@ -2015,14 +2177,25 @@
       "node_kind": "heading",
       "norm_label": "\u1111\u1173\u1105\u1169\u1109\u1166\u1109\u1173 \u1100\u1167\u11bc\u1100\u1168",
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L206"
+      "source_location": "L208"
+    },
+    {
+      "id": "test_fixtures_catalog_src_cacherepository",
+      "label": "CacheRepository.ts",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "code",
+      "norm_label": "cacherepository.ts",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
+      "source_location": "L1"
     },
     {
       "id": "test_fixtures_orders_src_redisconfig",
       "label": "RedisConfig.ts",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "code",
       "norm_label": "redisconfig.ts",
       "source_file": "test/fixtures/orders/src/RedisConfig.ts",
@@ -2033,7 +2206,7 @@
       "label": "2026-09-21-graphify-api-implementation.md",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "2026-09-21-graphify-api-implementation.md",
@@ -2045,7 +2218,7 @@
       "label": "Graphify \uae30\ubc18 CodeFleet API \uad6c\ud604 \uacc4\ud68d",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "graphify \u1100\u1175\u1107\u1161\u11ab codefleet api \u1100\u116e\u1112\u1167\u11ab \u1100\u1168\u1112\u116c\u11a8",
@@ -2057,7 +2230,7 @@
       "label": "Task 1: \uc815\uc801 \uc800\uc7a5\uc18c \uc124\uc815\uacfc \uc2e4\ud589 \ud658\uacbd",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "task 1: \u110c\u1165\u11bc\u110c\u1165\u11a8 \u110c\u1165\u110c\u1161\u11bc\u1109\u1169 \u1109\u1165\u11af\u110c\u1165\u11bc\u1100\u116a \u1109\u1175\u11af\u1112\u1162\u11bc \u1112\u116a\u11ab\u1100\u1167\u11bc",
@@ -2069,7 +2242,7 @@
       "label": "Task 2: \ub370\ub4dc\ub77d\uacfc \uc178 \uc8fc\uc785\uc744 \ub9c9\ub294 Graphify \ud504\ub85c\uc138\uc2a4 \uacbd\uacc4",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "task 2: \u1103\u1166\u1103\u1173\u1105\u1161\u11a8\u1100\u116a \u1109\u1168\u11af \u110c\u116e\u110b\u1175\u11b8\u110b\u1173\u11af \u1106\u1161\u11a8\u1102\u1173\u11ab graphify \u1111\u1173\u1105\u1169\u1109\u1166\u1109\u1173 \u1100\u1167\u11bc\u1100\u1168",
@@ -2081,7 +2254,7 @@
       "label": "Task 3: \uc800\uc7a5\uc18c \uc0c1\ud0dc, \uc9c1\ub82c \uc7a0\uae08, \uc6d0\uc790\uc801 \uc0c9\uc778 \uad50\uccb4",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "task 3: \u110c\u1165\u110c\u1161\u11bc\u1109\u1169 \u1109\u1161\u11bc\u1110\u1162, \u110c\u1175\u11a8\u1105\u1167\u11af \u110c\u1161\u11b7\u1100\u1173\u11b7, \u110b\u116f\u11ab\u110c\u1161\u110c\u1165\u11a8 \u1109\u1162\u11a8\u110b\u1175\u11ab \u1100\u116d\u110e\u1166",
@@ -2093,7 +2266,7 @@
       "label": "Task 5: \uc2e4\uc81c Graphify \uac80\uc99d\uacfc \uc2e4\ud589 \uc774\ubbf8\uc9c0",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "task 5: \u1109\u1175\u11af\u110c\u1166 graphify \u1100\u1165\u11b7\u110c\u1173\u11bc\u1100\u116a \u1109\u1175\u11af\u1112\u1162\u11bc \u110b\u1175\u1106\u1175\u110c\u1175",
@@ -2105,7 +2278,7 @@
       "label": "\uac80\ud1a0 \uc911\uc810",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "\u1100\u1165\u11b7\u1110\u1169 \u110c\u116e\u11bc\u110c\u1165\u11b7",
@@ -2117,7 +2290,7 @@
       "label": "\uacf5\ud1b5 \uc81c\uc57d",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "\u1100\u1169\u11bc\u1110\u1169\u11bc \u110c\u1166\u110b\u1163\u11a8",
@@ -2129,12 +2302,132 @@
       "label": "\ucd5c\uc885 \uac80\uc99d",
       "_origin": "ast",
       "community": 7,
-      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "\u110e\u116c\u110c\u1169\u11bc \u1100\u1165\u11b7\u110c\u1173\u11bc",
       "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
       "source_location": "L687"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
+      "label": "Task 4: \uc2e4\uc81c Graphify \ud68c\uadc0 \uac80\uc99d\uacfc \ubb38\uc11c \ub3d9\uae30\ud654",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 4: \u1109\u1175\u11af\u110c\u1166 graphify \u1112\u116c\u1100\u1171 \u1100\u1165\u11b7\u110c\u1173\u11bc\u1100\u116a \u1106\u116e\u11ab\u1109\u1165 \u1103\u1169\u11bc\u1100\u1175\u1112\u116a",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L285"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design",
+      "label": "2026-09-22-graphify-api-hardening-design.md",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-22-graphify-api-hardening-design.md",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "label": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "graphify api \u110b\u116e\u11ab\u110b\u1167\u11bc \u110b\u1161\u11ab\u110c\u1165\u11ab\u1109\u1165\u11bc \u1107\u1169\u1100\u1161\u11bc \u1109\u1165\u11af\u1100\u1168",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\uac80\uc0c9_\ubd80\ud558\uc640_\uc624\ub958_\uacc4\uc57d",
+      "label": "\uac80\uc0c9 \ubd80\ud558\uc640 \uc624\ub958 \uacc4\uc57d",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1100\u1165\u11b7\u1109\u1162\u11a8 \u1107\u116e\u1112\u1161\u110b\u116a \u110b\u1169\u1105\u1172 \u1100\u1168\u110b\u1163\u11a8",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\uac80\uc99d",
+      "label": "\uac80\uc99d",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1100\u1165\u11b7\u110c\u1173\u11bc",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L87"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\uad00\ub9ac_\uacbd\ub85c",
+      "label": "\uad00\ub9ac \uacbd\ub85c",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1100\u116a\u11ab\u1105\u1175 \u1100\u1167\u11bc\u1105\u1169",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\ub3d9\uc2dc_sync\uc640_\uc0c1\ud0dc",
+      "label": "\ub3d9\uc2dc sync\uc640 \uc0c1\ud0dc",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1103\u1169\u11bc\u1109\u1175 sync\u110b\u116a \u1109\u1161\u11bc\u1110\u1162",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\ubaa9\ud45c",
+      "label": "\ubaa9\ud45c",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1106\u1169\u11a8\u1111\u116d",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\ubd88\ubcc0_generation\uacfc_\ud65c\uc131_\ud3ec\uc778\ud130",
+      "label": "\ubd88\ubcc0 generation\uacfc \ud65c\uc131 \ud3ec\uc778\ud130",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u1107\u116e\u11af\u1107\u1167\u11ab generation\u1100\u116a \u1112\u116a\u11af\u1109\u1165\u11bc \u1111\u1169\u110b\u1175\u11ab\u1110\u1165",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "docs_specs_2026_09_22_graphify_api_hardening_design_\uc900\ube44_\uc0c1\ud0dc\uc640_\uc2e4\ud589_\ud658\uacbd",
+      "label": "\uc900\ube44 \uc0c1\ud0dc\uc640 \uc2e4\ud589 \ud658\uacbd",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u110c\u116e\u11ab\u1107\u1175 \u1109\u1161\u11bc\u1110\u1162\u110b\u116a \u1109\u1175\u11af\u1112\u1162\u11bc \u1112\u116a\u11ab\u1100\u1167\u11bc",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L77"
     },
     {
       "id": "docs_prepare_2026_09_21_zoekt_integration",
@@ -2197,36 +2490,69 @@
       "source_location": "L21"
     },
     {
-      "id": "src_repositories_lock",
-      "label": "lock.ts",
+      "id": "src_repositories_query_limit",
+      "label": "query-limit.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "lock.ts",
-      "source_file": "src/repositories/lock.ts",
+      "norm_label": "query-limit.ts",
+      "source_file": "src/repositories/query-limit.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_repositories_lock_tails",
-      "label": "tails",
+      "id": "test_process_runner_test",
+      "label": "process-runner.test.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "tails",
-      "source_file": "src/repositories/lock.ts",
+      "norm_label": "process-runner.test.ts",
+      "source_file": "test/process-runner.test.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_repositories_service",
-      "label": "service.ts",
+      "id": "test_process_runner_test_environment",
+      "label": "environment",
       "_origin": "ast",
       "community": 9,
-      "community_name": "service.ts",
+      "community_name": "ref_node_assert",
       "file_type": "code",
-      "norm_label": "service.ts",
-      "source_file": "src/repositories/service.ts",
+      "norm_label": "environment",
+      "source_file": "test/process-runner.test.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "test_process_runner_test_fixture",
+      "label": "fixture",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "ref_node_assert",
+      "file_type": "code",
+      "norm_label": "fixture",
+      "source_file": "test/process-runner.test.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "test_query_limit_test",
+      "label": "query-limit.test.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "ref_node_assert",
+      "file_type": "code",
+      "norm_label": "query-limit.test.ts",
+      "source_file": "test/query-limit.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_repositories_config_test",
+      "label": "repositories-config.test.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "ref_node_assert",
+      "file_type": "code",
+      "norm_label": "repositories-config.test.ts",
+      "source_file": "test/repositories-config.test.ts",
       "source_location": "L1"
     },
     {
@@ -2242,26 +2568,26 @@
       "type": "external"
     },
     {
-      "id": "ref_node_assert",
-      "label": "ref_node_assert",
+      "id": "ref_node_events",
+      "label": "ref_node_events",
       "_origin": "semantic",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "external": true,
       "file_type": "concept",
-      "norm_label": "ref_node_assert",
+      "norm_label": "ref_node_events",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "ref_node_events",
-      "label": "ref_node_events",
+      "id": "ref_node_http",
+      "label": "ref_node_http",
       "_origin": "semantic",
-      "community": 2,
-      "community_name": "database.ts",
+      "community": 12,
+      "community_name": "server.ts",
       "external": true,
       "file_type": "concept",
-      "norm_label": "ref_node_events",
+      "norm_label": "ref_node_http",
       "source_file": "",
       "type": "external"
     },
@@ -2270,22 +2596,10 @@
       "label": "ref_node_fs",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_fs",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_http",
-      "label": "ref_node_http",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "database.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_http",
       "source_file": "",
       "type": "external"
     },
@@ -2294,7 +2608,7 @@
       "label": "ref_node_os",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_os",
@@ -2306,7 +2620,7 @@
       "label": "ref_node_path",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_path",
@@ -2318,22 +2632,10 @@
       "label": "ref_node_sqlite",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "database.ts",
+      "community_name": "service.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_sqlite",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_test",
-      "label": "ref_node_test",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "database.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_test",
       "source_file": "",
       "type": "external"
     },
@@ -2350,11 +2652,35 @@
       "type": "external"
     },
     {
+      "id": "ref_node_assert",
+      "label": "ref_node_assert",
+      "_origin": "semantic",
+      "community": 9,
+      "community_name": "ref_node_assert",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_assert",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_test",
+      "label": "ref_node_test",
+      "_origin": "semantic",
+      "community": 9,
+      "community_name": "ref_node_assert",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_test",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_node_url",
       "label": "ref_node_url",
       "_origin": "semantic",
-      "community": 5,
-      "community_name": "graphify-integration.test.ts",
+      "community": 9,
+      "community_name": "ref_node_assert",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
@@ -2363,6 +2689,30 @@
     }
   ],
   "links": [
+    {
+      "source": "src_config_environment_loadenvironment",
+      "target": "src_config_environment_commonenvironment",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_environment_loadsyncenvironment",
+      "target": "src_config_environment_commonenvironment",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
     {
       "source": "src_config_repositories_loadrepositories",
       "target": "src_config_repositories_isrecord",
@@ -2400,51 +2750,39 @@
       "weight": 1.0
     },
     {
-      "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_lock_withrepositorylock",
+      "source": "src_registry_database_manageddirectory",
+      "target": "src_registry_database_isinside",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L109",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
-      "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_service_exists",
+      "source": "src_registry_database_openregistry",
+      "target": "src_registry_database_manageddirectory",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L110",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
-      "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_service_errorcode",
+      "source": "src_repositories_query_limit_createquerylimit",
+      "target": "src_repositories_query_limit_aborted",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_process_run_runcommand",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L74",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -2456,7 +2794,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L78",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_publicerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -2468,19 +2818,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L84",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
       "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_service_ensuredirectory",
+      "target": "src_registry_database_manageddirectory",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L92",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -2492,7 +2842,79 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L94",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_exists",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_errorcode",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_query_limit_createquerylimit",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_process_run_runcommand",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_errormessage",
+      "target": "src_repositories_service_errorcode",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_publicerror",
+      "target": "src_repositories_service_errorcode",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -2504,7 +2926,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L47",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -2516,7 +2938,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L119",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -2528,7 +2950,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L124",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -2540,7 +2962,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L139",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -2552,7 +2974,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L151",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -2564,7 +2986,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L151",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server_createserver",
+      "target": "src_server_unavailable",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/server.ts",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -2576,7 +3010,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L63",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -2588,7 +3022,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L170",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -2600,7 +3034,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L171",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -2612,7 +3046,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L174",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server_start",
+      "target": "src_server_createreadinessprobe",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/server.ts",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -2624,7 +3070,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L181",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -2636,7 +3082,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L183",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -2648,7 +3094,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L103",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -2660,12 +3106,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L41",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
       "source": "src_sync_sync",
-      "target": "src_config_environment_loadenvironment",
+      "target": "src_config_environment_loadsyncenvironment",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3068,7 +3514,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3080,7 +3526,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -3092,7 +3538,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -3104,7 +3550,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -3116,19 +3562,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_repositories_service",
-      "target": "src_repositories_lock_withrepositorylock",
+      "target": "src_repositories_query_limit_createquerylimit",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3229,7 +3675,7 @@
     },
     {
       "source": "src_sync",
-      "target": "src_config_environment_loadenvironment",
+      "target": "src_config_environment_loadsyncenvironment",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3312,6 +3758,18 @@
       "weight": 1.0
     },
     {
+      "source": "test_environment_test",
+      "target": "src_config_environment_loadsyncenvironment",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/environment.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "test_graphify_client_test",
       "target": "src_graphify_client_creategraphifyclient",
       "relation": "imports",
@@ -3384,6 +3842,18 @@
       "weight": 1.0
     },
     {
+      "source": "test_query_limit_test",
+      "target": "src_repositories_query_limit_createquerylimit",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/query-limit.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "test_registry_test",
       "target": "src_registry_database_openregistry",
       "relation": "imports",
@@ -3392,7 +3862,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "test/registry.test.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3405,18 +3875,6 @@
       "context": "import",
       "source_file": "test/repositories-config.test.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "test_repository_lock_test",
-      "target": "src_repositories_lock_withrepositorylock",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "test/repository-lock.test.ts",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -3477,6 +3935,18 @@
       "context": "import",
       "source_file": "test/search-api.test.ts",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_server_test",
+      "target": "src_server_createreadinessprobe",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/server.test.ts",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -3604,7 +4074,7 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "ref_node_fs",
+      "target": "ref_node_crypto",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3616,7 +4086,7 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "ref_node_path",
+      "target": "ref_node_fs",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3628,20 +4098,19 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "src_config_repositories",
+      "target": "ref_node_path",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L4",
-      "type_only": true,
+      "source_location": "L3",
       "weight": 1.0
     },
     {
       "source": "src_repositories_service",
-      "target": "src_process_run",
+      "target": "src_config_repositories",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3654,7 +4123,7 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "src_registry_database",
+      "target": "src_process_run",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3667,7 +4136,7 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "src_repositories_lock",
+      "target": "src_registry_database",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3675,6 +4144,19 @@
       "context": "import",
       "source_file": "src/repositories/service.ts",
       "source_location": "L7",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_query_limit",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4124,6 +4606,42 @@
       "weight": 1.0
     },
     {
+      "source": "test_query_limit_test",
+      "target": "ref_node_assert",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/query-limit.test.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_query_limit_test",
+      "target": "ref_node_test",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/query-limit.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_query_limit_test",
+      "target": "src_repositories_query_limit",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/query-limit.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "test_registry_test",
       "target": "ref_node_assert",
       "relation": "imports_from",
@@ -4173,7 +4691,7 @@
     },
     {
       "source": "test_registry_test",
-      "target": "ref_node_test",
+      "target": "ref_node_sqlite",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4185,6 +4703,18 @@
     },
     {
       "source": "test_registry_test",
+      "target": "ref_node_test",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/registry.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_registry_test",
       "target": "src_registry_database",
       "relation": "imports_from",
       "_origin": "ast",
@@ -4192,7 +4722,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "test/registry.test.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -4265,42 +4795,6 @@
       "context": "import",
       "source_file": "test/repositories-config.test.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "test_repository_lock_test",
-      "target": "ref_node_assert",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "test/repository-lock.test.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "test_repository_lock_test",
-      "target": "ref_node_test",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "test/repository-lock.test.ts",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "test_repository_lock_test",
-      "target": "src_repositories_lock",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "test/repository-lock.test.ts",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -4794,6 +5288,83 @@
       "weight": 1.0
     },
     {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uad6c\ud604_\uacc4\ud68d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uad6c\ud604_\uacc4\ud68d",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_\uacf5\ud1b5_\uc81c\uc57d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uad6c\ud604_\uacc4\ud68d",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
+      "target": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
       "source": "docs_prepare_2026_09_21_zoekt_integration",
       "target": "docs_prepare_2026_09_21_zoekt_integration_zoekt_\uc5f0\ub3d9_\uc900\ube44",
       "relation": "contains",
@@ -5109,7 +5680,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L206",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -5120,7 +5691,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L231",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -5131,7 +5702,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L247",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -5142,7 +5713,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L264",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -5153,7 +5724,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
-      "source_location": "L282",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -5242,6 +5813,94 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/2026-09-21-graphify-api-design.md",
       "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\ubaa9\ud45c",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\ub3d9\uc2dc_sync\uc640_\uc0c1\ud0dc",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\uad00\ub9ac_\uacbd\ub85c",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\uac80\uc0c9_\ubd80\ud558\uc640_\uc624\ub958_\uacc4\uc57d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\uc900\ube44_\uc0c1\ud0dc\uc640_\uc2e4\ud589_\ud658\uacbd",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\uac80\uc99d",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_graphify_api_\uc6b4\uc601_\uc548\uc804\uc131_\ubcf4\uac15_\uc124\uacc4",
+      "target": "docs_specs_2026_09_22_graphify_api_hardening_design_\ubd88\ubcc0_generation\uacfc_\ud65c\uc131_\ud3ec\uc778\ud130",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -5450,18 +6109,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_codefleet",
-      "target": "readme_verification",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -5476,6 +6124,39 @@
       "weight": 1.0
     },
     {
+      "source": "readme_codefleet",
+      "target": "readme_verification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_environment",
+      "target": "src_config_environment_commonenvironment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/config/environment.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_environment",
+      "target": "src_config_environment_loadsyncenvironment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/config/environment.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "src_config_environment",
       "target": "src_config_environment_loadenvironment",
       "relation": "contains",
@@ -5483,7 +6164,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/config/environment.ts",
-      "source_location": "L1",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -5620,18 +6301,7 @@
     },
     {
       "source": "src_registry_database",
-      "target": "src_registry_database_registry",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/registry/database.ts",
-      "source_location": "L163",
-      "weight": 1.0
-    },
-    {
-      "source": "src_registry_database",
-      "target": "src_registry_database_repositoryrow",
+      "target": "src_registry_database_repositoryindexrecord",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5642,13 +6312,68 @@
     },
     {
       "source": "src_registry_database",
+      "target": "src_registry_database_repositoryrow",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/registry/database.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_registry_database",
+      "target": "src_registry_database_registry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/registry/database.ts",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "src_registry_database",
+      "target": "src_registry_database_isinside",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/registry/database.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_registry_database",
+      "target": "src_registry_database_manageddirectory",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/registry/database.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_registry_database",
+      "target": "src_registry_database_torecord",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/registry/database.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_registry_database",
       "target": "src_registry_database_openregistry",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/registry/database.ts",
-      "source_location": "L27",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -5663,135 +6388,36 @@
       "weight": 1.0
     },
     {
-      "source": "src_repositories_lock",
-      "target": "src_repositories_lock_tails",
+      "source": "src_repositories_query_limit",
+      "target": "src_repositories_query_limit_queued",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/repositories/lock.ts",
+      "source_file": "src/repositories/query-limit.ts",
       "source_location": "L1",
       "weight": 1.0
     },
     {
-      "source": "src_repositories_lock",
-      "target": "src_repositories_lock_withrepositorylock",
+      "source": "src_repositories_query_limit",
+      "target": "src_repositories_query_limit_createquerylimit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/repositories/lock.ts",
-      "source_location": "L4",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_graphifyclient",
+      "source": "src_repositories_query_limit",
+      "target": "src_repositories_query_limit_aborted",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_searchoutcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_childenvironment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_errorcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_errormessage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_isinside",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_exists",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_ensuredirectory",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L55",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_defaultbranch",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service",
-      "target": "src_repositories_service_createrepositoryservice",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L63",
+      "source_file": "src/repositories/query-limit.ts",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -5802,7 +6428,128 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/repositories/service.ts",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_graphifyclient",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_searchoutcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_childenvironment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_messages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_errorcode",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_errormessage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_publicerror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_isinside",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_exists",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_defaultbranch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_createrepositoryservice",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -5813,7 +6560,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L102",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_server_unavailable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -5824,7 +6582,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L113",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -5840,28 +6598,6 @@
     },
     {
       "source": "src_server",
-      "target": "src_server_application",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/server.ts",
-      "source_location": "L167",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
-      "target": "src_server_start",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/server.ts",
-      "source_location": "L169",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
       "target": "src_server_serverdependencies",
       "relation": "contains",
       "_origin": "ast",
@@ -5873,7 +6609,29 @@
     },
     {
       "source": "src_server",
-      "target": "src_server_requesterror",
+      "target": "src_server_application",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_server_start",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_server_createreadinessprobe",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5884,29 +6642,7 @@
     },
     {
       "source": "src_server",
-      "target": "src_server_writejson",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/server.ts",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
-      "target": "src_server_writerequesterror",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/server.ts",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
-      "target": "src_server_authenticate",
+      "target": "src_server_requesterror",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5917,13 +6653,46 @@
     },
     {
       "source": "src_server",
+      "target": "src_server_writejson",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_server_writerequesterror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_server_authenticate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/server.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
       "target": "src_server_readjsonbody",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L59",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -6176,7 +6945,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L29",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -6199,7 +6968,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "src/server.ts",
-      "source_location": "L183",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -6227,6 +6996,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
+      "target": "test_fixtures_catalog_src_cacherepository_cacherepository",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "CacheRepository",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
       "source": "docs_plans_2026_09_21_graphify_api_implementation_task_5_\uc2e4\uc81c_graphify_\uac80\uc99d\uacfc_\uc2e4\ud589_\uc774\ubbf8\uc9c0",
       "target": "test_fixtures_orders_src_redisconfig_redisconfig",
       "relation": "references",
@@ -6236,6 +7017,30 @@
       "context": "RedisConfig",
       "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
       "source_location": "L614",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
+      "target": "test_fixtures_orders_src_redisconfig_redisconfig",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RedisConfig",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_2026_09_22_graphify_api_hardening_design_\uac80\uc99d",
+      "target": "test_fixtures_orders_src_redisconfig_redisconfig",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RedisConfig",
+      "source_file": "docs/specs/2026-09-22-graphify-api-hardening-design.md",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -6251,6 +7056,54 @@
       "weight": 1.0
     },
     {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
+      "target": "src_registry_database_repositoryindexrecord",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RepositoryIndexRecord",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
+      "target": "src_registry_database_repositoryrecord",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RepositoryRecord",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
+      "target": "src_server_requesterror",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RequestError",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_21_graphify_api_implementation_task_4_\uc778\uc99d\ub41c_\ub2e4\uc911_\uc800\uc7a5\uc18c_http_\uac80\uc0c9_api",
+      "target": "src_repositories_query_limit_aborted",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "aborted",
+      "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
+      "source_location": "L562",
+      "weight": 1.0
+    },
+    {
       "source": "docs_plans_2026_09_21_graphify_api_implementation_task_4_\uc778\uc99d\ub41c_\ub2e4\uc911_\uc800\uc7a5\uc18c_http_\uac80\uc0c9_api",
       "target": "src_server_authenticate",
       "relation": "references",
@@ -6260,6 +7113,42 @@
       "context": "authenticate",
       "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
       "source_location": "L558",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
+      "target": "src_repositories_service_createrepositoryservice",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "createRepositoryService",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
+      "target": "src_config_environment_loadenvironment",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "loadEnvironment",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
+      "target": "src_config_environment_loadsyncenvironment",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "loadSyncEnvironment",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -6300,5 +7189,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2049d044931cb3bae9c3a4d2a583ed73e2fc7cf3"
+  "built_at_commit": "9b9e4cee1807b50937df09cc61ae211404125f3a"
 }
