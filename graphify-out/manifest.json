@@ -1,0 +1,80 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1790006211.5221317,
+    "seen": 1790006212.288722,
+    "ast_hash": "005ac71c84af2cae38e255e2b9de2411",
+    "semantic_hash": "005ac71c84af2cae38e255e2b9de2411"
+  },
+  "package.json": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.288726,
+    "ast_hash": "412fa7b415be647f6a115b6f3ca1d674",
+    "semantic_hash": "412fa7b415be647f6a115b6f3ca1d674"
+  },
+  "src/admin/routes.ts": {
+    "mtime": 1789615381.8831086,
+    "seen": 1790006212.2887275,
+    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
+    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+  },
+  "src/codegraph/client.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887285,
+    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
+    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+  },
+  "src/config/environment.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887297,
+    "ast_hash": "b613c46543f5096284686b11946f4823",
+    "semantic_hash": "b613c46543f5096284686b11946f4823"
+  },
+  "src/mcp/server.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887304,
+    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
+    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+  },
+  "src/registry/database.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887309,
+    "ast_hash": "2d0e4acd96756625a26f4797a31b61ce",
+    "semantic_hash": "2d0e4acd96756625a26f4797a31b61ce"
+  },
+  "src/repositories/service.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887316,
+    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
+    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+  },
+  "src/server.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887325,
+    "ast_hash": "fb08efdda92224dc905378c9b8ce8e11",
+    "semantic_hash": "fb08efdda92224dc905378c9b8ce8e11"
+  },
+  "test/environment.test.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.288733,
+    "ast_hash": "dc7bd24129583ac56e35daeeb678dfeb",
+    "semantic_hash": "dc7bd24129583ac56e35daeeb678dfeb"
+  },
+  "test/registry.test.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887337,
+    "ast_hash": "8bb444954315f2288e9d4eca4746229c",
+    "semantic_hash": "8bb444954315f2288e9d4eca4746229c"
+  },
+  "test/server.test.ts": {
+    "mtime": 1789920384.8583398,
+    "seen": 1790006212.2887347,
+    "ast_hash": "2966964b9e1065029e1a246b93c7690e",
+    "semantic_hash": "2966964b9e1065029e1a246b93c7690e"
+  },
+  "tsconfig.json": {
+    "mtime": 1789615702.6384423,
+    "seen": 1790006212.2887352,
+    "ast_hash": "d3b38b78a4d4d05f8ceb586ee34d6833",
+    "semantic_hash": "d3b38b78a4d4d05f8ceb586ee34d6833"
+  }
+}

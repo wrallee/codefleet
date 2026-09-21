@@ -1,0 +1,4 @@
+# >>> graphify-init >>>
+# graphify-init: exclude installed Graphify skill sources
+**/skills/graphify/
+# <<< graphify-init <<<
