@@ -1,80 +1,206 @@
 {
   ".codex/hooks.json": {
-    "mtime": 1790006211.5221317,
-    "seen": 1790006212.288722,
+    "mtime": 1790007155.3977325,
+    "seen": 1790007348.0422375,
     "ast_hash": "005ac71c84af2cae38e255e2b9de2411",
     "semantic_hash": "005ac71c84af2cae38e255e2b9de2411"
   },
   "package.json": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.288726,
-    "ast_hash": "412fa7b415be647f6a115b6f3ca1d674",
-    "semantic_hash": "412fa7b415be647f6a115b6f3ca1d674"
-  },
-  "src/admin/routes.ts": {
-    "mtime": 1789615381.8831086,
-    "seen": 1790006212.2887275,
-    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
-    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
-  },
-  "src/codegraph/client.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887285,
-    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
-    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+    "mtime": 1790007155.4260874,
+    "seen": 1790007348.042244,
+    "ast_hash": "3993f81e1df32d8e38d0eb616ba65f34",
+    "semantic_hash": ""
   },
   "src/config/environment.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887297,
-    "ast_hash": "b613c46543f5096284686b11946f4823",
-    "semantic_hash": "b613c46543f5096284686b11946f4823"
-  },
-  "src/mcp/server.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887304,
-    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
-    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+    "mtime": 1790007155.4141073,
+    "seen": 1790007348.0422451,
+    "ast_hash": "43d21ce297abffcbe7c87cf8b5bba891",
+    "semantic_hash": ""
   },
   "src/registry/database.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887309,
-    "ast_hash": "2d0e4acd96756625a26f4797a31b61ce",
-    "semantic_hash": "2d0e4acd96756625a26f4797a31b61ce"
+    "mtime": 1790007155.426377,
+    "seen": 1790007348.042249,
+    "ast_hash": "d109c41ad492cc7d1fdbf622c59227bd",
+    "semantic_hash": ""
   },
   "src/repositories/service.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887316,
-    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
-    "semantic_hash": "68b329da9893e34099c7d8ad5cb9c940"
+    "mtime": 1790007155.426916,
+    "seen": 1790007348.0422506,
+    "ast_hash": "5d480bcce18d619fed46bfd3636d27b0",
+    "semantic_hash": ""
   },
   "src/server.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887325,
-    "ast_hash": "fb08efdda92224dc905378c9b8ce8e11",
-    "semantic_hash": "fb08efdda92224dc905378c9b8ce8e11"
+    "mtime": 1790007806.205825,
+    "seen": 1790007857.9022257,
+    "ast_hash": "fb3cd93c10d61b199dc0d815c3adbcb4",
+    "semantic_hash": ""
   },
   "test/environment.test.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.288733,
-    "ast_hash": "dc7bd24129583ac56e35daeeb678dfeb",
-    "semantic_hash": "dc7bd24129583ac56e35daeeb678dfeb"
+    "mtime": 1790007155.4146812,
+    "seen": 1790007348.0422544,
+    "ast_hash": "3fed2aa07d060ece2b38b5454f8baedd",
+    "semantic_hash": ""
   },
   "test/registry.test.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887337,
-    "ast_hash": "8bb444954315f2288e9d4eca4746229c",
-    "semantic_hash": "8bb444954315f2288e9d4eca4746229c"
+    "mtime": 1790007155.4274712,
+    "seen": 1790007348.042257,
+    "ast_hash": "fd91214c1da525c2fb07ea51fb77b312",
+    "semantic_hash": ""
   },
   "test/server.test.ts": {
-    "mtime": 1789920384.8583398,
-    "seen": 1790006212.2887347,
-    "ast_hash": "2966964b9e1065029e1a246b93c7690e",
-    "semantic_hash": "2966964b9e1065029e1a246b93c7690e"
+    "mtime": 1790007486.5931623,
+    "seen": 1790007857.9022377,
+    "ast_hash": "aee6bc7dae1279dc34a7c2a8889ceef2",
+    "semantic_hash": ""
   },
   "tsconfig.json": {
-    "mtime": 1789615702.6384423,
-    "seen": 1790006212.2887352,
+    "mtime": 1789996798.9550202,
+    "seen": 1790007348.0422618,
     "ast_hash": "d3b38b78a4d4d05f8ceb586ee34d6833",
     "semantic_hash": "d3b38b78a4d4d05f8ceb586ee34d6833"
+  },
+  "config/repositories.json": {
+    "mtime": 1790007155.4130793,
+    "seen": 1790007348.0422413,
+    "ast_hash": "540d54c02906b1fcf649001516c24509",
+    "semantic_hash": ""
+  },
+  "src/config/repositories.ts": {
+    "mtime": 1790007155.4143884,
+    "seen": 1790007348.042246,
+    "ast_hash": "5f656811ac6f5077c322dbf55e455bd7",
+    "semantic_hash": ""
+  },
+  "src/graphify/client.ts": {
+    "mtime": 1790007155.4189448,
+    "seen": 1790007348.042247,
+    "ast_hash": "ebba3fe6212618353d0d9322c30894bc",
+    "semantic_hash": ""
+  },
+  "src/process/run.ts": {
+    "mtime": 1790007155.4189448,
+    "seen": 1790007348.0422482,
+    "ast_hash": "6230130390341401518011e3b09b85e7",
+    "semantic_hash": ""
+  },
+  "src/repositories/lock.ts": {
+    "mtime": 1790007155.4266312,
+    "seen": 1790007348.04225,
+    "ast_hash": "914186482145b4986dcca7d1d3e37573",
+    "semantic_hash": ""
+  },
+  "src/sync.ts": {
+    "mtime": 1790007155.427198,
+    "seen": 1790007348.0422528,
+    "ast_hash": "5d5af4acbc104f14c2cda142e23256b3",
+    "semantic_hash": ""
+  },
+  "test-fixtures/process-child.mjs": {
+    "mtime": 1790007155.4189448,
+    "seen": 1790007348.0422535,
+    "ast_hash": "a1b406534fca9a649e93f266c9be3540",
+    "semantic_hash": ""
+  },
+  "test/graphify-client.test.ts": {
+    "mtime": 1790007155.4213371,
+    "seen": 1790007348.0422552,
+    "ast_hash": "8f10ff189e7f41dc651ca63041ba79b4",
+    "semantic_hash": ""
+  },
+  "test/process-runner.test.ts": {
+    "mtime": 1790007155.4215713,
+    "seen": 1790007348.0422559,
+    "ast_hash": "9e2d1b0d52ed57aa9c7005d4c8b88ff1",
+    "semantic_hash": ""
+  },
+  "test/repositories-config.test.ts": {
+    "mtime": 1790007155.414972,
+    "seen": 1790007348.0422583,
+    "ast_hash": "0f81733d643a94b16cdfad33b8a8ff54",
+    "semantic_hash": ""
+  },
+  "test/repository-lock.test.ts": {
+    "mtime": 1790007155.4277096,
+    "seen": 1790007348.0422587,
+    "ast_hash": "b1eb06c35fc5c0b4403356e6eca59f05",
+    "semantic_hash": ""
+  },
+  "test/repository-service.test.ts": {
+    "mtime": 1790007155.4279597,
+    "seen": 1790007348.0422595,
+    "ast_hash": "c3a4266b0ca7920dd18aaae226eadd7b",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1790007155.4027998,
+    "seen": 1790007348.0422628,
+    "ast_hash": "6a47d64fcc136324ca395065a707ef76",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790008145.0161703,
+    "seen": 1790008376.359425,
+    "ast_hash": "3d1a9c83734d024f418d26441491e154",
+    "semantic_hash": ""
+  },
+  "docs/plans/2026-09-17-runtime-registry-foundation.md": {
+    "mtime": 1789996798.9473338,
+    "seen": 1790007348.0422652,
+    "ast_hash": "bac743cffdd29d4c123494a990b8cc3c",
+    "semantic_hash": ""
+  },
+  "docs/plans/2026-09-21-graphify-api-implementation.md": {
+    "mtime": 1789996798.9473338,
+    "seen": 1790007348.0422657,
+    "ast_hash": "e2099c6aa283ab02ed424346ec7972e4",
+    "semantic_hash": ""
+  },
+  "docs/prepare/2026-09-21-zoekt-integration.md": {
+    "mtime": 1789996798.9473338,
+    "seen": 1790007348.0422664,
+    "ast_hash": "56889edd8ab1a50dc86991f99953b697",
+    "semantic_hash": ""
+  },
+  "docs/specs/2026-09-17-codefleet-design.md": {
+    "mtime": 1789996798.9473338,
+    "seen": 1790007348.0422668,
+    "ast_hash": "735996258b4723d0c266b81764613db7",
+    "semantic_hash": ""
+  },
+  "docs/specs/2026-09-21-graphify-api-design.md": {
+    "mtime": 1789996798.9491262,
+    "seen": 1790007348.0422676,
+    "ast_hash": "ff93acd27c683130b1e83d306190ae2e",
+    "semantic_hash": ""
+  },
+  "test/search-api.test.ts": {
+    "mtime": 1790007486.6919303,
+    "seen": 1790007857.9022367,
+    "ast_hash": "bcb559b6a9e68bd25f6749533ef19036",
+    "semantic_hash": ""
+  },
+  "test/fixtures/catalog/src/CacheRepository.ts": {
+    "mtime": 1790007940.1486502,
+    "seen": 1790008376.3594124,
+    "ast_hash": "35a9945af1a36a38674ca75aa467b3c8",
+    "semantic_hash": ""
+  },
+  "test/fixtures/orders/src/RedisConfig.ts": {
+    "mtime": 1790007928.629327,
+    "seen": 1790008376.3594134,
+    "ast_hash": "8108107e5ea0e05433a1a38e0943b574",
+    "semantic_hash": ""
+  },
+  "test/graphify-integration.test.ts": {
+    "mtime": 1790008075.23686,
+    "seen": 1790008376.3594158,
+    "ast_hash": "69f9dec15146a7c6f55057d7f332adb1",
+    "semantic_hash": ""
+  },
+  "THIRD_PARTY_NOTICES.md": {
+    "mtime": 1790008127.4783127,
+    "seen": 1790008376.3594258,
+    "ast_hash": "46cd8d66039b55a83239e1323abc0451",
+    "semantic_hash": ""
   }
 }
