@@ -1,6 +1,9 @@
 # CodeFleet 설계 명세
 
-- 상태: 검토 초안
+> 이 문서는 `docs/specs/2026-09-21-graphify-api-design.md`로 대체되었다.
+> CodeGraph, MCP, 관리 화면을 전제로 한 아래 내용은 구현 기준으로 사용하지 않는다.
+
+- 상태: 대체됨
 - 작성일: 2026-09-17
 - 저장소: `wrallee/codefleet`
 - 라이선스: MIT
