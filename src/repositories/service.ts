@@ -1,10 +1,10 @@
-import { access, mkdtemp, rename, rm, stat } from "node:fs/promises";
+import { randomUUID } from "node:crypto";
+import { access, lstat, mkdir, mkdtemp, realpath, rm, rename } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 
 import type { RepositoryConfig } from "../config/repositories.ts";
 import type { CommandResult, RunCommandOptions } from "../process/run.ts";
 import type { Registry, RepositoryRecord } from "../registry/database.ts";
-import { withRepositoryLock } from "./lock.ts";
 
 type RunCommand = (options: RunCommandOptions) => Promise<CommandResult>;
 
@@ -28,9 +28,7 @@ function childEnvironment(): NodeJS.ProcessEnv {
 }
 
 function errorCode(error: unknown): string {
-  if (typeof error === "object" && error !== null && "code" in error && typeof error.code === "string") {
-    return error.code;
-  }
+  if (typeof error === "object" && error !== null && "code" in error && typeof error.code === "string") return error.code;
   return "REPOSITORY_SYNC_FAILED";
 }
 
@@ -39,8 +37,8 @@ function errorMessage(error: unknown): string {
 }
 
 function isInside(root: string, candidate: string): boolean {
-  const path = relative(resolve(root), resolve(candidate));
-  return path !== "" && !path.startsWith("..") && !path.includes(`..${process.platform === "win32" ? "\\" : "/"}`);
+  const path = relative(root, candidate);
+  return path === "" || (!path.startsWith("..") && !path.includes(`..${process.platform === "win32" ? "\\" : "/"}`));
 }
 
 async function exists(path: string): Promise<boolean> {
@@ -50,10 +48,6 @@ async function exists(path: string): Promise<boolean> {
   } catch {
     return false;
   }
-}
-
-async function ensureDirectory(path: string): Promise<void> {
-  if (!(await stat(path)).isDirectory()) throw new Error("관리 디렉터리가 아님");
 }
 
 function defaultBranch(output: string): string | undefined {
@@ -67,10 +61,9 @@ export function createRepositoryService(options: Readonly<{
   runCommand: RunCommand;
 }>) {
   const { registry, graphify, runCommand } = options;
-  const dataDirectory = resolve(options.dataDirectory);
-  const repositoriesDirectory = join(dataDirectory, "repositories");
-  const stagingDirectory = join(dataDirectory, ".staging");
-  const trashDirectory = join(dataDirectory, ".trash");
+  const dataDirectory = resolve(registry.dataDirectory);
+  const repositoriesDirectory = registry.repositoriesDirectory;
+  const stagingDirectory = registry.stagingDirectory;
   const git = (args: readonly string[], cwd?: string) => runCommand({
     executable: "git",
     args,
@@ -79,58 +72,49 @@ export function createRepositoryService(options: Readonly<{
     timeoutMs: 600_000,
     maxOutputBytes: 1_048_576,
   });
-
-  const managedPath = (path: string) => {
-    if (!isInside(dataDirectory, path)) throw new Error("관리 경로가 data directory 밖에 있음");
-    return path;
+  const managedDirectory = async (path: string) => {
+    const entry = await lstat(path);
+    if (entry.isSymbolicLink() || !entry.isDirectory()) throw new Error("managed directory must not be a symlink");
+    const actual = await realpath(path);
+    if (!isInside(dataDirectory, actual)) throw new Error("managed directory escapes data directory");
+    return actual;
+  };
+  const makeManagedDirectory = async (path: string) => {
+    if (!isInside(dataDirectory, resolve(path))) throw new Error("managed directory escapes data directory");
+    await mkdir(path, { recursive: true });
+    return managedDirectory(path);
   };
   const syncOne = async (config: RepositoryConfig) => {
-    const previousRecord = registry.listRepositories().find(({ id }) => id === config.id);
-    registry.markSyncing(config.id);
+    const syncGeneration = registry.beginSync(config.id);
     let staging: string | undefined;
     try {
-      await ensureDirectory(stagingDirectory);
-      await ensureDirectory(trashDirectory);
+      await managedDirectory(stagingDirectory);
       const branch = config.branch ?? defaultBranch((await git(["ls-remote", "--symref", config.cloneUrl, "HEAD"])).stdout);
       if (!branch) {
-        registry.markDegraded(config.id, "DEFAULT_BRANCH_UNRESOLVED");
+        registry.markSyncFailed(config.id, syncGeneration, "DEFAULT_BRANCH_UNRESOLVED");
         return;
       }
       await git(["check-ref-format", "--branch", branch]);
-      staging = managedPath(await mkdtemp(join(stagingDirectory, `${config.id}-`)));
+      staging = await mkdtemp(join(stagingDirectory, `${config.id}-`));
+      await managedDirectory(staging);
       await git(["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", branch, "--", config.cloneUrl, staging]);
       const commit = (await git(["-C", staging, "rev-parse", "HEAD"])).stdout.trim();
       await graphify.extract(staging);
       await access(join(staging, "graphify-out", "graph.json"));
 
-      const active = managedPath(join(repositoriesDirectory, config.id));
-      const previous = managedPath(join(trashDirectory, `${config.id}-${Date.now()}`));
-      const staged = staging;
-      await withRepositoryLock(config.id, async () => {
-        const hadActive = await exists(active);
-        if (hadActive) await rename(active, previous);
-        try {
-          await rename(staged, active);
-          staging = undefined;
-          registry.markReady(config.id, branch, commit, new Date().toISOString());
-        } catch (error) {
-          if (await exists(active)) await rename(active, staged);
-          staging = staged;
-          if (hadActive && await exists(previous)) await rename(previous, active);
-          throw error;
-        }
-      });
-      if (await exists(previous)) await rm(previous, { recursive: true, force: true });
+      const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, config.id));
+      const generationsDirectory = await makeManagedDirectory(join(repositoryDirectory, "generations"));
+      const activeGeneration = `${commit}-${randomUUID()}`;
+      const destination = join(generationsDirectory, activeGeneration);
+      await rename(staging, destination);
+      staging = undefined;
+      // ponytail: immutable generations are retained; add retention cleanup only when PVC usage proves it is needed.
+      registry.markReady(config.id, syncGeneration, branch, config.cloneUrl, commit, activeGeneration, new Date().toISOString());
     } catch (error) {
       try {
         if (staging && await exists(staging)) await rm(staging, { recursive: true, force: true });
-        if (previousRecord?.state === "ready" && previousRecord.indexedCommit && previousRecord.indexedAt) {
-          registry.markReady(config.id, previousRecord.branch, previousRecord.indexedCommit, previousRecord.indexedAt);
-        } else {
-          registry.markDegraded(config.id, errorCode(error));
-        }
-      } catch {
-        // Keep the original sync error when recovery bookkeeping also fails.
+      } finally {
+        registry.markSyncFailed(config.id, syncGeneration, errorCode(error));
       }
     }
   };
@@ -150,14 +134,15 @@ export function createRepositoryService(options: Readonly<{
       }
       const outcomes = await Promise.all(selected.map(async (record) => {
         try {
-          return await withRepositoryLock(record.id, async () => {
-            const current = registry.listRepositories().find(({ id }) => id === record.id);
-            if (!current || current.state !== "ready" || !current.indexedCommit || !current.indexedAt) {
-              throw Object.assign(new Error("준비되지 않은 저장소"), { code: "REPOSITORY_NOT_READY" });
-            }
-            const output = await graphify.query(join(repositoriesDirectory, current.id, "graphify-out", "graph.json"), query, signal);
-            return { repositoryId: current.id, indexedCommit: current.indexedCommit, indexedAt: current.indexedAt, output };
-          });
+          const current = registry.getRepositoryIndex(record.id);
+          if (!current || current.state !== "ready" || !current.indexedCommit || !current.indexedAt) {
+            throw Object.assign(new Error("준비되지 않은 저장소"), { code: "REPOSITORY_NOT_READY" });
+          }
+          const indexRoot = current.activeGeneration
+            ? join(repositoriesDirectory, current.id, "generations", current.activeGeneration)
+            : join(repositoriesDirectory, current.id);
+          const output = await graphify.query(join(indexRoot, "graphify-out", "graph.json"), query, signal);
+          return { repositoryId: current.id, indexedCommit: current.indexedCommit, indexedAt: current.indexedAt, output };
         } catch (error) {
           warnings.push({ repositoryId: record.id, code: errorCode(error), message: errorMessage(error) });
           return undefined;

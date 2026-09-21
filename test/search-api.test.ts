@@ -31,8 +31,8 @@ function fixture(search: (query: string, repositoryIds?: readonly string[], sign
     { id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" },
     { id: "catalog", cloneUrl: "https://github.com/example/catalog.git", branch: "main" },
   ]);
-  registry.markReady("orders", "main", "abc", "2026-09-21T00:00:00.000Z");
-  registry.markReady("catalog", "main", "def", "2026-09-21T00:00:00.000Z");
+  registry.markReady("orders", registry.beginSync("orders"), "main", "https://github.com/example/orders.git", "abc", "orders-g1", "2026-09-21T00:00:00.000Z");
+  registry.markReady("catalog", registry.beginSync("catalog"), "main", "https://github.com/example/catalog.git", "def", "catalog-g1", "2026-09-21T00:00:00.000Z");
   return {
     directory,
     registry,
