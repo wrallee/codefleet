@@ -53,6 +53,20 @@ function toRecord(row: RepositoryRow): RepositoryRecord {
   };
 }
 
+function configureDatabase(database: DatabaseSync) {
+  database.exec("PRAGMA busy_timeout = 5000;");
+  const wait = new Int32Array(new SharedArrayBuffer(4));
+  for (let attempt = 0; attempt < 100; attempt += 1) {
+    try {
+      database.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
+      return;
+    } catch (error) {
+      if (!(typeof error === "object" && error !== null && "errcode" in error && error.errcode === 5) || attempt === 99) throw error;
+      Atomics.wait(wait, 0, 0, 50);
+    }
+  }
+}
+
 export function openRegistry(configuredDataDirectory: string) {
   mkdirSync(configuredDataDirectory, { recursive: true });
   const dataDirectory = realpathSync(configuredDataDirectory);
@@ -60,16 +74,14 @@ export function openRegistry(configuredDataDirectory: string) {
   const stagingDirectory = managedDirectory(dataDirectory, ".staging");
   const trashDirectory = managedDirectory(dataDirectory, ".trash");
   const database = new DatabaseSync(join(dataDirectory, "codefleet.db"));
-  database.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000;");
+  configureDatabase(database);
 
-  const { user_version: schemaVersion } = database.prepare("PRAGMA user_version").get() as { user_version: number };
-  if (schemaVersion > CURRENT_SCHEMA_VERSION) {
-    database.close();
-    throw new Error(`지원하지 않는 레지스트리 스키마 버전: ${schemaVersion}`);
-  }
-  if (schemaVersion === 0) {
+  database.exec("BEGIN IMMEDIATE");
+  try {
+    const { user_version: schemaVersion } = database.prepare("PRAGMA user_version").get() as { user_version: number };
+    if (schemaVersion > CURRENT_SCHEMA_VERSION) throw new Error(`지원하지 않는 레지스트리 스키마 버전: ${schemaVersion}`);
+    if (schemaVersion === 0) {
     database.exec(`
-      BEGIN;
       CREATE TABLE repositories (
         id TEXT PRIMARY KEY,
         display_name TEXT NOT NULL,
@@ -91,19 +103,22 @@ export function openRegistry(configuredDataDirectory: string) {
         updated_at TEXT NOT NULL
       );
       PRAGMA user_version = 2;
-      COMMIT;
     `);
-  } else if (schemaVersion === 1) {
+    } else if (schemaVersion === 1) {
     database.exec(`
-      BEGIN;
       ALTER TABLE repositories ADD COLUMN indexed_branch TEXT;
       ALTER TABLE repositories ADD COLUMN indexed_clone_url TEXT;
       ALTER TABLE repositories ADD COLUMN active_generation TEXT;
       ALTER TABLE repositories ADD COLUMN sync_generation INTEGER NOT NULL DEFAULT 0;
       UPDATE repositories SET indexed_branch = branch, indexed_clone_url = clone_url WHERE indexed_commit IS NOT NULL;
       PRAGMA user_version = 2;
-      COMMIT;
     `);
+    }
+    database.exec("COMMIT");
+  } catch (error) {
+    database.exec("ROLLBACK");
+    database.close();
+    throw error;
   }
 
   let open = true;

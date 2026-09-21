@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, rmSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -162,6 +163,29 @@ test("symlink 관리 디렉터리를 거부한다", () => {
     assert.throws(() => openRegistry(dataDirectory), /symlink/);
 
     assert.equal(existsSync(outside), true);
+  } finally {
+    rmSync(temporaryDirectory, { recursive: true, force: true });
+  }
+});
+
+test("별도 프로세스의 최초 schema migration은 하나만 수행한다", async () => {
+  const temporaryDirectory = mkdtempSync(join(tmpdir(), "codefleet-"));
+  const dataDirectory = join(temporaryDirectory, "data");
+  const moduleUrl = new URL("../src/registry/database.ts", import.meta.url).href;
+  const script = `import { openRegistry } from ${JSON.stringify(moduleUrl)}; openRegistry(${JSON.stringify(dataDirectory)}).close();`;
+  const open = () => new Promise<void>((resolve, reject) => {
+    const child = spawn(process.execPath, ["--input-type=module", "--eval", script], { stdio: ["ignore", "ignore", "pipe"] });
+    let stderr = "";
+    child.stderr.on("data", (chunk) => { stderr += chunk; });
+    child.once("error", reject);
+    child.once("exit", (code) => code === 0 ? resolve() : reject(new Error(`registry child exited: ${code}: ${stderr}`)));
+  });
+
+  try {
+    await Promise.all([open(), open()]);
+    const registry = openRegistry(dataDirectory);
+    assert.equal((registry.database.prepare("PRAGMA user_version").get() as { user_version: number }).user_version, 2);
+    registry.close();
   } finally {
     rmSync(temporaryDirectory, { recursive: true, force: true });
   }

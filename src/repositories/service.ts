@@ -137,7 +137,11 @@ export function createRepositoryService(options: Readonly<{
       } catch (error) {
         throw publicError("GRAPHIFY", error);
       }
-      await access(join(staging, "graphify-out", "graph.json"));
+      try {
+        await access(join(staging, "graphify-out", "graph.json"));
+      } catch {
+        throw publicError("GRAPHIFY", Object.assign(new Error("graph output missing"), { code: "PROCESS_EXIT_FAILURE" }));
+      }
 
       const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, config.id));
       const generationsDirectory = await makeManagedDirectory(join(repositoryDirectory, "generations"));

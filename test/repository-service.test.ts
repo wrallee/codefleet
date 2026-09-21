@@ -221,3 +221,17 @@ test("Git과 Graphify 프로세스 오류를 공개 코드로 변환한다", asy
     rmSync(fixture.directory, { recursive: true, force: true });
   }
 });
+
+test("Graphify가 graph.json 없이 성공해도 내부 파일 오류를 노출하지 않는다", async () => {
+  const fixture = createFixture();
+
+  try {
+    fixture.graphify.extract = async () => undefined;
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand: fixture.runCommand });
+    await service.syncAll([{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }]);
+    assert.equal(fixture.registry.listRepositories()[0]?.lastError, "GRAPHIFY_FAILED");
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
