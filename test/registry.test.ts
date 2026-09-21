@@ -61,3 +61,32 @@ test("필수 데이터 디렉터리가 없으면 준비되지 않은 상태를 �
     rmSync(temporaryDirectory, { recursive: true, force: true });
   }
 });
+
+test("설정을 조정하고 색인 상태를 기록한다", () => {
+  const temporaryDirectory = mkdtempSync(join(tmpdir(), "codefleet-"));
+
+  try {
+    const registry = openRegistry(join(temporaryDirectory, "data"));
+    registry.reconcile([{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }]);
+    assert.deepEqual(registry.listRepositories().map(({ id, state }) => ({ id, state })), [
+      { id: "orders", state: "pending" },
+    ]);
+
+    registry.markSyncing("orders");
+    registry.markReady("orders", "main", "abc123", "2026-09-21T00:00:00.000Z");
+    assert.deepEqual(registry.listRepositories(), [{
+      id: "orders",
+      branch: "main",
+      state: "ready",
+      indexedCommit: "abc123",
+      indexedAt: "2026-09-21T00:00:00.000Z",
+      lastError: null,
+    }]);
+
+    registry.reconcile([]);
+    assert.deepEqual(registry.listRepositories(), []);
+    registry.close();
+  } finally {
+    rmSync(temporaryDirectory, { recursive: true, force: true });
+  }
+});
