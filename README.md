@@ -1,30 +1,63 @@
-# codefleet
+# CodeFleet
 
-AI 에이전트를 위한 멀티 저장소 코드 탐색 서비스
+CodeFleet는 여러 Git 저장소를 Graphify로 색인하고 구조 기반 검색 결과를 HTTP JSON으로
+반환한다. 현재 MCP 서버와 관리 화면은 제공하지 않는다.
 
-## 상태
+## Repository configuration
 
-SQLite 레지스트리와 상태 확인 서버까지 구현했다. 저장소 관리와 CodeGraph,
-MCP 연동은 다음 단계에서 추가한다. 전체 범위는
-[설계 명세](docs/specs/2026-09-17-codefleet-design.md)를 참고한다.
+`config/repositories.json`에 GitHub HTTPS 또는 SSH clone URL을 등록한다. `branch`를
+생략하면 동기화 때 원격 HEAD를 감지하며, 감지에 실패해도 `main`이나 `master`를
+추측하지 않는다.
 
-## 로컬 실행
+```json
+{
+  "repositories": [
+    {
+      "id": "orders",
+      "cloneUrl": "git@github.com:example/orders.git",
+      "branch": "main"
+    }
+  ]
+}
+```
 
-Node.js 24 이상이 필요하다.
+`CODEFLEET_DATA_DIR` 하나를 PVC 마운트 지점으로 사용한다. SQLite, 활성 checkout,
+Graphify graph, staging, trash가 모두 그 아래에 저장된다.
+
+## Run
+
+Node.js 24 이상과 Graphify CLI가 필요하다.
 
 ```bash
 npm ci
-CODEFLEET_DATA_DIR=./data PORT=3000 npm start
+export CODEFLEET_API_TOKEN=replace-with-a-secret
+export CODEFLEET_DATA_DIR=./data
+export GRAPHIFY_BIN=graphify
+npm run sync
+npm start
 ```
 
-- `GET /healthz`: 프로세스 생존 상태
-- `GET /readyz`: SQLite와 데이터 디렉터리 준비 상태
+환경 변수 기본값은 `CODEFLEET_DATA_DIR=/data`, `GRAPHIFY_BIN=graphify`, `PORT=3000`이다.
+`CODEFLEET_API_TOKEN`은 필수다.
 
-`CODEFLEET_DATA_DIR`의 기본값은 `/data`, `PORT`의 기본값은 `3000`이다.
+## API
 
-## 검증
+`GET /healthz`는 프로세스 상태, `GET /readyz`는 SQLite·데이터 디렉터리·Graphify CLI
+준비 상태를 반환한다. 그 외 엔드포인트에는 Bearer 토큰이 필요하다.
+
+```bash
+curl -H "Authorization: Bearer $CODEFLEET_API_TOKEN" http://localhost:3000/repositories
+
+curl -X POST http://localhost:3000/search \
+  -H "Authorization: Bearer $CODEFLEET_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"query":"redis related sources","repositoryIds":["orders"]}'
+```
+
+## Verification
 
 ```bash
 npm run check
-docker build -t codefleet .
+docker build -t codefleet:graphify .
+docker run --rm codefleet:graphify /opt/graphify/bin/graphify --version
 ```
