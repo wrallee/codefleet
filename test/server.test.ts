@@ -143,6 +143,9 @@ test("start는 설정된 데이터 디렉터리로 서버를 시작한다", asyn
   const temporaryDirectory = mkdtempSync(join(tmpdir(), "codefleet-"));
   const application = start({
     dataDirectory: join(temporaryDirectory, "data"),
+    repositoriesFile: "config/repositories.json",
+    graphifyBinary: "graphify",
+    apiToken: "test-token",
     port: 0,
   });
 
