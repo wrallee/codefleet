@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { loadEnvironment } from "../src/config/environment.ts";
+import { loadEnvironment, loadSyncEnvironment } from "../src/config/environment.ts";
 
 test("필수 토큰과 함께 기본 실행 설정을 반환한다", () => {
   assert.deepEqual(loadEnvironment({ CODEFLEET_API_TOKEN: "secret" }), {
@@ -11,6 +11,14 @@ test("필수 토큰과 함께 기본 실행 설정을 반환한다", () => {
     apiToken: "secret",
     port: 3000,
     maxConcurrentQueries: 4,
+  });
+});
+
+test("sync 설정은 API 토큰과 PORT 없이 공통 경로만 읽는다", () => {
+  assert.deepEqual(loadSyncEnvironment({}), {
+    dataDirectory: "/data",
+    repositoriesFile: "config/repositories.json",
+    graphifyBinary: "graphify",
   });
 });
 

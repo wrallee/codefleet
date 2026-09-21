@@ -37,8 +37,12 @@ npm run sync
 npm start
 ```
 
-환경 변수 기본값은 `CODEFLEET_DATA_DIR=/data`, `GRAPHIFY_BIN=graphify`, `PORT=3000`이다.
+환경 변수 기본값은 `CODEFLEET_DATA_DIR=/data`, `GRAPHIFY_BIN=graphify`, `PORT=3000`,
+`CODEFLEET_MAX_CONCURRENT_QUERIES=4`이다. 동시 검색 상한은 1~64로 지정할 수 있다.
 `CODEFLEET_API_TOKEN`은 필수다.
+
+컨테이너는 UID/GID 1000(`node`)으로 실행된다. Kubernetes PVC는 `runAsUser: 1000`,
+`runAsGroup: 1000`, `fsGroup: 1000` 또는 동등한 소유권으로 `/data` 쓰기를 허용해야 한다.
 
 ## API
 

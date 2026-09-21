@@ -32,8 +32,10 @@ ENV NODE_ENV=production
 COPY package.json ./
 COPY config ./config
 COPY --from=verify /app/src ./src
+RUN mkdir /data && chown node:node /data
 
 EXPOSE 3000
 VOLUME ["/data"]
+USER node
 
 CMD ["node", "src/server.ts"]

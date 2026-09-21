@@ -7,7 +7,7 @@ import { join } from "node:path";
 import test from "node:test";
 
 import { openRegistry } from "../src/registry/database.ts";
-import { createServer, start } from "../src/server.ts";
+import { createReadinessProbe, createServer, start } from "../src/server.ts";
 
 function testServer(registry: ReturnType<typeof openRegistry>, isGraphifyReady = () => true) {
   return createServer({
@@ -188,4 +188,25 @@ test("GET /readyz는 Graphify를 실행할 수 없으면 준비되지 않은 상
     registry.close();
     rmSync(temporaryDirectory, { recursive: true, force: true });
   }
+});
+
+test("readiness probe는 TTL 동안 결과를 캐시하고 다음 TTL에 회복한다", async () => {
+  let now = 0;
+  let checks = 0;
+  let available = false;
+  const ready = createReadinessProbe(async () => {
+    checks += 1;
+    if (!available) throw new Error("graphify unavailable");
+  }, 5_000, () => now);
+
+  assert.equal(await ready(), false);
+  assert.equal(await Promise.all([ready(), ready()]).then(([first, second]) => first && second), false);
+  assert.equal(checks, 1);
+  available = true;
+  now = 4_999;
+  assert.equal(await ready(), false);
+  assert.equal(checks, 1);
+  now = 5_000;
+  assert.equal(await ready(), true);
+  assert.equal(checks, 2);
 });

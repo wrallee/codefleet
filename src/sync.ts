@@ -1,6 +1,6 @@
 import { pathToFileURL } from "node:url";
 
-import { loadEnvironment } from "./config/environment.ts";
+import { loadSyncEnvironment } from "./config/environment.ts";
 import { loadRepositories } from "./config/repositories.ts";
 import { createGraphifyClient } from "./graphify/client.ts";
 import { runCommand } from "./process/run.ts";
@@ -8,7 +8,7 @@ import { openRegistry } from "./registry/database.ts";
 import { createRepositoryService } from "./repositories/service.ts";
 
 export async function sync(): Promise<void> {
-  const environment = loadEnvironment(process.env);
+  const environment = loadSyncEnvironment(process.env);
   const registry = openRegistry(environment.dataDirectory);
   try {
     await createRepositoryService({

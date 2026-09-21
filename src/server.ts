@@ -20,8 +20,26 @@ type ServerDependencies = Readonly<{
   registry: Registry;
   repositories: RepositorySearch;
   apiToken: string;
-  isGraphifyReady: () => boolean;
+  isGraphifyReady: () => boolean | Promise<boolean>;
 }>;
+
+export function createReadinessProbe(check: () => void | Promise<void>, ttlMs = 5_000, now = Date.now) {
+  let expiresAt = 0;
+  let cached = false;
+  let checking: Promise<boolean> | undefined;
+  return async (): Promise<boolean> => {
+    if (now() < expiresAt) return cached;
+    checking ??= Promise.resolve().then(check).then(
+      () => true,
+      () => false,
+    ).then((result) => {
+      cached = result;
+      expiresAt = now() + ttlMs;
+      return result;
+    }).finally(() => { checking = undefined; });
+    return checking;
+  };
+}
 
 class RequestError extends Error {
   readonly status: number;
@@ -141,7 +159,7 @@ export function createServer(dependencies: ServerDependencies) {
       return;
     }
     if (request.method === "GET" && pathname === "/readyz") {
-      const ready = dependencies.registry.isReady() && dependencies.isGraphifyReady();
+      const ready = dependencies.registry.isReady() && await dependencies.isGraphifyReady();
       writeJson(response, ready ? 200 : 503, { status: ready ? "ready" : "not_ready" });
       return;
     }
@@ -188,17 +206,12 @@ export async function start(config = loadEnvironment(process.env)): Promise<Appl
   try {
     registry.reconcile(repositories);
     const graphify = createGraphifyClient(config.graphifyBinary);
-    let graphifyReady = true;
-    try {
-      await graphify.check();
-    } catch {
-      graphifyReady = false;
-    }
+    const isGraphifyReady = createReadinessProbe(() => graphify.check());
     const server = createServer({
       registry,
       repositories: createRepositoryService({ registry, graphify, dataDirectory: config.dataDirectory, runCommand, maxConcurrentQueries: config.maxConcurrentQueries }),
       apiToken: config.apiToken,
-      isGraphifyReady: () => graphifyReady,
+      isGraphifyReady,
     });
     await new Promise<void>((resolve, reject) => {
       server.once("error", reject);
