@@ -59,6 +59,11 @@ test("Graphify로 두 Git 저장소를 색인하고 오래된 노드를 교체�
     assert.deepEqual(initial.warnings, []);
     assert.deepEqual(initial.results.map(({ repositoryId }) => repositoryId).sort(), ["catalog", "orders"]);
     assert.equal(new Set(initial.results.map(({ indexedCommit }) => indexedCommit)).size, 2);
+    const initialById = new Map(initial.results.map((result) => [result.repositoryId, result]));
+    assert.match(initialById.get("orders")?.output ?? "", /RedisConfig/);
+    const catalog = await service.search("CacheRepository", ["catalog"]);
+    assert.deepEqual(catalog.warnings, []);
+    assert.match(catalog.results[0]?.output ?? "", /CacheRepository/);
 
     rmSync(join(orders.source, "src", "RedisConfig.ts"));
     writeFileSync(join(orders.source, "src", "HealthConfig.ts"), "export const health = 'ok';\n");
@@ -70,6 +75,7 @@ test("Graphify로 두 Git 저장소를 색인하고 오래된 노드를 교체�
     const afterRemoval = await service.search("redis related sources", ["orders"]);
     assert.deepEqual(afterRemoval.warnings, []);
     assert.equal(afterRemoval.results[0]?.output.includes("RedisConfig"), false);
+    assert.notEqual(afterRemoval.results[0]?.indexedCommit, initialById.get("orders")?.indexedCommit);
   } finally {
     registry.close();
     rmSync(root, { recursive: true, force: true });

@@ -44,7 +44,7 @@ CodeFleet (Node.js 24 / TypeScript)
   `- 저장소별 결과 병합
        |
        v
-  /data/repositories/<id>/graphify-out/graph.json
+  /data/repositories/<id>/generations/<generation>/graphify-out/graph.json
 ```
 
 Graphify는 별도 SDK로 감싸지 않는다. CodeFleet은 인수 배열과 `shell: false`로
@@ -88,14 +88,14 @@ SQLite는 설정 원본이 아니다. 설정에 있는 저장소의 현재 상�
 
 ## 영구 볼륨 배치
 
-`CODEFLEET_DATA_DIR` 하나를 PVC의 마운트 지점으로 사용한다. SQLite, 활성 체크아웃,
-Graphify 색인, staging, trash는 모두 그 아래에 둔다.
+`CODEFLEET_DATA_DIR` 하나를 PVC의 마운트 지점으로 사용한다. SQLite, staging,
+불변 generation 색인은 모두 그 아래에 둔다.
 
 ```text
 /data/                         # 단일 PVC
   codefleet.db
   repositories/
-    <repository-id>/
+    <repository-id>/generations/<commit>-<random>/
       .git/
       graphify-out/graph.json
       ...source files...
@@ -120,9 +120,9 @@ ConfigMap 또는 Secret으로 제공하며 PVC에 저장하지 않는다.
 3. 체크아웃 커밋을 읽는다.
 4. `graphify extract <path> --code-only --no-viz`를 실행한다.
 5. `graphify-out/graph.json`이 존재하고 읽을 수 있는지 확인한다.
-6. 새 체크아웃을 활성 디렉터리와 원자적으로 교체한다.
-7. 교체가 끝난 뒤 SQLite의 색인 커밋과 시각을 갱신한다.
-8. 이전 디렉터리를 정리한다.
+6. 새 checkout을 고유 generation 디렉터리로 한 번 rename한다.
+7. SQLite의 활성 generation과 동일한 branch, clone URL, commit, 시각을 fencing 조건으로 갱신한다.
+8. 이전 generation은 자동 삭제하지 않는다.
 
 복제나 색인이 실패하면 임시 디렉터리만 정리하고 기존 활성 색인을 유지한다.
 같은 저장소의 동기화와 검색이 겹칠 때 검색은 교체 전 또는 교체 후의 완전한
@@ -143,9 +143,9 @@ ConfigMap 또는 Secret으로 제공하며 PVC에 저장하지 않는다.
 
 ### `GET /readyz`
 
-설정 파일, SQLite, 데이터 디렉터리, Graphify 실행 파일을 사용할 수 있으면
-`200`을 반환한다. 개별 저장소의 색인 실패는 전체 서버를 준비되지 않은 상태로
-만들지 않는다.
+SQLite와 데이터 디렉터리가 준비되고 Graphify 실행 확인이 성공하면 `200`을 반환한다.
+Graphify 확인 결과는 5초 TTL로 캐시하며, 다음 TTL에 다시 확인해 일시 장애에서 회복한다.
+개별 저장소의 색인 실패는 전체 서버를 준비되지 않은 상태로 만들지 않는다.
 
 ### `GET /repositories`
 
@@ -200,8 +200,10 @@ Graphify 출력 문자열을 파싱하지 않고 저장소 메타데이터와 �
 ```
 
 한 저장소의 검색 실패가 다른 저장소 결과를 버리지 않는다. 실패한 저장소는
-`warnings`에 안정적인 오류 코드와 함께 기록한다. 모든 대상이 실패한 경우에만
-요청을 실패로 처리한다.
+`repositoryIds`는 중복을 제거하고 최대 64개만 받는다. `warnings`에 안정적인 오류
+코드와 함께 기록한다. 모든 대상이 실패하면 단일 코드 또는 `SEARCH_UNAVAILABLE`와
+warnings를 함께 반환한다. Graphify 자식 프로세스는 서버 인스턴스 전체에서 FIFO로
+최대 `CODEFLEET_MAX_CONCURRENT_QUERIES`(기본 4, 1~64)개만 실행한다.
 
 ## 프로세스 경계
 
@@ -230,19 +232,13 @@ Graphify 버전은 이미지와 검증 환경에서 동일하게 고정한다. �
 
 ## 동시성과 데드락 방지
 
-색인 생성은 잠금 없이 임시 디렉터리에서 수행한다. 저장소별 쓰기 잠금은 완성된
-색인을 활성 디렉터리와 교체하고 SQLite 상태를 갱신하는 짧은 구간에만 사용한다.
-Git 복제, Graphify 실행, 외부 프로세스 종료 대기는 쓰기 잠금을 잡은 상태에서 하지
-않는다.
+색인 생성은 임시 디렉터리에서 끝낸 뒤 불변 generation으로 게시한다. SQLite의
+`sync_generation` fencing은 오래된 sync가 최신 활성 포인터를 덮는 것을 막는다.
+검색은 한 번 읽은 generation과 provenance를 끝까지 사용하므로 API와 별도 sync
+프로세스 사이에 메모리 잠금이 필요 없다.
 
-검색은 자식 프로세스가 끝날 때까지 해당 저장소의 읽기 사용권을 유지한다. 교체는
-기존 읽기 사용권이 모두 반환된 뒤 수행하며, 교체 이전 디렉터리는 사용 중인 검색이
-없을 때만 정리한다. 사용권은 성공, 오류, 제한 시간, 요청 취소를 포함한 모든 경로의
-`finally`에서 반환한다.
-
-한 작업은 한 번에 하나의 저장소 잠금만 획득한다. 다중 저장소 검색은 모든 잠금을
-먼저 잡지 않고 저장소별 작업을 독립적으로 실행해 순환 대기를 만들지 않는다. 전체
-색인 동시 실행 수는 잠금이 아닌 단일 작업 대기열로 제한한다.
+이전 generation은 즉시 정리하지 않아 진행 중 검색 경로가 사라지지 않는다. PVC 사용량이
+실제로 문제가 될 때만 별도 보존 기간 기반 정리를 추가한다.
 
 ## 오류 계약
 

@@ -4,7 +4,7 @@
 
 **목표:** 설정 파일에 등록된 여러 Git 저장소를 Graphify로 안전하게 색인하고 검색하는 HTTP JSON API를 만든다.
 
-**구조:** Node.js 서버가 JSON 설정과 SQLite 상태를 관리하고, Git과 Graphify CLI를 셸 없이 자식 프로세스로 실행한다. 색인은 임시 디렉터리에서 완성한 뒤 저장소별 잠금 안에서 교체하며, 검색 결과는 저장소와 색인 커밋 정보로 감싸 반환한다.
+**구조:** Node.js 서버가 JSON 설정과 SQLite 상태를 관리하고, Git과 Graphify CLI를 셸 없이 자식 프로세스로 실행한다. 색인은 임시 디렉터리에서 완성한 뒤 불변 generation으로 게시하고 SQLite fencing으로 활성 포인터를 바꾸며, 검색 결과는 저장소와 색인 커밋 정보로 감싸 반환한다.
 
 **기술:** Node.js 24, TypeScript 7, `node:http`, `node:sqlite`, `node:child_process`, `node:test`, Graphify `graphifyy==0.9.65`, Git
 
@@ -23,8 +23,8 @@
 - 코드 색인은 `graphify extract <path> --code-only --no-viz`로 실행한다.
 - Git과 Graphify는 `spawn`에 인수 배열과 `shell: false`를 사용한다. 요청값으로 실행 파일, 경로, 환경 변수, 추가 옵션을 받지 않는다.
 - 자식 프로세스에 `CODEFLEET_API_TOKEN`을 전달하지 않는다.
-- 저장소별 잠금은 한 번에 하나만 잡는다. Git 복제와 Graphify 실행 중에는 잠금을 잡지 않는다.
-- 첫 버전은 저장소 색인을 직렬 실행하고 같은 저장소의 검색도 직렬화한다. `ponytail:` 주석에 같은 저장소의 처리량이 문제가 될 때 읽기/쓰기 잠금으로 바꾼다고 기록한다.
+- generation은 자동 삭제하지 않으며, SQLite `sync_generation`이 오래된 sync 게시를 차단한다.
+- 검색은 FIFO 상한(`CODEFLEET_MAX_CONCURRENT_QUERIES`, 기본 4)으로 Graphify 자식 프로세스를 제한한다.
 - `GET /healthz`와 `GET /readyz`를 제외한 API는 Bearer 인증을 요구한다.
 - 외부 입력 길이와 자식 프로세스 실행 시간 및 출력 크기를 제한한다.
 - 구현에 새 npm 운영 의존성을 추가하지 않는다.
