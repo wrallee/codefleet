@@ -1,7 +1,7 @@
 # Graph Report - codefleet  (2026-09-22)
 
 ## Corpus Check
-- 41 files · ~19,906 words
+- 41 files · ~19,910 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 6)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d47b2b21`
+- Built from commit: `61cbf652`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

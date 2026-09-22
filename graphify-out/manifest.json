@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "src/server.ts": {
-    "mtime": 1790060627.6587894,
-    "seen": 1790060688.1172926,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340763,
     "ast_hash": "571d2bda66a3dcb830f617041102fac7",
     "semantic_hash": ""
   },
@@ -72,8 +72,8 @@
     "semantic_hash": ""
   },
   "src/graphify/client.ts": {
-    "mtime": 1790060627.6547892,
-    "seen": 1790060688.1172826,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.234067,
     "ast_hash": "94c90b73958d919669dcbf0fe1d2a9bd",
     "semantic_hash": ""
   },
@@ -84,8 +84,8 @@
     "semantic_hash": ""
   },
   "src/sync.ts": {
-    "mtime": 1790060627.6587894,
-    "seen": 1790060688.1172938,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.234077,
     "ast_hash": "c43d573e93a658c9e909eb3feaf486c1",
     "semantic_hash": ""
   },
@@ -96,8 +96,8 @@
     "semantic_hash": ""
   },
   "test/graphify-client.test.ts": {
-    "mtime": 1790060627.6587894,
-    "seen": 1790060688.1173003,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340832,
     "ast_hash": "a80724b86e4b32e66047569c4c534174",
     "semantic_hash": ""
   },
@@ -126,8 +126,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790060627.6587894,
-    "seen": 1790060688.1173117,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340944,
     "ast_hash": "3edd84e924ded925ce81f66c885069e4",
     "semantic_hash": ""
   },
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "test/graphify-integration.test.ts": {
-    "mtime": 1790041255.791753,
-    "seen": 1790045713.2568693,
-    "ast_hash": "6dc46e0637736123268b2bd581f32b8f",
+    "mtime": 1790061016.8785086,
+    "seen": 1790061027.234084,
+    "ast_hash": "a270b8f3d89202b7b057606a73720f19",
     "semantic_hash": ""
   },
   "THIRD_PARTY_NOTICES.md": {
@@ -222,26 +222,26 @@
     "semantic_hash": ""
   },
   "src/graphify/worker.py": {
-    "mtime": 1790060643.5553606,
-    "seen": 1790060688.1172845,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340684,
     "ast_hash": "e67512a62b22ce4bc164a431abf6aa27",
     "semantic_hash": ""
   },
   "src/graphify/worker.ts": {
-    "mtime": 1790060643.5553606,
-    "seen": 1790060688.117286,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340696,
     "ast_hash": "9433dd6f20f97a0e7922dbaf85f90319",
     "semantic_hash": ""
   },
   "test-fixtures/graphify-worker.mjs": {
-    "mtime": 1790060627.6547892,
-    "seen": 1790060688.1172948,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.234078,
     "ast_hash": "63d7b3016f1e88cf280ad08485efe7ad",
     "semantic_hash": ""
   },
   "test/graphify-worker.test.ts": {
-    "mtime": 1790060627.6547892,
-    "seen": 1790060688.117302,
+    "mtime": 1790060701.9177644,
+    "seen": 1790061027.2340846,
     "ast_hash": "c9726007a9ef335948c3949fdad94eaf",
     "semantic_hash": ""
   }

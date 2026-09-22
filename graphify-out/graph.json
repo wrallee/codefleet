@@ -3046,6 +3046,66 @@
       "type": "external"
     },
     {
+      "id": "graphify_serve",
+      "label": "graphify_serve",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "graphify_serve",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "json",
+      "label": "json",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "json",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pathlib",
+      "label": "pathlib",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pathlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sys",
+      "label": "sys",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sys",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_readline",
+      "label": "ref_node_readline",
+      "_origin": "semantic",
+      "community": 18,
+      "community_name": "graphify-worker.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_readline",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_node_crypto",
       "label": "ref_node_crypto",
       "_origin": "semantic",
@@ -3150,61 +3210,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "graphify_serve",
-      "label": "graphify_serve",
-      "community": 17,
-      "community_name": "worker.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "graphify_serve",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "json",
-      "label": "json",
-      "community": 17,
-      "community_name": "worker.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "json",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pathlib",
-      "label": "pathlib",
-      "community": 17,
-      "community_name": "worker.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pathlib",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sys",
-      "label": "sys",
-      "community": 17,
-      "community_name": "worker.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sys",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_readline",
-      "label": "ref_node_readline",
-      "community": 18,
-      "community_name": "graphify-worker.mjs",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_readline",
       "source_file": "",
       "type": "external"
     }
@@ -8381,7 +8386,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "test/graphify-integration.test.ts",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -8566,5 +8571,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d47b2b21178963287a4c984b92756df4746bff68"
+  "built_at_commit": "61cbf65223d0ba4e57fb95ba14ee7cee76ae4ba2"
 }

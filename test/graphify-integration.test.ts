@@ -42,9 +42,10 @@ test("Graphify로 두 Git 저장소를 색인하고 오래된 노드를 교체�
   const orders = createRemote(root, "orders");
   const catalog = createRemote(root, "catalog");
   const registry = openRegistry(join(root, "data"));
+  const graphify = createGraphifyClient(graphifyBinary);
   const service = createRepositoryService({
     registry,
-    graphify: createGraphifyClient(graphifyBinary),
+    graphify,
     dataDirectory: registry.dataDirectory,
     runCommand,
   });
@@ -82,6 +83,7 @@ test("Graphify로 두 Git 저장소를 색인하고 오래된 노드를 교체�
     assert.equal(afterRemoval.results[0]?.output.includes("RedisConfig"), false);
     assert.notEqual(afterRemoval.results[0]?.indexedCommit, initialById.get("orders")?.indexedCommit);
   } finally {
+    graphify.close();
     registry.close();
     rmSync(root, { recursive: true, force: true });
   }
