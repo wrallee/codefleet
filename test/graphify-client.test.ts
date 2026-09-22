@@ -14,7 +14,7 @@ test("Graphify 명령과 자식 환경을 고정한다", async () => {
   await client.check();
   await client.extract("/data/.staging/orders");
   const output = await client.query(
-    "/data/repositories/orders/graphify-out/graph.json",
+    "/data/repositories/orders",
     "redis; $(touch /tmp/nope)",
   );
 
@@ -43,7 +43,8 @@ test("Graphify 명령과 자식 환경을 고정한다", async () => {
     "query",
     "redis; $(touch /tmp/nope)",
     "--graph",
-    "/data/repositories/orders/graphify-out/graph.json",
+    "graphify-out/graph.json",
   ]);
+  assert.equal(calls[2]?.cwd, "/data/repositories/orders");
   assert.equal(calls[2]?.env.CODEFLEET_API_TOKEN, undefined);
 });

@@ -17,7 +17,7 @@ function createFixture(defaultBranch = "trunk") {
     check: async () => undefined,
     extract: async (path: string) => {
       mkdirSync(join(path, "graphify-out"), { recursive: true });
-      writeFileSync(join(path, "graphify-out", "graph.json"), "{}");
+      writeFileSync(join(path, "graphify-out", "graph.json"), JSON.stringify({ nodes: [], links: [] }));
     },
     query: async (_path: string, _query: string, signal?: AbortSignal) => {
       if (signal?.aborted) throw Object.assign(new Error("명령 실행이 취소됨"), { code: "PROCESS_ABORTED" });
@@ -97,7 +97,7 @@ test("새 generation 게시 실패와 재색인 뒤에도 이전 색인을 보�
     fixture.registry.markReady = (...args) => {
       if (failOnce) {
         failOnce = false;
-        throw new Error("database write failed");
+        throw Object.assign(new Error("database write failed"), { code: "EACCES" });
       }
       return markReady(...args);
     };
@@ -105,6 +105,7 @@ test("새 generation 게시 실패와 재색인 뒤에도 이전 색인을 보�
 
     assert.equal(existsSync(join(fixture.registry.repositoriesDirectory, "orders", "generations", oldGeneration, "graphify-out", "graph.json")), true);
     assert.equal(fixture.registry.listRepositories()[0]?.indexedCommit, "abc123");
+    assert.equal(fixture.registry.listRepositories()[0]?.lastError, "REPOSITORY_SYNC_FAILED");
     fixture.graphify.query = async () => { throw Object.assign(new Error("timeout"), { code: "PROCESS_TIMEOUT" }); };
     assert.equal((await service.search("redis", ["orders"])).warnings[0]?.code, "GRAPHIFY_TIMEOUT");
     fixture.graphify.query = async () => "NODE Redis";
@@ -148,7 +149,7 @@ test("다른 서비스가 새 generation을 게시해도 진행 중 검색은 �
 
     releaseQuery();
     const outcome = await search;
-    assert.equal(queriedPath, join(fixture.registry.repositoriesDirectory, "orders", "generations", old.activeGeneration, "graphify-out", "graph.json"));
+    assert.equal(queriedPath, join(fixture.registry.repositoriesDirectory, "orders", "generations", old.activeGeneration));
     assert.deepEqual(outcome.results.map(({ indexedCommit }) => indexedCommit), ["abc123"]);
     assert.equal(secondRegistry.getRepositoryIndex("orders")?.indexedCommit, "def456");
   } finally {
@@ -194,6 +195,89 @@ test("generations symlink를 따라가지 않는다", async () => {
 
     assert.equal(fixture.registry.listRepositories()[0]?.indexedCommit, "abc123");
     assert.equal(existsSync(join(outside, "def456", "graphify-out", "graph.json")), false);
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
+
+test("clone이 제공한 graphify-out symlink를 제거한 뒤 색인한다", async () => {
+  const fixture = createFixture();
+  const config = [{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }];
+  const outside = join(fixture.directory, "outside");
+  const runCommand = async (options: RunCommandOptions) => {
+    const result = await fixture.runCommand(options);
+    if (options.args[0] === "clone") symlinkSync(outside, String(options.args.at(-1)) + "/graphify-out");
+    return result;
+  };
+
+  try {
+    mkdirSync(outside);
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand });
+    await service.syncAll(config);
+
+    assert.equal(fixture.registry.listRepositories()[0]?.state, "ready");
+    assert.equal(existsSync(join(outside, "graph.json")), false);
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
+
+test("잘못된 graph.json은 게시하지 않는다", async () => {
+  const fixture = createFixture();
+
+  try {
+    fixture.graphify.extract = async (path: string) => {
+      mkdirSync(join(path, "graphify-out"), { recursive: true });
+      writeFileSync(join(path, "graphify-out", "graph.json"), "not-json");
+    };
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand: fixture.runCommand });
+    await service.syncAll([{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }]);
+
+    assert.equal(fixture.registry.listRepositories()[0]?.lastError, "GRAPHIFY_FAILED");
+    assert.equal(fixture.registry.getRepositoryIndex("orders")?.activeGeneration, null);
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
+
+test("graph.json 디렉터리는 게시하지 않는다", async () => {
+  const fixture = createFixture();
+
+  try {
+    fixture.graphify.extract = async (path: string) => {
+      mkdirSync(join(path, "graphify-out", "graph.json"), { recursive: true });
+    };
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand: fixture.runCommand });
+    await service.syncAll([{ id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" }]);
+
+    assert.equal(fixture.registry.listRepositories()[0]?.lastError, "GRAPHIFY_FAILED");
+    assert.equal(fixture.registry.getRepositoryIndex("orders")?.activeGeneration, null);
+  } finally {
+    fixture.registry.close();
+    rmSync(fixture.directory, { recursive: true, force: true });
+  }
+});
+
+test("저장소 목록을 생략하면 ready 저장소만 검색한다", async () => {
+  const fixture = createFixture();
+
+  try {
+    const configs = [
+      { id: "orders", cloneUrl: "https://github.com/example/orders.git", branch: "main" },
+      { id: "catalog", cloneUrl: "https://github.com/example/catalog.git", branch: "main" },
+    ];
+    fixture.registry.reconcile(configs);
+    const token = fixture.registry.beginSync("orders");
+    fixture.registry.markReady("orders", token, "main", configs[0]!.cloneUrl, "abc123", "generation", "2026-09-22T00:00:00.000Z");
+    const service = createRepositoryService({ registry: fixture.registry, graphify: fixture.graphify, dataDirectory: fixture.registry.dataDirectory, runCommand: fixture.runCommand });
+
+    const implicit = await service.search("redis");
+    assert.deepEqual(implicit.results.map(({ repositoryId }) => repositoryId), ["orders"]);
+    assert.deepEqual(implicit.warnings, []);
+    assert.equal((await service.search("redis", ["catalog"])).warnings[0]?.code, "REPOSITORY_NOT_READY");
   } finally {
     fixture.registry.close();
     rmSync(fixture.directory, { recursive: true, force: true });

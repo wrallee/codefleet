@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { access, lstat, mkdir, mkdtemp, realpath, rm, rename } from "node:fs/promises";
+import { access, lstat, mkdir, mkdtemp, readFile, realpath, rm, rename } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 
 import type { RepositoryConfig } from "../config/repositories.ts";
@@ -12,7 +12,7 @@ type RunCommand = (options: RunCommandOptions) => Promise<CommandResult>;
 type GraphifyClient = Readonly<{
   check(): Promise<void>;
   extract(repositoryPath: string): Promise<void>;
-  query(graphPath: string, query: string, signal?: AbortSignal): Promise<string>;
+  query(repositoryPath: string, query: string, signal?: AbortSignal): Promise<string>;
 }>;
 
 export type SearchOutcome = Readonly<{
@@ -40,11 +40,17 @@ const messages: Record<string, string> = {
   SEARCH_ABORTED: "검색이 취소됨",
   REPOSITORY_NOT_READY: "준비되지 않은 저장소",
   REPOSITORY_NOT_FOUND: "등록되지 않은 저장소",
+  DEFAULT_BRANCH_UNRESOLVED: "기본 브랜치를 확인할 수 없음",
+  REPOSITORY_SYNC_FAILED: "저장소 동기화에 실패함",
 };
 
+function rawErrorCode(error: unknown): string | undefined {
+  return typeof error === "object" && error !== null && "code" in error && typeof error.code === "string" ? error.code : undefined;
+}
+
 function errorCode(error: unknown): string {
-  if (typeof error === "object" && error !== null && "code" in error && typeof error.code === "string") return error.code;
-  return "REPOSITORY_SYNC_FAILED";
+  const code = rawErrorCode(error);
+  return code && Object.hasOwn(messages, code) ? code : "REPOSITORY_SYNC_FAILED";
 }
 
 function errorMessage(error: unknown): string {
@@ -52,8 +58,8 @@ function errorMessage(error: unknown): string {
 }
 
 function publicError(kind: "GIT" | "GRAPHIFY", error: unknown): Error & { code: string } {
-  const processCode = errorCode(error);
-  if (messages[processCode]) return Object.assign(new Error(messages[processCode]), { code: processCode });
+  const processCode = rawErrorCode(error);
+  if (processCode && Object.hasOwn(messages, processCode)) return Object.assign(new Error(messages[processCode]), { code: processCode });
   const code = processCode === "PROCESS_ABORTED" ? "SEARCH_ABORTED" : processCode === "PROCESS_TIMEOUT" ? `${kind}_TIMEOUT`
     : processCode === "PROCESS_OUTPUT_LIMIT" ? `${kind}_OUTPUT_LIMIT`
       : processCode === "PROCESS_SPAWN_FAILED" ? `${kind}_UNAVAILABLE`
@@ -117,6 +123,26 @@ export function createRepositoryService(options: Readonly<{
     await mkdir(path, { recursive: true });
     return managedDirectory(path);
   };
+  const graphOutputDirectory = async (repositoryPath: string) => {
+    const root = await realpath(repositoryPath);
+    const output = join(repositoryPath, "graphify-out");
+    const entry = await lstat(output);
+    if (entry.isSymbolicLink() || !entry.isDirectory()) throw new Error("graph output must be a directory");
+    const actual = await realpath(output);
+    if (!isInside(root, actual)) throw new Error("graph output escapes repository directory");
+    return actual;
+  };
+  const validateGraphOutput = async (repositoryPath: string) => {
+    const output = await graphOutputDirectory(repositoryPath);
+    const graphPath = join(output, "graph.json");
+    const entry = await lstat(graphPath);
+    if (entry.isSymbolicLink() || !entry.isFile()) throw new Error("graph output must be a regular file");
+    const actual = await realpath(graphPath);
+    if (!isInside(output, actual)) throw new Error("graph file escapes graph output directory");
+    const graph = JSON.parse(await readFile(actual, "utf8")) as unknown;
+    if (typeof graph !== "object" || graph === null || !("nodes" in graph) || !("links" in graph)
+      || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) throw new Error("invalid graph output");
+  };
   const syncOne = async (config: RepositoryConfig) => {
     const syncGeneration = registry.beginSync(config.id);
     let staging: string | undefined;
@@ -133,20 +159,24 @@ export function createRepositoryService(options: Readonly<{
       await git(["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", branch, "--", config.cloneUrl, staging]);
       const commit = (await git(["-C", staging, "rev-parse", "HEAD"])).stdout.trim();
       try {
+        await rm(join(staging, "graphify-out"), { recursive: true, force: true });
+        await mkdir(join(staging, "graphify-out"));
+        await graphOutputDirectory(staging);
         await graphify.extract(staging);
+        await validateGraphOutput(staging);
       } catch (error) {
         throw publicError("GRAPHIFY", error);
-      }
-      try {
-        await access(join(staging, "graphify-out", "graph.json"));
-      } catch {
-        throw publicError("GRAPHIFY", Object.assign(new Error("graph output missing"), { code: "PROCESS_EXIT_FAILURE" }));
       }
 
       const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, config.id));
       const generationsDirectory = await makeManagedDirectory(join(repositoryDirectory, "generations"));
       const activeGeneration = `${commit}-${randomUUID()}`;
       const destination = join(generationsDirectory, activeGeneration);
+      try {
+        await validateGraphOutput(staging);
+      } catch (error) {
+        throw publicError("GRAPHIFY", error);
+      }
       await rename(staging, destination);
       staging = undefined;
       // ponytail: immutable generations are retained; add retention cleanup only when PVC usage proves it is needed.
@@ -169,7 +199,8 @@ export function createRepositoryService(options: Readonly<{
       const records = registry.listRepositories();
       const byId = new Map(records.map((record) => [record.id, record]));
       const selectedIds = repositoryIds && [...new Set(repositoryIds)];
-      const selected = selectedIds ? selectedIds.map((id) => byId.get(id)).filter((record): record is RepositoryRecord => record !== undefined) : records;
+      const selected = selectedIds ? selectedIds.map((id) => byId.get(id)).filter((record): record is RepositoryRecord => record !== undefined)
+        : records.filter((record) => record.state === "ready");
       const warnings: Array<{ repositoryId: string; code: string; message: string }> = [];
       for (const id of selectedIds ?? []) {
         if (!byId.has(id)) warnings.push({ repositoryId: id, code: "REPOSITORY_NOT_FOUND", message: "등록되지 않은 저장소" });
@@ -185,7 +216,7 @@ export function createRepositoryService(options: Readonly<{
             : join(repositoriesDirectory, current.id);
           let output: string;
           try {
-            output = await queryLimit.run(() => graphify.query(join(indexRoot, "graphify-out", "graph.json"), query, signal), signal);
+            output = await queryLimit.run(() => graphify.query(indexRoot, query, signal), signal);
           } catch (error) {
             throw publicError("GRAPHIFY", error);
           }

@@ -55,7 +55,8 @@ SQLite 행에 단조 증가하는 `sync_generation`을 둔다. sync 시작은 �
 data root는 시작 시 실제 경로로 정규화한다. `repositories`, `.staging`, `.trash`, 저장소
 root, `generations`는 `lstat`으로 실제 디렉터리인지 확인하고 symlink를 거부한다. 생성된
 경로는 `realpath` 기준으로 data root 내부인지 확인한 뒤 rename한다. HTTP 입력은 어떤
-파일 시스템 경로도 지정할 수 없다.
+파일 시스템 경로도 지정할 수 없다. clone이 제공한 `graphify-out`은 색인 전에 제거하고,
+게시 직전까지 내부의 일반 `graph.json`과 필수 배열을 재검증한다.
 
 ## 검색 부하와 오류 계약
 
@@ -72,7 +73,9 @@ Git과 Graphify 호출부에서 프로세스 오류를 다음 공개 코드로 �
 
 일부 저장소 실패는 성공 결과와 `warnings`를 함께 반환한다. 모든 저장소가 실패하면
 단일 실패는 해당 코드, 복수의 서로 다른 실패는 `SEARCH_UNAVAILABLE`을 반환하되
-`warnings`를 버리지 않는다. stderr, 토큰, clone URL, 내부 경로는 응답에 포함하지 않는다.
+`warnings`를 버리지 않는다. 임의의 OS·라이브러리 오류 코드는 공개하지 않고
+`REPOSITORY_SYNC_FAILED`로 정규화한다. Graphify query에는 generation을 작업 디렉터리로
+두고 상대 graph 경로를 전달한다. stderr, 토큰, clone URL, 내부 경로는 응답에 포함하지 않는다.
 
 ## 준비 상태와 실행 환경
 
@@ -90,7 +93,8 @@ Git과 Graphify 호출부에서 프로세스 오류를 다음 공개 코드로 �
   같은 generation과 commit을 끝까지 반환하는지 확인한다.
 - 설정 branch 변경 직후 기존 색인의 indexed branch와 commit이 유지되는지 확인한다.
 - rename 뒤 DB 게시 실패와 오래된 sync 토큰 완료가 활성 포인터를 바꾸지 않는지 확인한다.
-- symlink 관리 디렉터리를 시작과 sync에서 거부하고 외부 디렉터리를 변경하지 않는지 확인한다.
+- symlink 관리 디렉터리와 clone의 `graphify-out`을 거부하거나 교체하고 외부 디렉터리를 변경하지 않는지 확인한다.
+- 손상되거나 일반 파일이 아닌 `graph.json`을 게시하지 않고 검색 결과에 내부 경로를 노출하지 않는지 확인한다.
 - 중복 ID, 65개 ID, FIFO 동시 실행 상한, 대기 중 취소를 확인한다.
 - Git·Graphify·timeout·output-limit·unknown repository 오류 코드와 전체 실패 warnings를
   확인한다.

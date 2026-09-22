@@ -31,10 +31,11 @@ export function createGraphifyClient(binary: string, execute: RunCommand = runCo
         env,
       });
     },
-    async query(graphPath: string, query: string, signal?: AbortSignal): Promise<string> {
+    async query(repositoryPath: string, query: string, signal?: AbortSignal): Promise<string> {
       const result = await execute({
         executable: binary,
-        args: ["query", query, "--graph", graphPath],
+        args: ["query", query, "--graph", "graphify-out/graph.json"],
+        cwd: repositoryPath,
         timeoutMs: 600_000,
         maxOutputBytes: OUTPUT_LIMIT,
         env,

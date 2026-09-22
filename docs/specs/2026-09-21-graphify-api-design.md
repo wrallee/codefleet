@@ -118,8 +118,9 @@ ConfigMap 또는 Secret으로 제공하며 PVC에 저장하지 않는다.
 1. 설정 브랜치를 검증하거나 원격 HEAD에서 기본 브랜치를 감지한다.
 2. 임시 디렉터리에 대상 브랜치를 깊이 1로 복제한다.
 3. 체크아웃 커밋을 읽는다.
-4. `graphify extract <path> --code-only --no-viz`를 실행한다.
-5. `graphify-out/graph.json`이 존재하고 읽을 수 있는지 확인한다.
+4. clone이 제공한 `graphify-out`을 제거하고 내부의 새 디렉터리에서
+   `graphify extract <path> --code-only --no-viz`를 실행한다.
+5. `graphify-out/graph.json`이 일반 파일이며 유효한 Graphify JSON인지 확인한다.
 6. 새 checkout을 고유 generation 디렉터리로 한 번 rename한다.
 7. SQLite의 활성 generation과 동일한 branch, clone URL, commit, 시각을 fencing 조건으로 갱신한다.
 8. 이전 generation은 자동 삭제하지 않는다.

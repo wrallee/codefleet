@@ -59,6 +59,11 @@ test("Graphify로 두 Git 저장소를 색인하고 오래된 노드를 교체�
     assert.deepEqual(initial.warnings, []);
     assert.deepEqual(initial.results.map(({ repositoryId }) => repositoryId).sort(), ["catalog", "orders"]);
     assert.equal(new Set(initial.results.map(({ indexedCommit }) => indexedCommit)).size, 2);
+    assert.equal(initial.results.some(({ output }) => output.includes(registry.dataDirectory)), false);
+    for (const result of initial.results) {
+      const generation = registry.getRepositoryIndex(result.repositoryId)?.activeGeneration;
+      if (generation) assert.equal(result.output.includes(generation), false);
+    }
     const initialById = new Map(initial.results.map((result) => [result.repositoryId, result]));
     assert.match(initialById.get("orders")?.output ?? "", /RedisConfig/);
     const catalog = await service.search("CacheRepository", ["catalog"]);
