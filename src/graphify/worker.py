@@ -19,7 +19,7 @@ for line in sys.stdin:
             mode="bfs",
             depth=3,
             token_budget=2000,
-            graph_path=graph_path,
+            graph_path="graphify-out/graph.json",
         )
         response = {"id": request["id"], "result": result}
     except Exception:
