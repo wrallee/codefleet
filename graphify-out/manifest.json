@@ -18,15 +18,15 @@
     "semantic_hash": ""
   },
   "src/registry/database.ts": {
-    "mtime": 1790031561.7703478,
-    "seen": 1790032147.1566064,
-    "ast_hash": "e89b50db12449823104b5733925171bb",
+    "mtime": 1790032546.126773,
+    "seen": 1790039032.7195454,
+    "ast_hash": "1a993b8975f025fdeadbecf1019fc42b",
     "semantic_hash": ""
   },
   "src/repositories/service.ts": {
-    "mtime": 1790031832.2588966,
-    "seen": 1790032147.1566088,
-    "ast_hash": "904feaab0f0c6f54e0144a7c0109daee",
+    "mtime": 1790039076.4854524,
+    "seen": 1790039112.4963672,
+    "ast_hash": "365ea6fbc3567632b744df4804d6d2b2",
     "semantic_hash": ""
   },
   "src/server.ts": {
@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "test/registry.test.ts": {
-    "mtime": 1790031607.6040149,
-    "seen": 1790032147.1566184,
-    "ast_hash": "83d6d4547583b74a7211f106b85caa7a",
+    "mtime": 1790032521.6947308,
+    "seen": 1790039032.7195585,
+    "ast_hash": "45e5ff1b467c2657af89f0ef9d2dccd2",
     "semantic_hash": ""
   },
   "test/server.test.ts": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/graphify/client.ts": {
-    "mtime": 1790009223.8263106,
-    "seen": 1790032147.156605,
-    "ast_hash": "ebba3fe6212618353d0d9322c30894bc",
+    "mtime": 1790038880.7141714,
+    "seen": 1790039032.719542,
+    "ast_hash": "534126e3c7479eaf0c86af859e79786a",
     "semantic_hash": ""
   },
   "src/process/run.ts": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "test/graphify-client.test.ts": {
-    "mtime": 1790009223.8301136,
-    "seen": 1790032147.1566153,
-    "ast_hash": "8f10ff189e7f41dc651ca63041ba79b4",
+    "mtime": 1790038771.0215116,
+    "seen": 1790039032.7195537,
+    "ast_hash": "182f62ac0829b99fd78afe74cf57272f",
     "semantic_hash": ""
   },
   "test/process-runner.test.ts": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "test/repository-service.test.ts": {
-    "mtime": 1790031832.3512561,
-    "seen": 1790032147.1566195,
-    "ast_hash": "441aea6f17e7d2c9cba564ada02cef41",
+    "mtime": 1790038770.929317,
+    "seen": 1790039032.7195601,
+    "ast_hash": "4e8348f4840f90ea8473ab434f6d2afb",
     "semantic_hash": ""
   },
   "AGENTS.md": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "docs/specs/2026-09-21-graphify-api-design.md": {
-    "mtime": 1790032132.4639714,
-    "seen": 1790032147.1566308,
-    "ast_hash": "165e20254c605fe4eb06e2a39385167f",
+    "mtime": 1790038988.1867156,
+    "seen": 1790039032.7195714,
+    "ast_hash": "be3968e24019b3e6a9aea2fe1d3ca811",
     "semantic_hash": ""
   },
   "test/search-api.test.ts": {
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "test/graphify-integration.test.ts": {
-    "mtime": 1790032080.5992098,
-    "seen": 1790032147.156616,
-    "ast_hash": "477e6a5958bbdfcb7e5204b79773b81d",
+    "mtime": 1790038771.113706,
+    "seen": 1790039032.7195551,
+    "ast_hash": "6dc46e0637736123268b2bd581f32b8f",
     "semantic_hash": ""
   },
   "THIRD_PARTY_NOTICES.md": {
@@ -210,9 +210,9 @@
     "semantic_hash": ""
   },
   "docs/specs/2026-09-22-graphify-api-hardening-design.md": {
-    "mtime": 1790028623.035527,
-    "seen": 1790032147.1566315,
-    "ast_hash": "0481cbc9c4d8694655e17b7e52c3bb9d",
+    "mtime": 1790038988.2781384,
+    "seen": 1790039032.7195728,
+    "ast_hash": "866e6ef2c9e4af945f1ea5ecae87fa10",
     "semantic_hash": ""
   }
 }
