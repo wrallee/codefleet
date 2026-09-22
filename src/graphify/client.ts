@@ -1,5 +1,6 @@
 import { runCommand } from "../process/run.ts";
 import type { CommandResult, RunCommandOptions } from "../process/run.ts";
+import { defaultGraphifyWorker, type GraphifyQueryWorker } from "./worker.ts";
 
 const CHILD_ENV_KEYS = ["PATH", "HOME", "LANG", "LC_ALL", "SSH_AUTH_SOCK"] as const;
 const OUTPUT_LIMIT = 1_048_576;
@@ -14,8 +15,14 @@ function childEnvironment(): NodeJS.ProcessEnv {
   );
 }
 
-export function createGraphifyClient(binary: string, execute: RunCommand = runCommand) {
+export function createGraphifyClient(binary: string, options: Readonly<{
+  execute?: RunCommand;
+  queryWorker?: GraphifyQueryWorker;
+  workerCount?: number;
+}> = {}) {
   const env = childEnvironment();
+  const execute = options.execute ?? runCommand;
+  const queryWorker = options.queryWorker ?? defaultGraphifyWorker(binary, env, options.workerCount ?? 4);
 
   return {
     async check(): Promise<void> {
@@ -32,16 +39,10 @@ export function createGraphifyClient(binary: string, execute: RunCommand = runCo
       });
     },
     async query(repositoryPath: string, query: string, signal?: AbortSignal): Promise<string> {
-      const result = await execute({
-        executable: binary,
-        args: ["query", query, "--graph", "graphify-out/graph.json"],
-        cwd: repositoryPath,
-        timeoutMs: 600_000,
-        maxOutputBytes: OUTPUT_LIMIT,
-        env,
-        signal,
-      });
-      return result.stdout;
+      return queryWorker.query(repositoryPath, query, signal);
+    },
+    close(): void {
+      queryWorker.close();
     },
   };
 }

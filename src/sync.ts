@@ -10,14 +10,16 @@ import { createRepositoryService } from "./repositories/service.ts";
 export async function sync(): Promise<void> {
   const environment = loadSyncEnvironment(process.env);
   const registry = openRegistry(environment.dataDirectory);
+  const graphify = createGraphifyClient(environment.graphifyBinary);
   try {
     await createRepositoryService({
       registry,
-      graphify: createGraphifyClient(environment.graphifyBinary),
+      graphify,
       dataDirectory: environment.dataDirectory,
       runCommand,
     }).syncAll(loadRepositories(environment.repositoriesFile));
   } finally {
+    graphify.close();
     registry.close();
   }
 }

@@ -224,7 +224,7 @@ export async function start(config = loadEnvironment(process.env)): Promise<Appl
   const registry = openRegistry(config.dataDirectory);
   try {
     registry.reconcile(repositories);
-    const graphify = createGraphifyClient(config.graphifyBinary);
+    const graphify = createGraphifyClient(config.graphifyBinary, { workerCount: config.maxConcurrentQueries });
     const isGraphifyReady = createReadinessProbe(() => graphify.check());
     const server = createServer({
       registry,
@@ -238,6 +238,7 @@ export async function start(config = loadEnvironment(process.env)): Promise<Appl
         resolve();
       });
     });
+    server.once("close", () => graphify.close());
     return { server, registry };
   } catch (error) {
     registry.close();

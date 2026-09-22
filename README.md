@@ -1,7 +1,8 @@
 # CodeFleet
 
 CodeFleet는 여러 Git 저장소를 Graphify로 색인하고 구조 기반 검색 결과를 HTTP JSON으로
-반환한다. 현재 MCP 서버와 관리 화면은 제공하지 않는다.
+반환한다. 검색용 Graphify worker는 프로세스와 그래프 인덱스를 메모리에 유지한다.
+현재 MCP 서버와 관리 화면은 제공하지 않는다.
 
 ## Repository configuration
 

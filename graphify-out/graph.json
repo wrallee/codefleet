@@ -69,6 +69,58 @@
       "source_location": "L19"
     },
     {
+      "id": "src_registry_database_repositoryindexrecord",
+      "label": "RepositoryIndexRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "file_type": "code",
+      "norm_label": "repositoryindexrecord",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_registry_database_repositoryrecord",
+      "label": "RepositoryRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "file_type": "code",
+      "norm_label": "repositoryrecord",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "test_fixtures_catalog_src_cacherepository_cacherepository",
+      "label": "CacheRepository",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "file_type": "code",
+      "norm_label": "cacherepository",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker",
+      "label": "PersistentWorker",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": "persistentworker",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "src_repositories_query_limit_queued",
       "label": "Queued",
       "_callable": true,
@@ -134,32 +186,6 @@
       "source_location": "L8"
     },
     {
-      "id": "src_registry_database_repositoryindexrecord",
-      "label": "RepositoryIndexRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repositoryindexrecord",
-      "source_file": "src/registry/database.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_registry_database_repositoryrecord",
-      "label": "RepositoryRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repositoryrecord",
-      "source_file": "src/registry/database.ts",
-      "source_location": "L9"
-    },
-    {
       "id": "src_registry_database_repositoryrow",
       "label": "RepositoryRow",
       "_callable": true,
@@ -171,19 +197,6 @@
       "norm_label": "repositoryrow",
       "source_file": "src/registry/database.ts",
       "source_location": "L20"
-    },
-    {
-      "id": "test_fixtures_catalog_src_cacherepository_cacherepository",
-      "label": "CacheRepository",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
-      "file_type": "code",
-      "norm_label": "cacherepository",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
-      "source_location": "L1"
     },
     {
       "id": "test_fixtures_orders_src_redisconfig_redisconfig",
@@ -205,10 +218,36 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "runcommand",
       "source_file": "src/graphify/client.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_graphify_worker_graphifyqueryworker",
+      "label": "GraphifyQueryWorker",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "graphifyqueryworker",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L139"
+    },
+    {
+      "id": "src_graphify_worker_pending",
+      "label": "Pending",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "pending",
+      "source_file": "src/graphify/worker.ts",
       "source_location": "L7"
     },
     {
@@ -218,7 +257,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "commanderror",
       "source_file": "src/process/run.ts",
@@ -231,7 +270,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "commanderrorcode",
       "source_file": "src/process/run.ts",
@@ -244,7 +283,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "commandresult",
       "source_file": "src/process/run.ts",
@@ -257,7 +296,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "runcommandoptions",
       "source_file": "src/process/run.ts",
@@ -322,6 +361,18 @@
       "norm_label": ".constructor()",
       "source_file": "src/server.ts",
       "source_location": "L46"
+    },
+    {
+      "id": "src_server_start",
+      "label": "start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "start()",
+      "source_file": "src/server.ts",
+      "source_location": "L222"
     },
     {
       "id": "src_server_unavailable",
@@ -480,40 +531,112 @@
       "source_location": "L25"
     },
     {
-      "id": "src_config_environment_commonenvironment",
-      "label": "commonEnvironment()",
+      "id": "test_fixtures_catalog_src_cacherepository_cacherepository_getendpoint",
+      "label": ".getEndpoint()",
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "code",
-      "norm_label": "commonenvironment()",
-      "source_file": "src/config/environment.ts",
-      "source_location": "L1"
+      "norm_label": ".getendpoint()",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
+      "source_location": "L4"
     },
     {
-      "id": "src_config_environment_loadenvironment",
-      "label": "loadEnvironment()",
+      "id": "src_graphify_worker_persistentworker_close",
+      "label": ".close()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "environment.ts",
+      "community": 16,
+      "community_name": "PersistentWorker",
       "file_type": "code",
-      "norm_label": "loadenvironment()",
-      "source_file": "src/config/environment.ts",
-      "source_location": "L15"
+      "norm_label": ".close()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L130"
     },
     {
-      "id": "src_config_environment_loadsyncenvironment",
-      "label": "loadSyncEnvironment()",
+      "id": "src_graphify_worker_persistentworker_constructor",
+      "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "environment.ts",
+      "community": 16,
+      "community_name": "PersistentWorker",
       "file_type": "code",
-      "norm_label": "loadsyncenvironment()",
-      "source_file": "src/config/environment.ts",
-      "source_location": "L11"
+      "norm_label": ".constructor()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker_consume",
+      "label": ".consume()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": ".consume()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker_fail",
+      "label": ".fail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": ".fail()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L92"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker_handleline",
+      "label": ".handleLine()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": ".handleline()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker_query",
+      "label": ".query()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": ".query()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L103"
+    },
+    {
+      "id": "src_graphify_worker_persistentworker_start",
+      "label": ".start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": ".start()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_graphify_worker_workererror",
+      "label": "workerError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "PersistentWorker",
+      "file_type": "code",
+      "norm_label": "workererror()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L14"
     },
     {
       "id": "src_repositories_query_limit_aborted",
@@ -660,6 +783,42 @@
       "source_location": "L99"
     },
     {
+      "id": "src_config_repositories_inferrepositoryid",
+      "label": "inferRepositoryId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "inferrepositoryid()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_config_repositories_isrecord",
+      "label": "isRecord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "isrecord()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_config_repositories_loadrepositories",
+      "label": "loadRepositories()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "loadrepositories()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L26"
+    },
+    {
       "id": "src_registry_database_configuredatabase",
       "label": "configureDatabase()",
       "_callable": true,
@@ -768,52 +927,40 @@
       "source_location": "L11"
     },
     {
-      "id": "test_fixtures_catalog_src_cacherepository_cacherepository_getendpoint",
-      "label": ".getEndpoint()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
-      "file_type": "code",
-      "norm_label": ".getendpoint()",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_config_repositories_inferrepositoryid",
-      "label": "inferRepositoryId()",
+      "id": "src_config_environment_commonenvironment",
+      "label": "commonEnvironment()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
-      "norm_label": "inferrepositoryid()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L18"
+      "norm_label": "commonenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L1"
     },
     {
-      "id": "src_config_repositories_isrecord",
-      "label": "isRecord()",
+      "id": "src_config_environment_loadenvironment",
+      "label": "loadEnvironment()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
-      "norm_label": "isrecord()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L14"
+      "norm_label": "loadenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L15"
     },
     {
-      "id": "src_config_repositories_loadrepositories",
-      "label": "loadRepositories()",
+      "id": "src_config_environment_loadsyncenvironment",
+      "label": "loadSyncEnvironment()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
-      "norm_label": "loadrepositories()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L26"
+      "norm_label": "loadsyncenvironment()",
+      "source_file": "src/config/environment.ts",
+      "source_location": "L11"
     },
     {
       "id": "src_graphify_client_childenvironment",
@@ -821,11 +968,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "childenvironment()",
       "source_file": "src/graphify/client.ts",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "src_graphify_client_creategraphifyclient",
@@ -833,11 +980,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "creategraphifyclient()",
       "source_file": "src/graphify/client.ts",
-      "source_location": "L17"
+      "source_location": "L18"
+    },
+    {
+      "id": "src_graphify_worker_creategraphifyworkerpool",
+      "label": "createGraphifyWorkerPool()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "creategraphifyworkerpool()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L144"
+    },
+    {
+      "id": "src_graphify_worker_defaultgraphifyworker",
+      "label": "defaultGraphifyWorker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "defaultgraphifyworker()",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L171"
     },
     {
       "id": "src_process_run_commanderror_constructor",
@@ -845,7 +1016,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/process/run.ts",
@@ -857,23 +1028,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "runcommand()",
       "source_file": "src/process/run.ts",
       "source_location": "L32"
-    },
-    {
-      "id": "src_server_start",
-      "label": "start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "run.ts",
-      "file_type": "code",
-      "norm_label": "start()",
-      "source_file": "src/server.ts",
-      "source_location": "L222"
     },
     {
       "id": "src_sync_sync",
@@ -881,11 +1040,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "sync()",
       "source_file": "src/sync.ts",
       "source_location": "L10"
+    },
+    {
+      "id": "test_graphify_client_test_close",
+      "label": "close()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "close()",
+      "source_file": "test/graphify-client.test.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_graphify_client_test_query",
+      "label": "query()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "query()",
+      "source_file": "test/graphify-client.test.ts",
+      "source_location": "L16"
     },
     {
       "id": "package",
@@ -1473,7 +1656,7 @@
       "node_kind": "heading",
       "norm_label": "api",
       "source_file": "README.md",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "readme_codefleet",
@@ -1497,7 +1680,7 @@
       "node_kind": "heading",
       "norm_label": "repository configuration",
       "source_file": "README.md",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "readme_run",
@@ -1509,7 +1692,7 @@
       "node_kind": "heading",
       "norm_label": "run",
       "source_file": "README.md",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "readme_verification",
@@ -1521,28 +1704,17 @@
       "node_kind": "heading",
       "norm_label": "verification",
       "source_file": "README.md",
-      "source_location": "L60"
+      "source_location": "L61"
     },
     {
-      "id": "src_config_environment",
-      "label": "environment.ts",
+      "id": "test_fixtures_catalog_src_cacherepository",
+      "label": "CacheRepository.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "code",
-      "norm_label": "environment.ts",
-      "source_file": "src/config/environment.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_environment_test",
-      "label": "environment.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "environment.ts",
-      "file_type": "code",
-      "norm_label": "environment.test.ts",
-      "source_file": "test/environment.test.ts",
+      "norm_label": "cacherepository.ts",
+      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
       "source_location": "L1"
     },
     {
@@ -1550,7 +1722,7 @@
       "label": "2026-09-22-graphify-api-hardening.md",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "2026-09-22-graphify-api-hardening.md",
@@ -1562,7 +1734,7 @@
       "label": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uad6c\ud604 \uacc4\ud68d",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "graphify api \u110b\u116e\u11ab\u110b\u1167\u11bc \u110b\u1161\u11ab\u110c\u1165\u11ab\u1109\u1165\u11bc \u1107\u1169\u1100\u1161\u11bc \u1100\u116e\u1112\u1167\u11ab \u1100\u1168\u1112\u116c\u11a8",
@@ -1570,11 +1742,23 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
+      "label": "Task 1: \ubd88\ubcc0 generation\uacfc \uc815\ud655\ud55c \uc0c9\uc778 provenance",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 1: \u1107\u116e\u11af\u1107\u1167\u11ab generation\u1100\u116a \u110c\u1165\u11bc\u1112\u116a\u11a8\u1112\u1161\u11ab \u1109\u1162\u11a8\u110b\u1175\u11ab provenance",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L33"
+    },
+    {
       "id": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
       "label": "Task 2: \uac80\uc0c9 \uc0c1\ud55c\uacfc \uc548\uc815\uc801\uc778 \uc624\ub958 \uacc4\uc57d",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "task 2: \u1100\u1165\u11b7\u1109\u1162\u11a8 \u1109\u1161\u11bc\u1112\u1161\u11ab\u1100\u116a \u110b\u1161\u11ab\u110c\u1165\u11bc\u110c\u1165\u11a8\u110b\u1175\u11ab \u110b\u1169\u1105\u1172 \u1100\u1168\u110b\u1163\u11a8",
@@ -1582,23 +1766,23 @@
       "source_location": "L153"
     },
     {
-      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
-      "label": "Task 3: readiness, sync \uc124\uc815, non-root \ub7f0\ud0c0\uc784",
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
+      "label": "Task 4: \uc2e4\uc81c Graphify \ud68c\uadc0 \uac80\uc99d\uacfc \ubb38\uc11c \ub3d9\uae30\ud654",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "task 3: readiness, sync \u1109\u1165\u11af\u110c\u1165\u11bc, non-root \u1105\u1165\u11ab\u1110\u1161\u110b\u1175\u11b7",
+      "norm_label": "task 4: \u1109\u1175\u11af\u110c\u1166 graphify \u1112\u116c\u1100\u1171 \u1100\u1165\u11b7\u110c\u1173\u11bc\u1100\u116a \u1106\u116e\u11ab\u1109\u1165 \u1103\u1169\u11bc\u1100\u1175\u1112\u116a",
       "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
-      "source_location": "L227"
+      "source_location": "L285"
     },
     {
       "id": "docs_plans_2026_09_22_graphify_api_hardening_\uac80\ud1a0_\uc911\uc810",
       "label": "\uac80\ud1a0 \uc911\uc810",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "\u1100\u1165\u11b7\u1110\u1169 \u110c\u116e\u11bc\u110c\u1165\u11b7",
@@ -1610,7 +1794,7 @@
       "label": "\uacf5\ud1b5 \uc81c\uc57d",
       "_origin": "ast",
       "community": 14,
-      "community_name": "environment.ts",
+      "community_name": "\uac80\ud1a0 \uc911\uc810",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "\u1100\u1169\u11bc\u1110\u1169\u11bc \u110c\u1166\u110b\u1163\u11a8",
@@ -1676,6 +1860,39 @@
       "norm_label": "third-party notices",
       "source_file": "THIRD_PARTY_NOTICES.md",
       "source_location": "L1"
+    },
+    {
+      "id": "src_graphify_worker_py_src_graphify_worker",
+      "label": "worker.py",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "worker.py",
+      "file_type": "code",
+      "norm_label": "worker.py",
+      "source_file": "src/graphify/worker.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_fixtures_graphify_worker",
+      "label": "graphify-worker.mjs",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "graphify-worker.mjs",
+      "file_type": "code",
+      "norm_label": "graphify-worker.mjs",
+      "source_file": "test-fixtures/graphify-worker.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_fixtures_graphify_worker_lines",
+      "label": "lines",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "graphify-worker.mjs",
+      "file_type": "code",
+      "norm_label": "lines",
+      "source_file": "test-fixtures/graphify-worker.mjs",
+      "source_location": "L3"
     },
     {
       "id": "src_repositories_query_limit",
@@ -2058,6 +2275,28 @@
       "source_location": "L180"
     },
     {
+      "id": "src_config_repositories",
+      "label": "repositories.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "repositories.ts",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_config_repositories_repository_id",
+      "label": "REPOSITORY_ID",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "repository_id",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "src_registry_database",
       "label": "database.ts",
       "_origin": "ast",
@@ -2122,18 +2361,6 @@
       "norm_label": "repository-service.test.ts",
       "source_file": "test/repository-service.test.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
-      "label": "Task 1: \ubd88\ubcc0 generation\uacfc \uc815\ud655\ud55c \uc0c9\uc778 provenance",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "task 1: \u1107\u116e\u11af\u1107\u1167\u11ab generation\u1100\u116a \u110c\u1165\u11bc\u1112\u116a\u11a8\u1112\u1161\u11ab \u1109\u1162\u11a8\u110b\u1175\u11ab provenance",
-      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
-      "source_location": "L33"
     },
     {
       "id": "docs_specs_2026_09_21_graphify_api_design",
@@ -2352,17 +2579,6 @@
       "source_location": "L209"
     },
     {
-      "id": "test_fixtures_catalog_src_cacherepository",
-      "label": "CacheRepository.ts",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
-      "file_type": "code",
-      "norm_label": "cacherepository.ts",
-      "source_file": "test/fixtures/catalog/src/CacheRepository.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "test_fixtures_orders_src_redisconfig",
       "label": "RedisConfig.ts",
       "_origin": "ast",
@@ -2480,18 +2696,6 @@
       "norm_label": "\u110e\u116c\u110c\u1169\u11bc \u1100\u1165\u11b7\u110c\u1173\u11bc",
       "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
       "source_location": "L687"
-    },
-    {
-      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_4_\uc2e4\uc81c_graphify_\ud68c\uadc0_\uac80\uc99d\uacfc_\ubb38\uc11c_\ub3d9\uae30\ud654",
-      "label": "Task 4: \uc2e4\uc81c Graphify \ud68c\uadc0 \uac80\uc99d\uacfc \ubb38\uc11c \ub3d9\uae30\ud654",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Graphify API \uc6b4\uc601 \uc548\uc804\uc131 \ubcf4\uac15 \uc124\uacc4",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "task 4: \u1109\u1175\u11af\u110c\u1166 graphify \u1112\u116c\u1100\u1171 \u1100\u1165\u11b7\u110c\u1173\u11bc\u1100\u116a \u1106\u116e\u11ab\u1109\u1165 \u1103\u1169\u11bc\u1100\u1175\u1112\u116a",
-      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
-      "source_location": "L285"
     },
     {
       "id": "docs_specs_2026_09_22_graphify_api_hardening_design",
@@ -2662,33 +2866,22 @@
       "source_location": "L21"
     },
     {
-      "id": "src_config_repositories",
-      "label": "repositories.ts",
+      "id": "src_config_environment",
+      "label": "environment.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
-      "norm_label": "repositories.ts",
-      "source_file": "src/config/repositories.ts",
+      "norm_label": "environment.ts",
+      "source_file": "src/config/environment.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_config_repositories_repository_id",
-      "label": "REPOSITORY_ID",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "run.ts",
-      "file_type": "code",
-      "norm_label": "repository_id",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L4"
     },
     {
       "id": "src_graphify_client",
       "label": "client.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "client.ts",
       "source_file": "src/graphify/client.ts",
@@ -2699,18 +2892,29 @@
       "label": "CHILD_ENV_KEYS",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "child_env_keys",
       "source_file": "src/graphify/client.ts",
-      "source_location": "L4"
+      "source_location": "L5"
+    },
+    {
+      "id": "src_graphify_worker_ts_src_graphify_worker",
+      "label": "worker.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "worker.ts",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_process_run",
       "label": "run.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "run.ts",
       "source_file": "src/process/run.ts",
@@ -2721,10 +2925,21 @@
       "label": "sync.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "sync.ts",
       "source_file": "src/sync.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_environment_test",
+      "label": "environment.test.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "environment.test.ts",
+      "source_file": "test/environment.test.ts",
       "source_location": "L1"
     },
     {
@@ -2732,10 +2947,21 @@
       "label": "graphify-client.test.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "graphify-client.test.ts",
       "source_file": "test/graphify-client.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_graphify_worker_test",
+      "label": "graphify-worker.test.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "code",
+      "norm_label": "graphify-worker.test.ts",
+      "source_file": "test/graphify-worker.test.ts",
       "source_location": "L1"
     },
     {
@@ -2743,7 +2969,7 @@
       "label": "process-runner.test.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "process-runner.test.ts",
       "source_file": "test/process-runner.test.ts",
@@ -2754,7 +2980,7 @@
       "label": "environment",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "environment",
       "source_file": "test/process-runner.test.ts",
@@ -2765,11 +2991,23 @@
       "label": "fixture",
       "_origin": "ast",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "file_type": "code",
       "norm_label": "fixture",
       "source_file": "test/process-runner.test.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "docs_plans_2026_09_22_graphify_api_hardening_task_3_readiness_sync_\uc124\uc815_non_root_\ub7f0\ud0c0\uc784",
+      "label": "Task 3: readiness, sync \uc124\uc815, non-root \ub7f0\ud0c0\uc784",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "client.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 3: readiness, sync \u1109\u1165\u11af\u110c\u1165\u11bc, non-root \u1105\u1165\u11ab\u1110\u1161\u110b\u1175\u11b7",
+      "source_file": "docs/plans/2026-09-22-graphify-api-hardening.md",
+      "source_location": "L227"
     },
     {
       "id": "ref_node_events",
@@ -2884,7 +3122,7 @@
       "label": "ref_node_assert",
       "_origin": "semantic",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_assert",
@@ -2896,7 +3134,7 @@
       "label": "ref_node_test",
       "_origin": "semantic",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_test",
@@ -2908,10 +3146,65 @@
       "label": "ref_node_url",
       "_origin": "semantic",
       "community": 9,
-      "community_name": "run.ts",
+      "community_name": "client.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "graphify_serve",
+      "label": "graphify_serve",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "graphify_serve",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "json",
+      "label": "json",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "json",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pathlib",
+      "label": "pathlib",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pathlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sys",
+      "label": "sys",
+      "community": 17,
+      "community_name": "worker.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sys",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_readline",
+      "label": "ref_node_readline",
+      "community": 18,
+      "community_name": "graphify-worker.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_readline",
       "source_file": "",
       "type": "external"
     }
@@ -2974,7 +3267,199 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/graphify/client.ts",
-      "source_location": "L18",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_client_creategraphifyclient",
+      "target": "src_graphify_worker_defaultgraphifyworker",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/client.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_creategraphifyworkerpool",
+      "target": "src_graphify_worker_persistentworker",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_defaultgraphifyworker",
+      "target": "src_graphify_worker_creategraphifyworkerpool",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_close",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_close",
+      "target": "src_graphify_worker_workererror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_consume",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_consume",
+      "target": "src_graphify_worker_workererror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_consume",
+      "target": "src_graphify_worker_persistentworker_handleline",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_handleline",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_handleline",
+      "target": "src_graphify_worker_workererror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_query",
+      "target": "src_graphify_worker_workererror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_query",
+      "target": "src_graphify_worker_persistentworker_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_query",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_start",
+      "target": "src_graphify_worker_workererror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_start",
+      "target": "src_graphify_worker_persistentworker_consume",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker_start",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -3399,18 +3884,6 @@
     },
     {
       "source": "src_sync_sync",
-      "target": "src_repositories_service_createrepositoryservice",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/sync.ts",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sync_sync",
       "target": "src_graphify_client_creategraphifyclient",
       "relation": "calls",
       "_origin": "ast",
@@ -3418,7 +3891,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/sync.ts",
-      "source_location": "L16",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sync_sync",
+      "target": "src_repositories_service_createrepositoryservice",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/sync.ts",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -3430,7 +3915,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/sync.ts",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3551,6 +4036,18 @@
       "context": "call",
       "source_file": "test/server.test.ts",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "test_graphify_client_test",
+      "target": "test_graphify_client_test_query",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "test/graphify-client.test.ts",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3766,6 +4263,54 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/graphify/client.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_client",
+      "target": "src_graphify_worker_defaultgraphifyworker",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/client.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_client",
+      "target": "src_graphify_worker_graphifyqueryworker",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/client.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_py_src_graphify_worker",
+      "target": "json",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_py_src_graphify_worker",
+      "target": "sys",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.py",
       "source_location": "L2",
       "weight": 1.0
     },
@@ -4154,6 +4699,18 @@
       "weight": 1.0
     },
     {
+      "source": "test_graphify_worker_test",
+      "target": "src_graphify_worker_creategraphifyworkerpool",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/graphify-worker.test.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "test_process_runner_test",
       "target": "src_process_run_runcommand",
       "relation": "imports",
@@ -4332,6 +4889,78 @@
       "source_file": "src/graphify/client.ts",
       "source_location": "L2",
       "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_client",
+      "target": "src_graphify_worker_ts_src_graphify_worker",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/client.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_py_src_graphify_worker",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_py_src_graphify_worker",
+      "target": "graphify_serve",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "ref_node_child_process",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "ref_node_url",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -4737,6 +5366,18 @@
       "weight": 1.0
     },
     {
+      "source": "test_fixtures_graphify_worker",
+      "target": "ref_node_readline",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test-fixtures/graphify-worker.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "test_graphify_client_test",
       "target": "ref_node_assert",
       "relation": "imports_from",
@@ -4903,6 +5544,42 @@
       "context": "import",
       "source_file": "test/graphify-integration.test.ts",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_graphify_worker_test",
+      "target": "ref_node_assert",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/graphify-worker.test.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_graphify_worker_test",
+      "target": "ref_node_test",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/graphify-worker.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_graphify_worker_test",
+      "target": "src_graphify_worker_ts_src_graphify_worker",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "test/graphify-worker.test.ts",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -6502,7 +7179,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -6513,18 +7190,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_codefleet",
-      "target": "readme_repository_configuration",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L6",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -6535,7 +7201,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L60",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_codefleet",
+      "target": "readme_repository_configuration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -6628,13 +7305,24 @@
     },
     {
       "source": "src_graphify_client",
+      "target": "src_graphify_client_childenvironment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/client.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_client",
       "target": "src_graphify_client_creategraphifyclient",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/graphify/client.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6645,7 +7333,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/graphify/client.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -6656,18 +7344,73 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/graphify/client.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
-      "source": "src_graphify_client",
-      "target": "src_graphify_client_childenvironment",
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_graphifyqueryworker",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/graphify/client.ts",
-      "source_location": "L9",
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_workererror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_creategraphifyworkerpool",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_defaultgraphifyworker",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_persistentworker",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_ts_src_graphify_worker",
+      "target": "src_graphify_worker_pending",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -7243,6 +7986,17 @@
       "weight": 1.0
     },
     {
+      "source": "test_fixtures_graphify_worker",
+      "target": "test_fixtures_graphify_worker_lines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "test-fixtures/graphify-worker.mjs",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "test_fixtures_orders_src_redisconfig",
       "target": "test_fixtures_orders_src_redisconfig_redisconfig",
       "relation": "contains",
@@ -7262,6 +8016,17 @@
       "confidence_score": 1.0,
       "source_file": "test-fixtures/process-child.mjs",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_graphify_client_test",
+      "target": "test_graphify_client_test_close",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "test/graphify-client.test.ts",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -7474,6 +8239,83 @@
       "weight": 1.0
     },
     {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_query",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_close",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_constructor",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_start",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_consume",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_handleline",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "src_graphify_worker_persistentworker",
+      "target": "src_graphify_worker_persistentworker_fail",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/graphify/worker.ts",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
       "source": "src_process_run_commanderror",
       "target": "src_process_run_commanderror_constructor",
       "relation": "method",
@@ -7527,7 +8369,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "src/sync.ts",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -7724,5 +8566,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "90589a85ca8d343e10b98fbd4187a63d89a8f6b7"
+  "built_at_commit": "d47b2b21178963287a4c984b92756df4746bff68"
 }

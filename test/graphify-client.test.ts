@@ -6,9 +6,19 @@ import type { RunCommandOptions } from "../src/process/run.ts";
 
 test("Graphify 명령과 자식 환경을 고정한다", async () => {
   const calls: RunCommandOptions[] = [];
-  const client = createGraphifyClient("/opt/graphify/bin/graphify", async (options) => {
-    calls.push(options);
-    return { stdout: "NODE Redis", stderr: "" };
+  const queries: Array<{ repositoryPath: string; query: string }> = [];
+  const client = createGraphifyClient("/opt/graphify/bin/graphify", {
+    execute: async (options) => {
+      calls.push(options);
+      return { stdout: "", stderr: "" };
+    },
+    queryWorker: {
+      async query(repositoryPath, query) {
+        queries.push({ repositoryPath, query });
+        return "NODE Redis";
+      },
+      close() {},
+    },
   });
 
   await client.check();
@@ -39,12 +49,6 @@ test("Graphify 명령과 자식 환경을 고정한다", async () => {
     maxOutputBytes: 1_048_576,
     env: expectedEnvironment,
   });
-  assert.deepEqual(calls[2]?.args, [
-    "query",
-    "redis; $(touch /tmp/nope)",
-    "--graph",
-    "graphify-out/graph.json",
-  ]);
-  assert.equal(calls[2]?.cwd, "/data/repositories/orders");
-  assert.equal(calls[2]?.env.CODEFLEET_API_TOKEN, undefined);
+  assert.deepEqual(queries, [{ repositoryPath: "/data/repositories/orders", query: "redis; $(touch /tmp/nope)" }]);
+  assert.equal(calls.length, 2);
 });

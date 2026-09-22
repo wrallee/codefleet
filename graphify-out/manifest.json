@@ -24,15 +24,15 @@
     "semantic_hash": ""
   },
   "src/repositories/service.ts": {
-    "mtime": 1790058497.7392857,
-    "seen": 1790058506.0573874,
+    "mtime": 1790058515.0588527,
+    "seen": 1790060688.1172917,
     "ast_hash": "e16e2944ddddff9657c132fe33de5518",
     "semantic_hash": ""
   },
   "src/server.ts": {
-    "mtime": 1790055143.4356081,
-    "seen": 1790057991.0690906,
-    "ast_hash": "f2500359461cb4a2e7e1efc60f0adae1",
+    "mtime": 1790060627.6587894,
+    "seen": 1790060688.1172926,
+    "ast_hash": "571d2bda66a3dcb830f617041102fac7",
     "semantic_hash": ""
   },
   "test/environment.test.ts": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/graphify/client.ts": {
-    "mtime": 1790041255.789922,
-    "seen": 1790045713.256857,
-    "ast_hash": "534126e3c7479eaf0c86af859e79786a",
+    "mtime": 1790060627.6547892,
+    "seen": 1790060688.1172826,
+    "ast_hash": "94c90b73958d919669dcbf0fe1d2a9bd",
     "semantic_hash": ""
   },
   "src/process/run.ts": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "src/sync.ts": {
-    "mtime": 1790041255.7906108,
-    "seen": 1790045713.256864,
-    "ast_hash": "83d810d852efc613bf5fce81037caace",
+    "mtime": 1790060627.6587894,
+    "seen": 1790060688.1172938,
+    "ast_hash": "c43d573e93a658c9e909eb3feaf486c1",
     "semantic_hash": ""
   },
   "test-fixtures/process-child.mjs": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "test/graphify-client.test.ts": {
-    "mtime": 1790041255.791753,
-    "seen": 1790045713.2568686,
-    "ast_hash": "182f62ac0829b99fd78afe74cf57272f",
+    "mtime": 1790060627.6587894,
+    "seen": 1790060688.1173003,
+    "ast_hash": "a80724b86e4b32e66047569c4c534174",
     "semantic_hash": ""
   },
   "test/process-runner.test.ts": {
@@ -114,8 +114,8 @@
     "semantic_hash": ""
   },
   "test/repository-service.test.ts": {
-    "mtime": 1790058497.7392857,
-    "seen": 1790058506.057401,
+    "mtime": 1790058515.0588527,
+    "seen": 1790060688.117307,
     "ast_hash": "94e10ea7818bb3564bee4eb20ac9fa74",
     "semantic_hash": ""
   },
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790058005.429159,
-    "seen": 1790058506.057406,
-    "ast_hash": "a80180daa0ebab7fc2e39d244f5bb1c9",
+    "mtime": 1790060627.6587894,
+    "seen": 1790060688.1173117,
+    "ast_hash": "3edd84e924ded925ce81f66c885069e4",
     "semantic_hash": ""
   },
   "docs/plans/2026-09-17-runtime-registry-foundation.md": {
@@ -219,6 +219,30 @@
     "mtime": 1790055143.4356081,
     "seen": 1790057991.0690846,
     "ast_hash": "2a0b45a741de1754417b8d176206a4c8",
+    "semantic_hash": ""
+  },
+  "src/graphify/worker.py": {
+    "mtime": 1790060643.5553606,
+    "seen": 1790060688.1172845,
+    "ast_hash": "e67512a62b22ce4bc164a431abf6aa27",
+    "semantic_hash": ""
+  },
+  "src/graphify/worker.ts": {
+    "mtime": 1790060643.5553606,
+    "seen": 1790060688.117286,
+    "ast_hash": "9433dd6f20f97a0e7922dbaf85f90319",
+    "semantic_hash": ""
+  },
+  "test-fixtures/graphify-worker.mjs": {
+    "mtime": 1790060627.6547892,
+    "seen": 1790060688.1172948,
+    "ast_hash": "63d7b3016f1e88cf280ad08485efe7ad",
+    "semantic_hash": ""
+  },
+  "test/graphify-worker.test.ts": {
+    "mtime": 1790060627.6547892,
+    "seen": 1790060688.117302,
+    "ast_hash": "c9726007a9ef335948c3949fdad94eaf",
     "semantic_hash": ""
   }
 }
