@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "test/graphify-integration.test.ts": {
-    "mtime": 1790061016.8785086,
-    "seen": 1790061027.234084,
+    "mtime": 1790061057.2889671,
+    "seen": 1790061271.7559056,
     "ast_hash": "a270b8f3d89202b7b057606a73720f19",
     "semantic_hash": ""
   },
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "src/graphify/worker.py": {
-    "mtime": 1790060701.9177644,
-    "seen": 1790061027.2340684,
-    "ast_hash": "e67512a62b22ce4bc164a431abf6aa27",
+    "mtime": 1790061264.7522318,
+    "seen": 1790061271.7558894,
+    "ast_hash": "c0b05f4bc35297826ac82f2fa5860944",
     "semantic_hash": ""
   },
   "src/graphify/worker.ts": {
