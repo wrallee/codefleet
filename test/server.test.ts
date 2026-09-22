@@ -13,7 +13,6 @@ function testServer(registry: ReturnType<typeof openRegistry>, isGraphifyReady =
   return createServer({
     registry,
     repositories: { search: async () => ({ results: [], warnings: [] }) },
-    apiToken: "test-token",
     isGraphifyReady,
   });
 }
@@ -106,7 +105,7 @@ test("OpenAPI 문서와 자체 호스팅 Swagger UI를 제공한다", async () =
     const document = await openApi.json() as Record<string, any>;
     assert.equal(document.openapi, "3.1.0");
     assert.deepEqual(Object.keys(document.paths), ["/healthz", "/readyz", "/repositories", "/search"]);
-    assert.equal(document.components.securitySchemes.bearerAuth.scheme, "bearer");
+    assert.equal(document.components.securitySchemes, undefined);
 
     const rootRedirect = await fetch(`${baseUrl}/`, { redirect: "manual" });
     assert.equal(rootRedirect.status, 308);
@@ -122,8 +121,7 @@ test("OpenAPI 문서와 자체 호스팅 Swagger UI를 제공한다", async () =
 
     const initializer = await fetch(`${baseUrl}/docs/swagger-initializer.js`);
     assert.equal(initializer.status, 200);
-    const initializerScript = await initializer.text();
-    assert.match(initializerScript, /preauthorizeApiKey\("bearerAuth", "test-token"\)/);
+    assert.doesNotMatch(await initializer.text(), /preauthorizeApiKey/);
 
     const bundle = await fetch(`${baseUrl}/docs/swagger-ui-bundle.js`);
     assert.equal(bundle.status, 200);
@@ -196,7 +194,6 @@ test("start는 설정된 데이터 디렉터리로 서버를 시작한다", asyn
     dataDirectory: join(temporaryDirectory, "data"),
     repositoriesFile: "config/repositories.json",
     graphifyBinary: process.execPath,
-    apiToken: "test-token",
     port: 0,
     maxConcurrentQueries: 4,
   });

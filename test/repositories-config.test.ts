@@ -17,13 +17,15 @@ test("저장소 설정을 읽는다", () => {
   const filePath = writeConfig({
     repositories: [
       { id: "orders", cloneUrl: "git@github.com:example/orders.git", branch: "main" },
-      { id: "catalog", cloneUrl: "https://github.com/example/catalog.git" },
+      { cloneUrl: "https://github.com/example/catalog.git" },
+      { cloneUrl: "https://github.gmarket.com/a-front-api/front-api.git", branch: "main" },
     ],
   });
 
   assert.deepEqual(loadRepositories(filePath), [
     { id: "orders", cloneUrl: "git@github.com:example/orders.git", branch: "main" },
-    { id: "catalog", cloneUrl: "https://github.com/example/catalog.git" },
+    { id: "example/catalog", cloneUrl: "https://github.com/example/catalog.git" },
+    { id: "a-front-api/front-api", cloneUrl: "https://github.gmarket.com/a-front-api/front-api.git", branch: "main" },
   ]);
 });
 

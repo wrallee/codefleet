@@ -34,11 +34,8 @@ export const openApiDocument = {
       get: {
         tags: ["Repositories"],
         summary: "List configured repository indexes",
-        security: [{ bearerAuth: [] }],
         responses: {
           "200": { description: "Repository states.", content: { "application/json": { schema: { $ref: "#/components/schemas/RepositoryList" } } } },
-          "401": { $ref: "#/components/responses/AuthenticationRequired" },
-          "403": { $ref: "#/components/responses/AuthenticationFailed" },
         },
       },
     },
@@ -46,7 +43,6 @@ export const openApiDocument = {
       post: {
         tags: ["Repositories"],
         summary: "Search repository graphs",
-        security: [{ bearerAuth: [] }],
         requestBody: {
           required: true,
           content: { "application/json": { schema: { $ref: "#/components/schemas/SearchRequest" } } },
@@ -54,8 +50,6 @@ export const openApiDocument = {
         responses: {
           "200": { description: "At least one repository returned a result.", content: { "application/json": { schema: { $ref: "#/components/schemas/SearchResponse" } } } },
           "400": { $ref: "#/components/responses/InvalidRequest" },
-          "401": { $ref: "#/components/responses/AuthenticationRequired" },
-          "403": { $ref: "#/components/responses/AuthenticationFailed" },
           "413": { $ref: "#/components/responses/InvalidRequest" },
           "503": { description: "Every selected repository failed.", content: { "application/json": { schema: { $ref: "#/components/schemas/SearchError" } } } },
         },
@@ -63,13 +57,8 @@ export const openApiDocument = {
     },
   },
   components: {
-    securitySchemes: {
-      bearerAuth: { type: "http", scheme: "bearer", bearerFormat: "API token" },
-    },
     responses: {
       InvalidRequest: { description: "The request is invalid.", content: { "application/json": { schema: { $ref: "#/components/schemas/ErrorResponse" } } } },
-      AuthenticationRequired: { description: "A Bearer token is required.", content: { "application/json": { schema: { $ref: "#/components/schemas/ErrorResponse" } } } },
-      AuthenticationFailed: { description: "The Bearer token is invalid.", content: { "application/json": { schema: { $ref: "#/components/schemas/ErrorResponse" } } } },
     },
     schemas: {
       Health: {
@@ -187,8 +176,7 @@ export const swaggerUiHtml = `<!doctype html>
 </body>
 </html>`;
 
-export function swaggerUiInitializer(apiToken: string) {
-  return `window.onload = () => {
+export const swaggerUiInitializer = `window.onload = () => {
   window.ui = SwaggerUIBundle({
     url: "/openapi.json",
     dom_id: "#swagger-ui",
@@ -196,6 +184,4 @@ export function swaggerUiInitializer(apiToken: string) {
     presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
     layout: "StandaloneLayout"
   });
-  window.ui.preauthorizeApiKey("bearerAuth", ${JSON.stringify(apiToken)});
 };`;
-}

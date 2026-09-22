@@ -85,6 +85,10 @@ function defaultBranch(output: string): string | undefined {
   return output.match(/^ref: refs\/heads\/([^\s]+)\tHEAD$/m)?.[1];
 }
 
+function repositoryStorageKey(id: string): string {
+  return encodeURIComponent(id);
+}
+
 export function createRepositoryService(options: Readonly<{
   registry: Registry;
   graphify: GraphifyClient;
@@ -154,7 +158,7 @@ export function createRepositoryService(options: Readonly<{
         return;
       }
       await git(["check-ref-format", "--branch", branch]);
-      staging = await mkdtemp(join(stagingDirectory, `${config.id}-`));
+      staging = await mkdtemp(join(stagingDirectory, `${repositoryStorageKey(config.id)}-`));
       await managedDirectory(staging);
       await git(["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", branch, "--", config.cloneUrl, staging]);
       const commit = (await git(["-C", staging, "rev-parse", "HEAD"])).stdout.trim();
@@ -168,7 +172,7 @@ export function createRepositoryService(options: Readonly<{
         throw publicError("GRAPHIFY", error);
       }
 
-      const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, config.id));
+      const repositoryDirectory = await makeManagedDirectory(join(repositoriesDirectory, repositoryStorageKey(config.id)));
       const generationsDirectory = await makeManagedDirectory(join(repositoryDirectory, "generations"));
       const activeGeneration = `${commit}-${randomUUID()}`;
       const destination = join(generationsDirectory, activeGeneration);
@@ -212,8 +216,8 @@ export function createRepositoryService(options: Readonly<{
             throw Object.assign(new Error("준비되지 않은 저장소"), { code: "REPOSITORY_NOT_READY" });
           }
           const indexRoot = current.activeGeneration
-            ? join(repositoriesDirectory, current.id, "generations", current.activeGeneration)
-            : join(repositoriesDirectory, current.id);
+            ? join(repositoriesDirectory, repositoryStorageKey(current.id), "generations", current.activeGeneration)
+            : join(repositoriesDirectory, repositoryStorageKey(current.id));
           let output: string;
           try {
             output = await queryLimit.run(() => graphify.query(indexRoot, query, signal), signal);

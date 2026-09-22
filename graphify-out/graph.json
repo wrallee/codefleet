@@ -4,6 +4,19 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_repositories_service_searchoutcome",
+      "label": "SearchOutcome",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "searchoutcome",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "src_server_application",
       "label": "Application",
       "_callable": true,
@@ -14,7 +27,7 @@
       "file_type": "code",
       "norm_label": "application",
       "source_file": "src/server.ts",
-      "source_location": "L238"
+      "source_location": "L220"
     },
     {
       "id": "src_server_repositorysearch",
@@ -27,7 +40,7 @@
       "file_type": "code",
       "norm_label": "repositorysearch",
       "source_file": "src/server.ts",
-      "source_location": "L16"
+      "source_location": "L15"
     },
     {
       "id": "src_server_requesterror",
@@ -40,7 +53,7 @@
       "file_type": "code",
       "norm_label": "requesterror",
       "source_file": "src/server.ts",
-      "source_location": "L45"
+      "source_location": "L43"
     },
     {
       "id": "src_server_serverdependencies",
@@ -53,7 +66,7 @@
       "file_type": "code",
       "norm_label": "serverdependencies",
       "source_file": "src/server.ts",
-      "source_location": "L20"
+      "source_location": "L19"
     },
     {
       "id": "src_repositories_query_limit_queued",
@@ -95,17 +108,17 @@
       "source_location": "L10"
     },
     {
-      "id": "src_repositories_service_searchoutcome",
-      "label": "SearchOutcome",
+      "id": "src_registry_database_registry",
+      "label": "Registry",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "service.ts",
+      "community": 3,
+      "community_name": "\uacf5\ud1b5 \uc81c\uc57d",
       "file_type": "code",
-      "norm_label": "searchoutcome",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L18"
+      "norm_label": "registry",
+      "source_file": "src/registry/database.ts",
+      "source_location": "L227"
     },
     {
       "id": "src_config_repositories_repositoryconfig",
@@ -118,20 +131,7 @@
       "file_type": "code",
       "norm_label": "repositoryconfig",
       "source_file": "src/config/repositories.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_registry_database_registry",
-      "label": "Registry",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "registry",
-      "source_file": "src/registry/database.ts",
-      "source_location": "L227"
+      "source_location": "L8"
     },
     {
       "id": "src_registry_database_repositoryindexrecord",
@@ -205,7 +205,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "runcommand",
       "source_file": "src/graphify/client.ts",
@@ -218,7 +218,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "commanderror",
       "source_file": "src/process/run.ts",
@@ -231,7 +231,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "commanderrorcode",
       "source_file": "src/process/run.ts",
@@ -244,7 +244,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "commandresult",
       "source_file": "src/process/run.ts",
@@ -257,7 +257,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "runcommandoptions",
       "source_file": "src/process/run.ts",
@@ -273,31 +273,7 @@
       "file_type": "code",
       "norm_label": "asset()",
       "source_file": "src/openapi.ts",
-      "source_location": "L166"
-    },
-    {
-      "id": "src_openapi_swaggeruiinitializer",
-      "label": "swaggerUiInitializer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "server.ts",
-      "file_type": "code",
-      "norm_label": "swaggeruiinitializer()",
-      "source_file": "src/openapi.ts",
-      "source_location": "L190"
-    },
-    {
-      "id": "src_server_authenticate",
-      "label": "authenticate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "server.ts",
-      "file_type": "code",
-      "norm_label": "authenticate()",
-      "source_file": "src/server.ts",
-      "source_location": "L72"
+      "source_location": "L155"
     },
     {
       "id": "src_server_createreadinessprobe",
@@ -309,7 +285,7 @@
       "file_type": "code",
       "norm_label": "createreadinessprobe()",
       "source_file": "src/server.ts",
-      "source_location": "L27"
+      "source_location": "L25"
     },
     {
       "id": "src_server_createserver",
@@ -321,7 +297,7 @@
       "file_type": "code",
       "norm_label": "createserver()",
       "source_file": "src/server.ts",
-      "source_location": "L157"
+      "source_location": "L140"
     },
     {
       "id": "src_server_readjsonbody",
@@ -333,7 +309,7 @@
       "file_type": "code",
       "norm_label": "readjsonbody()",
       "source_file": "src/server.ts",
-      "source_location": "L87"
+      "source_location": "L70"
     },
     {
       "id": "src_server_requesterror_constructor",
@@ -345,19 +321,7 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/server.ts",
-      "source_location": "L48"
-    },
-    {
-      "id": "src_server_start",
-      "label": "start()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "server.ts",
-      "file_type": "code",
-      "norm_label": "start()",
-      "source_file": "src/server.ts",
-      "source_location": "L240"
+      "source_location": "L46"
     },
     {
       "id": "src_server_unavailable",
@@ -369,7 +333,7 @@
       "file_type": "code",
       "norm_label": "unavailable()",
       "source_file": "src/server.ts",
-      "source_location": "L143"
+      "source_location": "L126"
     },
     {
       "id": "src_server_validatesearch",
@@ -381,7 +345,7 @@
       "file_type": "code",
       "norm_label": "validatesearch()",
       "source_file": "src/server.ts",
-      "source_location": "L130"
+      "source_location": "L113"
     },
     {
       "id": "src_server_writedocument",
@@ -393,7 +357,7 @@
       "file_type": "code",
       "norm_label": "writedocument()",
       "source_file": "src/server.ts",
-      "source_location": "L59"
+      "source_location": "L57"
     },
     {
       "id": "src_server_writejson",
@@ -405,7 +369,7 @@
       "file_type": "code",
       "norm_label": "writejson()",
       "source_file": "src/server.ts",
-      "source_location": "L54"
+      "source_location": "L52"
     },
     {
       "id": "src_server_writerequesterror",
@@ -417,7 +381,103 @@
       "file_type": "code",
       "norm_label": "writerequesterror()",
       "source_file": "src/server.ts",
-      "source_location": "L68"
+      "source_location": "L66"
+    },
+    {
+      "id": "test_search_api_test_close",
+      "label": "close()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "close()",
+      "source_file": "test/search-api.test.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_search_api_test_fixture",
+      "label": "fixture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "fixture()",
+      "source_file": "test/search-api.test.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "test_search_api_test_listen",
+      "label": "listen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "listen()",
+      "source_file": "test/search-api.test.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "test_server_test_close",
+      "label": "close()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "close()",
+      "source_file": "test/server.test.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "test_server_test_listen",
+      "label": "listen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "listen()",
+      "source_file": "test/server.test.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_server_test_requestpath",
+      "label": "requestPath()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "requestpath()",
+      "source_file": "test/server.test.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "test_server_test_testserver",
+      "label": "testServer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "testserver()",
+      "source_file": "test/server.test.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "test_server_test_waitforlistening",
+      "label": "waitForListening()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "waitforlistening()",
+      "source_file": "test/server.test.ts",
+      "source_location": "L25"
     },
     {
       "id": "src_config_environment_commonenvironment",
@@ -501,7 +561,7 @@
       "file_type": "code",
       "norm_label": "createrepositoryservice()",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L88"
+      "source_location": "L92"
     },
     {
       "id": "src_repositories_service_defaultbranch",
@@ -588,28 +648,16 @@
       "source_location": "L47"
     },
     {
-      "id": "src_config_repositories_isrecord",
-      "label": "isRecord()",
+      "id": "src_repositories_service_repositorystoragekey",
+      "label": "repositoryStorageKey()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
+      "community": 2,
+      "community_name": "service.ts",
       "file_type": "code",
-      "norm_label": "isrecord()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_config_repositories_loadrepositories",
-      "label": "loadRepositories()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "loadrepositories()",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L17"
+      "norm_label": "repositorystoragekey()",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L88"
     },
     {
       "id": "src_registry_database_configuredatabase",
@@ -672,6 +720,30 @@
       "source_location": "L45"
     },
     {
+      "id": "test_graphify_integration_test_createremote",
+      "label": "createRemote()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "createremote()",
+      "source_file": "test/graphify-integration.test.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_graphify_integration_test_git",
+      "label": "git()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "git()",
+      "source_file": "test/graphify-integration.test.ts",
+      "source_location": "L16"
+    },
+    {
       "id": "test_repositories_config_test_writeconfig",
       "label": "writeConfig()",
       "_callable": true,
@@ -696,102 +768,6 @@
       "source_location": "L11"
     },
     {
-      "id": "test_search_api_test_close",
-      "label": "close()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "close()",
-      "source_file": "test/search-api.test.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "test_search_api_test_fixture",
-      "label": "fixture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "fixture()",
-      "source_file": "test/search-api.test.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "test_search_api_test_listen",
-      "label": "listen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "listen()",
-      "source_file": "test/search-api.test.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "test_server_test_close",
-      "label": "close()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "close()",
-      "source_file": "test/server.test.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "test_server_test_listen",
-      "label": "listen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "listen()",
-      "source_file": "test/server.test.ts",
-      "source_location": "L21"
-    },
-    {
-      "id": "test_server_test_requestpath",
-      "label": "requestPath()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "requestpath()",
-      "source_file": "test/server.test.ts",
-      "source_location": "L43"
-    },
-    {
-      "id": "test_server_test_testserver",
-      "label": "testServer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "testserver()",
-      "source_file": "test/server.test.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "test_server_test_waitforlistening",
-      "label": "waitForListening()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "waitforlistening()",
-      "source_file": "test/server.test.ts",
-      "source_location": "L26"
-    },
-    {
       "id": "test_fixtures_catalog_src_cacherepository_cacherepository_getendpoint",
       "label": ".getEndpoint()",
       "_callable": true,
@@ -804,12 +780,48 @@
       "source_location": "L4"
     },
     {
+      "id": "src_config_repositories_inferrepositoryid",
+      "label": "inferRepositoryId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "inferrepositoryid()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_config_repositories_isrecord",
+      "label": "isRecord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "isrecord()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_config_repositories_loadrepositories",
+      "label": "loadRepositories()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "loadrepositories()",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L26"
+    },
+    {
       "id": "src_graphify_client_childenvironment",
       "label": "childEnvironment()",
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "childenvironment()",
       "source_file": "src/graphify/client.ts",
@@ -821,7 +833,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "creategraphifyclient()",
       "source_file": "src/graphify/client.ts",
@@ -833,7 +845,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "src/process/run.ts",
@@ -845,11 +857,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "runcommand()",
       "source_file": "src/process/run.ts",
       "source_location": "L32"
+    },
+    {
+      "id": "src_server_start",
+      "label": "start()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "start()",
+      "source_file": "src/server.ts",
+      "source_location": "L222"
     },
     {
       "id": "src_sync_sync",
@@ -857,35 +881,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "sync()",
       "source_file": "src/sync.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "test_graphify_integration_test_createremote",
-      "label": "createRemote()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "createremote()",
-      "source_file": "test/graphify-integration.test.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "test_graphify_integration_test_git",
-      "label": "git()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "git()",
-      "source_file": "test/graphify-integration.test.ts",
-      "source_location": "L16"
     },
     {
       "id": "package",
@@ -1371,7 +1371,7 @@
       "file_type": "code",
       "norm_label": "require",
       "source_file": "src/openapi.ts",
-      "source_location": "L165"
+      "source_location": "L154"
     },
     {
       "id": "src_openapi_swaggeruiassets",
@@ -1382,7 +1382,7 @@
       "file_type": "code",
       "norm_label": "swaggeruiassets",
       "source_file": "src/openapi.ts",
-      "source_location": "L168"
+      "source_location": "L157"
     },
     {
       "id": "src_openapi_swaggeruihtml",
@@ -1393,7 +1393,18 @@
       "file_type": "code",
       "norm_label": "swaggeruihtml",
       "source_file": "src/openapi.ts",
-      "source_location": "L174"
+      "source_location": "L163"
+    },
+    {
+      "id": "src_openapi_swaggeruiinitializer",
+      "label": "swaggerUiInitializer",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "swaggeruiinitializer",
+      "source_file": "src/openapi.ts",
+      "source_location": "L179"
     },
     {
       "id": "src_server",
@@ -1404,6 +1415,28 @@
       "file_type": "code",
       "norm_label": "server.ts",
       "source_file": "src/server.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_search_api_test",
+      "label": "search-api.test.ts",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "search-api.test.ts",
+      "source_file": "test/search-api.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_server_test",
+      "label": "server.test.ts",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "server.test.ts",
+      "source_file": "test/server.test.ts",
       "source_location": "L1"
     },
     {
@@ -1440,7 +1473,7 @@
       "node_kind": "heading",
       "norm_label": "api",
       "source_file": "README.md",
-      "source_location": "L47"
+      "source_location": "L44"
     },
     {
       "id": "readme_codefleet",
@@ -1476,7 +1509,7 @@
       "node_kind": "heading",
       "norm_label": "run",
       "source_file": "README.md",
-      "source_location": "L27"
+      "source_location": "L26"
     },
     {
       "id": "readme_verification",
@@ -1488,7 +1521,7 @@
       "node_kind": "heading",
       "norm_label": "verification",
       "source_file": "README.md",
-      "source_location": "L64"
+      "source_location": "L59"
     },
     {
       "id": "src_config_environment",
@@ -1735,6 +1768,18 @@
       "norm_label": "\u110c\u1161\u11a8\u110b\u1165\u11b8 1: typescript \u1109\u1175\u11af\u1112\u1162\u11bc \u1106\u1175\u11be \u1100\u1165\u11b7\u110c\u1173\u11bc \u1112\u116a\u11ab\u1100\u1167\u11bc",
       "source_file": "docs/plans/2026-09-17-runtime-registry-foundation.md",
       "source_location": "L23"
+    },
+    {
+      "id": "docs_plans_2026_09_17_runtime_registry_foundation_\uc791\uc5c5_2_sqlite_\ub808\uc9c0\uc2a4\ud2b8\ub9ac_\ucd08\uae30\ud654",
+      "label": "\uc791\uc5c5 2: SQLite \ub808\uc9c0\uc2a4\ud2b8\ub9ac \ucd08\uae30\ud654",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "\uacf5\ud1b5 \uc81c\uc57d",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u110c\u1161\u11a8\u110b\u1165\u11b8 2: sqlite \u1105\u1166\u110c\u1175\u1109\u1173\u1110\u1173\u1105\u1175 \u110e\u1169\u1100\u1175\u1112\u116a",
+      "source_file": "docs/plans/2026-09-17-runtime-registry-foundation.md",
+      "source_location": "L42"
     },
     {
       "id": "docs_plans_2026_09_17_runtime_registry_foundation_\uc791\uc5c5_3_\uc124\uc815\uacfc_\uc0c1\ud0dc_\ud655\uc778_\uc11c\ubc84",
@@ -2013,17 +2058,6 @@
       "source_location": "L180"
     },
     {
-      "id": "src_config_repositories",
-      "label": "repositories.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "repositories.ts",
-      "source_file": "src/config/repositories.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_registry_database",
       "label": "database.ts",
       "_origin": "ast",
@@ -2033,6 +2067,28 @@
       "norm_label": "database.ts",
       "source_file": "src/registry/database.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "test_graphify_integration_test",
+      "label": "graphify-integration.test.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "graphify-integration.test.ts",
+      "source_file": "test/graphify-integration.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_graphify_integration_test_fixtureroot",
+      "label": "fixtureRoot",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "database.ts",
+      "file_type": "code",
+      "norm_label": "fixtureroot",
+      "source_file": "test/graphify-integration.test.ts",
+      "source_location": "L14"
     },
     {
       "id": "test_registry_test",
@@ -2066,40 +2122,6 @@
       "norm_label": "repository-service.test.ts",
       "source_file": "test/repository-service.test.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "test_search_api_test",
-      "label": "search-api.test.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "search-api.test.ts",
-      "source_file": "test/search-api.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_server_test",
-      "label": "server.test.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "code",
-      "norm_label": "server.test.ts",
-      "source_file": "test/server.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_plans_2026_09_17_runtime_registry_foundation_\uc791\uc5c5_2_sqlite_\ub808\uc9c0\uc2a4\ud2b8\ub9ac_\ucd08\uae30\ud654",
-      "label": "\uc791\uc5c5 2: SQLite \ub808\uc9c0\uc2a4\ud2b8\ub9ac \ucd08\uae30\ud654",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "database.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\u110c\u1161\u11a8\u110b\u1165\u11b8 2: sqlite \u1105\u1166\u110c\u1175\u1109\u1173\u1110\u1173\u1105\u1175 \u110e\u1169\u1100\u1175\u1112\u116a",
-      "source_file": "docs/plans/2026-09-17-runtime-registry-foundation.md",
-      "source_location": "L42"
     },
     {
       "id": "docs_plans_2026_09_22_graphify_api_hardening_task_1_\ubd88\ubcc0_generation\uacfc_\uc815\ud655\ud55c_\uc0c9\uc778_provenance",
@@ -2640,11 +2662,33 @@
       "source_location": "L21"
     },
     {
+      "id": "src_config_repositories",
+      "label": "repositories.ts",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "repositories.ts",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_config_repositories_repository_id",
+      "label": "REPOSITORY_ID",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "run.ts",
+      "file_type": "code",
+      "norm_label": "repository_id",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "src_graphify_client",
       "label": "client.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "client.ts",
       "source_file": "src/graphify/client.ts",
@@ -2655,7 +2699,7 @@
       "label": "CHILD_ENV_KEYS",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "child_env_keys",
       "source_file": "src/graphify/client.ts",
@@ -2666,7 +2710,7 @@
       "label": "run.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "run.ts",
       "source_file": "src/process/run.ts",
@@ -2677,7 +2721,7 @@
       "label": "sync.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "sync.ts",
       "source_file": "src/sync.ts",
@@ -2688,40 +2732,18 @@
       "label": "graphify-client.test.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "graphify-client.test.ts",
       "source_file": "test/graphify-client.test.ts",
       "source_location": "L1"
     },
     {
-      "id": "test_graphify_integration_test",
-      "label": "graphify-integration.test.ts",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "graphify-integration.test.ts",
-      "source_file": "test/graphify-integration.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "test_graphify_integration_test_fixtureroot",
-      "label": "fixtureRoot",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "graphify-integration.test.ts",
-      "file_type": "code",
-      "norm_label": "fixtureroot",
-      "source_file": "test/graphify-integration.test.ts",
-      "source_location": "L14"
-    },
-    {
       "id": "test_process_runner_test",
       "label": "process-runner.test.ts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "process-runner.test.ts",
       "source_file": "test/process-runner.test.ts",
@@ -2732,7 +2754,7 @@
       "label": "environment",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "environment",
       "source_file": "test/process-runner.test.ts",
@@ -2743,11 +2765,35 @@
       "label": "fixture",
       "_origin": "ast",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "file_type": "code",
       "norm_label": "fixture",
       "source_file": "test/process-runner.test.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "ref_node_events",
+      "label": "ref_node_events",
+      "_origin": "semantic",
+      "community": 12,
+      "community_name": "server.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_events",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_node_http",
+      "label": "ref_node_http",
+      "_origin": "semantic",
+      "community": 12,
+      "community_name": "server.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_http",
+      "source_file": "",
+      "type": "external"
     },
     {
       "id": "ref_node_module",
@@ -2758,18 +2804,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_assert",
-      "label": "ref_node_assert",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "service.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_assert",
       "source_file": "",
       "type": "external"
     },
@@ -2798,18 +2832,6 @@
       "type": "external"
     },
     {
-      "id": "ref_node_events",
-      "label": "ref_node_events",
-      "_origin": "semantic",
-      "community": 5,
-      "community_name": "database.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_events",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "ref_node_fs",
       "label": "ref_node_fs",
       "_origin": "semantic",
@@ -2818,18 +2840,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_fs",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_http",
-      "label": "ref_node_http",
-      "_origin": "semantic",
-      "community": 5,
-      "community_name": "database.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_http",
       "source_file": "",
       "type": "external"
     },
@@ -2870,11 +2880,23 @@
       "type": "external"
     },
     {
+      "id": "ref_node_assert",
+      "label": "ref_node_assert",
+      "_origin": "semantic",
+      "community": 9,
+      "community_name": "run.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_assert",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_node_test",
       "label": "ref_node_test",
       "_origin": "semantic",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_test",
@@ -2886,7 +2908,7 @@
       "label": "ref_node_url",
       "_origin": "semantic",
       "community": 9,
-      "community_name": "graphify-integration.test.ts",
+      "community_name": "run.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
@@ -2904,7 +2926,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/config/environment.ts",
-      "source_location": "L24",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -2928,7 +2950,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/config/repositories.ts",
-      "source_location": "L19",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_repositories_loadrepositories",
+      "target": "src_config_repositories_inferrepositoryid",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -3005,19 +3039,19 @@
     },
     {
       "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_process_run_runcommand",
+      "target": "src_repositories_query_limit_createquerylimit",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L102",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
       "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_service_childenvironment",
+      "target": "src_process_run_runcommand",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3029,6 +3063,18 @@
     },
     {
       "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_childenvironment",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
       "target": "src_repositories_service_publicerror",
       "relation": "calls",
       "_origin": "ast",
@@ -3036,7 +3082,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L111",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -3048,7 +3094,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L118",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -3060,7 +3106,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L124",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -3072,7 +3118,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L151",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_repositorystoragekey",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -3084,7 +3142,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L186",
+      "source_location": "L190",
       "weight": 1.0
     },
     {
@@ -3096,19 +3154,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/repositories/service.ts",
-      "source_location": "L188",
-      "weight": 1.0
-    },
-    {
-      "source": "src_repositories_service_createrepositoryservice",
-      "target": "src_repositories_query_limit_createquerylimit",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/repositories/service.ts",
-      "source_location": "L99",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -3148,18 +3194,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_server_authenticate",
-      "target": "src_server_writejson",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/server.ts",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
       "source": "src_server_createserver",
       "target": "src_server_writerequesterror",
       "relation": "calls",
@@ -3168,7 +3202,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L163",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -3180,7 +3214,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L173",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -3192,31 +3226,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L191",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server_createserver",
-      "target": "src_openapi_swaggeruiinitializer",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/server.ts",
-      "source_location": "L195",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server_createserver",
-      "target": "src_server_authenticate",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/server.ts",
-      "source_location": "L210",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -3228,7 +3238,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L222",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -3240,7 +3250,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L222",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -3252,7 +3262,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L225",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -3264,7 +3274,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L91",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -3276,7 +3286,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L241",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -3288,7 +3298,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L242",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -3300,7 +3310,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L245",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -3312,7 +3322,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L246",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -3324,7 +3334,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L247",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -3336,7 +3346,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L249",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -3348,7 +3358,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L131",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -3360,7 +3370,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L69",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -3504,7 +3514,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L39",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -3516,7 +3526,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3528,7 +3538,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -3648,7 +3658,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3660,7 +3670,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -3672,7 +3682,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -3684,7 +3694,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "test/server.test.ts",
-      "source_location": "L43",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -3845,7 +3855,7 @@
     },
     {
       "source": "src_server",
-      "target": "src_process_run_runcommand",
+      "target": "src_repositories_service_createrepositoryservice",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3857,18 +3867,6 @@
     },
     {
       "source": "src_server",
-      "target": "src_repositories_service_createrepositoryservice",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/server.ts",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
       "target": "src_repositories_service_searchoutcome",
       "relation": "imports",
       "_origin": "ast",
@@ -3876,7 +3874,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -3888,7 +3886,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -3900,7 +3898,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -3912,7 +3910,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3924,7 +3922,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -3936,7 +3934,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -3948,7 +3946,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3960,7 +3958,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3972,12 +3970,24 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
       "source": "src_server",
       "target": "src_openapi_swaggeruiinitializer",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/server.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_process_run_runcommand",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4499,19 +4509,7 @@
     },
     {
       "source": "src_server",
-      "target": "ref_node_crypto",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/server.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
-      "target": "src_process_run",
+      "target": "src_repositories_service",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4523,7 +4521,7 @@
     },
     {
       "source": "src_server",
-      "target": "src_repositories_service",
+      "target": "src_registry_database",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4535,18 +4533,6 @@
     },
     {
       "source": "src_server",
-      "target": "src_registry_database",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/server.ts",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
       "target": "ref_node_http",
       "relation": "imports_from",
       "_origin": "ast",
@@ -4554,7 +4540,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L3",
+      "source_location": "L2",
       "type_only": true,
       "weight": 1.0
     },
@@ -4567,7 +4553,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -4579,7 +4565,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4591,7 +4577,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -4603,12 +4589,24 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/server.ts",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_server",
       "target": "src_openapi",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/server.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server",
+      "target": "src_process_run",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6504,7 +6502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -6515,7 +6513,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L47",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_codefleet",
+      "target": "readme_verification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -6527,17 +6536,6 @@
       "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_codefleet",
-      "target": "readme_verification",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -6581,7 +6579,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/config/repositories.ts",
-      "source_location": "L13",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_repositories",
+      "target": "src_config_repositories_inferrepositoryid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6592,7 +6601,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/config/repositories.ts",
-      "source_location": "L17",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_repositories",
+      "target": "src_config_repositories_repository_id",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/config/repositories.ts",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -6603,7 +6623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/config/repositories.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -6658,7 +6678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/openapi.ts",
-      "source_location": "L165",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -6669,7 +6689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/openapi.ts",
-      "source_location": "L166",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -6680,7 +6700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/openapi.ts",
-      "source_location": "L168",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -6691,7 +6711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/openapi.ts",
-      "source_location": "L174",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -6702,7 +6722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/openapi.ts",
-      "source_location": "L190",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -7037,13 +7057,24 @@
     },
     {
       "source": "src_repositories_service",
-      "target": "src_repositories_service_createrepositoryservice",
+      "target": "src_repositories_service_repositorystoragekey",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/repositories/service.ts",
       "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "src_repositories_service",
+      "target": "src_repositories_service_createrepositoryservice",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/repositories/service.ts",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -7054,7 +7085,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L130",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -7065,7 +7096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L143",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -7076,7 +7107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L157",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -7087,7 +7118,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -7098,7 +7129,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -7109,7 +7140,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L238",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -7120,7 +7151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L240",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -7131,7 +7162,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L27",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -7142,7 +7173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L45",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -7153,7 +7184,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L54",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -7164,7 +7195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L59",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -7175,18 +7206,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L68",
-      "weight": 1.0
-    },
-    {
-      "source": "src_server",
-      "target": "src_server_authenticate",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/server.ts",
-      "source_location": "L72",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -7197,7 +7217,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L87",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -7472,7 +7492,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L48",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -7495,7 +7515,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "src/server.ts",
-      "source_location": "L249",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -7631,18 +7651,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_plans_2026_09_21_graphify_api_implementation_task_4_\uc778\uc99d\ub41c_\ub2e4\uc911_\uc800\uc7a5\uc18c_http_\uac80\uc0c9_api",
-      "target": "src_server_authenticate",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "authenticate",
-      "source_file": "docs/plans/2026-09-21-graphify-api-implementation.md",
-      "source_location": "L558",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plans_2026_09_22_graphify_api_hardening_task_2_\uac80\uc0c9_\uc0c1\ud55c\uacfc_\uc548\uc815\uc801\uc778_\uc624\ub958_\uacc4\uc57d",
       "target": "src_repositories_service_createrepositoryservice",
       "relation": "references",
@@ -7716,5 +7724,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e97bfff572ad81f0b4a90d4274335de05757c946"
+  "built_at_commit": "67ad8aafb2aa613ab0372e57c77960760abc932c"
 }

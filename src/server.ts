@@ -1,4 +1,3 @@
-import { timingSafeEqual } from "node:crypto";
 import { createServer as createHttpServer } from "node:http";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { pathToFileURL } from "node:url";
@@ -20,7 +19,6 @@ type RepositorySearch = Readonly<{
 type ServerDependencies = Readonly<{
   registry: Registry;
   repositories: RepositorySearch;
-  apiToken: string;
   isGraphifyReady: () => boolean | Promise<boolean>;
 }>;
 
@@ -67,21 +65,6 @@ function writeDocument(response: ServerResponse, contentType: string, body: stri
 
 function writeRequestError(response: ServerResponse, status: number) {
   writeJson(response, status, { error: { code: "INVALID_REQUEST", message: "요청이 올바르지 않음", retryable: false } });
-}
-
-function authenticate(request: IncomingMessage, response: ServerResponse, apiToken: string): boolean {
-  const header = request.headers.authorization;
-  if (!header || !header.startsWith("Bearer ")) {
-    writeJson(response, 401, { error: { code: "AUTHENTICATION_REQUIRED", message: "인증이 필요함", retryable: false } });
-    return false;
-  }
-  const actual = Buffer.from(header.slice("Bearer ".length));
-  const expected = Buffer.from(apiToken);
-  if (actual.length !== expected.length || !timingSafeEqual(actual, expected)) {
-    writeJson(response, 403, { error: { code: "AUTHENTICATION_FAILED", message: "인증에 실패함", retryable: false } });
-    return false;
-  }
-  return true;
 }
 
 function readJsonBody(request: IncomingMessage): Promise<unknown> {
@@ -192,7 +175,7 @@ export function createServer(dependencies: ServerDependencies) {
       return;
     }
     if (request.method === "GET" && pathname === "/docs/swagger-initializer.js") {
-      writeDocument(response, "text/javascript; charset=utf-8", swaggerUiInitializer(dependencies.apiToken));
+      writeDocument(response, "text/javascript; charset=utf-8", swaggerUiInitializer);
       return;
     }
     const swaggerAsset = request.method === "GET" ? swaggerUiAssets.get(pathname) : undefined;
@@ -207,7 +190,6 @@ export function createServer(dependencies: ServerDependencies) {
       response.end();
       return;
     }
-    if (!authenticate(request, response, dependencies.apiToken)) return;
     if (request.method === "GET" && pathname === "/repositories") {
       writeJson(response, 200, { repositories: dependencies.registry.listRepositories() });
       return;
@@ -247,7 +229,6 @@ export async function start(config = loadEnvironment(process.env)): Promise<Appl
     const server = createServer({
       registry,
       repositories: createRepositoryService({ registry, graphify, dataDirectory: config.dataDirectory, runCommand, maxConcurrentQueries: config.maxConcurrentQueries }),
-      apiToken: config.apiToken,
       isGraphifyReady,
     });
     await new Promise<void>((resolve, reject) => {

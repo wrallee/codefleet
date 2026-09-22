@@ -36,23 +36,21 @@ function fixture(search: (query: string, repositoryIds?: readonly string[], sign
   return {
     directory,
     registry,
-    server: createServer({ registry, repositories: { search }, apiToken: "secret", isGraphifyReady: () => true }),
+    server: createServer({ registry, repositories: { search }, isGraphifyReady: () => true }),
   };
 }
 
-test("보호된 API는 Bearer 토큰과 본문 상한을 요구한다", async () => {
+test("API는 인증 없이 저장소를 반환하고 본문 상한을 적용한다", async () => {
   const value = fixture(async () => ({ results: [], warnings: [] }));
 
   try {
     const baseUrl = await listen(value.server);
-    assert.equal((await fetch(`${baseUrl}/repositories`)).status, 401);
-    assert.equal((await fetch(`${baseUrl}/repositories`, { headers: { authorization: "Bearer wrong" } })).status, 403);
-    const repositories = await fetch(`${baseUrl}/repositories`, { headers: { authorization: "Bearer secret" } });
+    const repositories = await fetch(`${baseUrl}/repositories`);
     assert.equal(repositories.status, 200);
     assert.deepEqual(await repositories.json(), { repositories: value.registry.listRepositories() });
     const tooLarge = await fetch(`${baseUrl}/search`, {
       method: "POST",
-      headers: { authorization: "Bearer secret", "content-type": "application/json" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ query: "x".repeat(16 * 1024) }),
     });
     assert.equal(tooLarge.status, 413);
@@ -72,7 +70,7 @@ test("검색 입력을 검증하고 저장소별 부분 실패를 보존한다",
 
   try {
     const baseUrl = await listen(value.server);
-    const headers = { authorization: "Bearer secret", "content-type": "application/json" };
+    const headers = { "content-type": "application/json" };
     for (const body of [
       { query: "" },
       { query: "x".repeat(1_001) },
@@ -107,7 +105,7 @@ test("중복 ID는 한 번만 검색하고 알 수 없는 ID는 warning으로 �
     const baseUrl = await listen(value.server);
     const response = await fetch(`${baseUrl}/search`, {
       method: "POST",
-      headers: { authorization: "Bearer secret", "content-type": "application/json" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ query: "redis", repositoryIds: ["orders", "orders", "unknown"] }),
     });
     assert.equal(response.status, 503);
@@ -130,7 +128,7 @@ test("모든 저장소 검색이 실패하면 503을 반환한다", async () => 
     const baseUrl = await listen(value.server);
     const response = await fetch(`${baseUrl}/search`, {
       method: "POST",
-      headers: { authorization: "Bearer secret", "content-type": "application/json" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ query: "redis" }),
     });
     assert.equal(response.status, 503);

@@ -37,7 +37,7 @@ function createFixture(defaultBranch = "trunk") {
 
 test("기본 브랜치를 감지해 staging 색인을 활성 디렉터리로 교체한다", async () => {
   const fixture = createFixture();
-  const config = [{ id: "orders", cloneUrl: "https://github.com/example/orders.git" }];
+  const config = [{ id: "example/orders", cloneUrl: "https://github.com/example/orders.git" }];
 
   try {
     const service = createRepositoryService({
@@ -51,12 +51,12 @@ test("기본 브랜치를 감지해 staging 색인을 활성 디렉터리로 교
     assert.equal(fixture.commands[0]?.args.join(" "), "ls-remote --symref https://github.com/example/orders.git HEAD");
     assert.deepEqual(fixture.commands[1]?.args, ["check-ref-format", "--branch", "trunk"]);
     assert.deepEqual(fixture.commands[2]?.args.slice(0, 7), ["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", "trunk", "--"]);
-    const active = fixture.registry.getRepositoryIndex("orders");
+    const active = fixture.registry.getRepositoryIndex("example/orders");
     assert.ok(active?.activeGeneration);
-    assert.equal(existsSync(join(fixture.registry.repositoriesDirectory, "orders", "generations", active.activeGeneration, "graphify-out", "graph.json")), true);
+    assert.equal(existsSync(join(fixture.registry.repositoriesDirectory, "example%2Forders", "generations", active.activeGeneration, "graphify-out", "graph.json")), true);
     const [record] = fixture.registry.listRepositories();
     assert.deepEqual({ ...record, indexedAt: null }, {
-      id: "orders", branch: "trunk", state: "ready", indexedCommit: "abc123", indexedAt: null, lastError: null,
+      id: "example/orders", branch: "trunk", state: "ready", indexedCommit: "abc123", indexedAt: null, lastError: null,
     });
     assert.match(record?.indexedAt ?? "", /^\d{4}-\d{2}-\d{2}T/);
   } finally {

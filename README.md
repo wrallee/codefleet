@@ -5,16 +5,15 @@ CodeFleet는 여러 Git 저장소를 Graphify로 색인하고 구조 기반 검�
 
 ## Repository configuration
 
-`config/repositories.json`에 GitHub HTTPS 또는 SSH clone URL을 등록한다. `branch`를
-생략하면 동기화 때 원격 HEAD를 감지하며, 감지에 실패해도 `main`이나 `master`를
-추측하지 않는다.
+`config/repositories.json`에 `github.com` 또는 `github.gmarket.com`의 HTTPS/SSH clone
+URL을 등록한다. `id`를 생략하면 clone URL에서 `org/repo` 형식으로 생성한다. `branch`를
+생략하면 동기화 때 원격 HEAD를 감지하며, 감지에 실패해도 `main`이나 `master`를 추측하지 않는다.
 
 ```json
 {
   "repositories": [
     {
-      "id": "orders",
-      "cloneUrl": "git@github.com:example/orders.git",
+      "cloneUrl": "https://github.com/wrallee/codefleet.git",
       "branch": "main"
     }
   ]
@@ -30,7 +29,6 @@ Node.js 24 이상과 Graphify CLI가 필요하다.
 
 ```bash
 npm ci
-export CODEFLEET_API_TOKEN=replace-with-a-secret
 export CODEFLEET_DATA_DIR=./data
 export GRAPHIFY_BIN=graphify
 npm run sync
@@ -39,7 +37,6 @@ npm start
 
 환경 변수 기본값은 `CODEFLEET_DATA_DIR=/data`, `GRAPHIFY_BIN=graphify`, `PORT=3000`,
 `CODEFLEET_MAX_CONCURRENT_QUERIES=4`이다. 동시 검색 상한은 1~64로 지정할 수 있다.
-`CODEFLEET_API_TOKEN`은 필수다.
 
 컨테이너는 UID/GID 1000(`node`)으로 실행된다. Kubernetes PVC는 `runAsUser: 1000`,
 `runAsGroup: 1000`, `fsGroup: 1000` 또는 동등한 소유권으로 `/data` 쓰기를 허용해야 한다.
@@ -47,16 +44,14 @@ npm start
 ## API
 
 `GET /healthz`는 프로세스 상태, `GET /readyz`는 SQLite·데이터 디렉터리·Graphify CLI
-준비 상태를 반환한다. 그 외 엔드포인트에는 Bearer 토큰이 필요하다.
+준비 상태를 반환한다. 현재 API 인증은 적용하지 않는다.
 
 OpenAPI 문서는 `GET /openapi.json`, Swagger UI는 `GET /docs/`에서 제공한다. `GET /`는 Swagger UI로 리다이렉트한다.
-Swagger UI는 `CODEFLEET_API_TOKEN`으로 보호된 API를 자동 승인한다.
 
 ```bash
-curl -H "Authorization: Bearer $CODEFLEET_API_TOKEN" http://localhost:3000/repositories
+curl http://localhost:3000/repositories
 
 curl -X POST http://localhost:3000/search \
-  -H "Authorization: Bearer $CODEFLEET_API_TOKEN" \
   -H "Content-Type: application/json" \
   --data '{"query":"redis related sources","repositoryIds":["orders"]}'
 ```
