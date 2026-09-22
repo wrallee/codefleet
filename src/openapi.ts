@@ -187,7 +187,8 @@ export const swaggerUiHtml = `<!doctype html>
 </body>
 </html>`;
 
-export const swaggerUiInitializer = `window.onload = () => {
+export function swaggerUiInitializer(apiToken: string) {
+  return `window.onload = () => {
   window.ui = SwaggerUIBundle({
     url: "/openapi.json",
     dom_id: "#swagger-ui",
@@ -195,4 +196,6 @@ export const swaggerUiInitializer = `window.onload = () => {
     presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
     layout: "StandaloneLayout"
   });
+  window.ui.preauthorizeApiKey("bearerAuth", ${JSON.stringify(apiToken)});
 };`;
+}

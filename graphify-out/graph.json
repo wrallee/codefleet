@@ -276,6 +276,18 @@
       "source_location": "L166"
     },
     {
+      "id": "src_openapi_swaggeruiinitializer",
+      "label": "swaggerUiInitializer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "server.ts",
+      "file_type": "code",
+      "norm_label": "swaggeruiinitializer()",
+      "source_file": "src/openapi.ts",
+      "source_location": "L190"
+    },
+    {
       "id": "src_server_authenticate",
       "label": "authenticate()",
       "_callable": true,
@@ -1384,17 +1396,6 @@
       "source_location": "L174"
     },
     {
-      "id": "src_openapi_swaggeruiinitializer",
-      "label": "swaggerUiInitializer",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "server.ts",
-      "file_type": "code",
-      "norm_label": "swaggeruiinitializer",
-      "source_file": "src/openapi.ts",
-      "source_location": "L190"
-    },
-    {
       "id": "src_server",
       "label": "server.ts",
       "_origin": "ast",
@@ -1487,7 +1488,7 @@
       "node_kind": "heading",
       "norm_label": "verification",
       "source_file": "README.md",
-      "source_location": "L63"
+      "source_location": "L64"
     },
     {
       "id": "src_config_environment",
@@ -3192,6 +3193,18 @@
       "context": "call",
       "source_file": "src/server.ts",
       "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "src_server_createserver",
+      "target": "src_openapi_swaggeruiinitializer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/server.ts",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -6524,7 +6537,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -7703,5 +7716,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "51104e7baf560c0ad202bc6c45b9b33e1213c172"
+  "built_at_commit": "e97bfff572ad81f0b4a90d4274335de05757c946"
 }

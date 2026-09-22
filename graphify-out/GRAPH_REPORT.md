@@ -1,17 +1,17 @@
 # Graph Report - codefleet  (2026-09-22)
 
 ## Corpus Check
-- 37 files · ~19,189 words
+- 37 files · ~19,216 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 6)
 
 ## Summary
-- 245 nodes · 415 edges · 16 communities (14 shown, 2 thin omitted)
+- 245 nodes · 416 edges · 16 communities (14 shown, 2 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `51104e7b`
+- Built from commit: `e97bfff5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,7 +37,7 @@
 1. `CodeFleet 설계 명세` - 18 edges
 2. `createRepositoryService()` - 17 edges
 3. `openRegistry()` - 15 edges
-4. `createServer()` - 13 edges
+4. `createServer()` - 14 edges
 5. `Graphify 기반 CodeFleet API 설계` - 13 edges
 6. `compilerOptions` - 11 edges
 7. `runCommand()` - 10 edges
@@ -103,8 +103,8 @@ Cohesion: 0.16
 Nodes (17): ref_node_test, ref_node_url, CHILD_ENV_KEYS, childEnvironment(), createGraphifyClient(), RunCommand, CommandError, CommandErrorCode (+9 more)
 
 ### Community 12 - "server.ts"
-Cohesion: 0.14
-Nodes (21): Task 4: 인증된 다중 저장소 HTTP 검색 API, ref_node_module, openApiDocument, require, swaggerUiAssets, swaggerUiHtml, swaggerUiInitializer, Application (+13 more)
+Cohesion: 0.15
+Nodes (21): Task 4: 인증된 다중 저장소 HTTP 검색 API, ref_node_module, openApiDocument, require, swaggerUiAssets, swaggerUiHtml, swaggerUiInitializer(), Application (+13 more)
 
 ### Community 13 - "CodeFleet"
 Cohesion: 0.33

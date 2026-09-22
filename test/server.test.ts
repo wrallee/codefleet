@@ -120,6 +120,11 @@ test("OpenAPI 문서와 자체 호스팅 Swagger UI를 제공한다", async () =
     assert.equal(docs.status, 200);
     assert.match(await docs.text(), /swagger-initializer\.js/);
 
+    const initializer = await fetch(`${baseUrl}/docs/swagger-initializer.js`);
+    assert.equal(initializer.status, 200);
+    const initializerScript = await initializer.text();
+    assert.match(initializerScript, /preauthorizeApiKey\("bearerAuth", "test-token"\)/);
+
     const bundle = await fetch(`${baseUrl}/docs/swagger-ui-bundle.js`);
     assert.equal(bundle.status, 200);
     assert.match(bundle.headers.get("content-type") ?? "", /^text\/javascript/);

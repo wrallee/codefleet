@@ -192,7 +192,7 @@ export function createServer(dependencies: ServerDependencies) {
       return;
     }
     if (request.method === "GET" && pathname === "/docs/swagger-initializer.js") {
-      writeDocument(response, "text/javascript; charset=utf-8", swaggerUiInitializer);
+      writeDocument(response, "text/javascript; charset=utf-8", swaggerUiInitializer(dependencies.apiToken));
       return;
     }
     const swaggerAsset = request.method === "GET" ? swaggerUiAssets.get(pathname) : undefined;

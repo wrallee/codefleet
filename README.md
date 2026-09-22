@@ -50,6 +50,7 @@ npm start
 준비 상태를 반환한다. 그 외 엔드포인트에는 Bearer 토큰이 필요하다.
 
 OpenAPI 문서는 `GET /openapi.json`, Swagger UI는 `GET /docs/`에서 제공한다. `GET /`는 Swagger UI로 리다이렉트한다.
+Swagger UI는 `CODEFLEET_API_TOKEN`으로 보호된 API를 자동 승인한다.
 
 ```bash
 curl -H "Authorization: Bearer $CODEFLEET_API_TOKEN" http://localhost:3000/repositories
