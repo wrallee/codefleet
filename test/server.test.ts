@@ -108,6 +108,10 @@ test("OpenAPI 문서와 자체 호스팅 Swagger UI를 제공한다", async () =
     assert.deepEqual(Object.keys(document.paths), ["/healthz", "/readyz", "/repositories", "/search"]);
     assert.equal(document.components.securitySchemes.bearerAuth.scheme, "bearer");
 
+    const rootRedirect = await fetch(`${baseUrl}/`, { redirect: "manual" });
+    assert.equal(rootRedirect.status, 308);
+    assert.equal(rootRedirect.headers.get("location"), "/docs/");
+
     const redirect = await fetch(`${baseUrl}/docs`, { redirect: "manual" });
     assert.equal(redirect.status, 308);
     assert.equal(redirect.headers.get("location"), "/docs/");

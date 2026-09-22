@@ -49,7 +49,7 @@ npm start
 `GET /healthz`는 프로세스 상태, `GET /readyz`는 SQLite·데이터 디렉터리·Graphify CLI
 준비 상태를 반환한다. 그 외 엔드포인트에는 Bearer 토큰이 필요하다.
 
-OpenAPI 문서는 `GET /openapi.json`, Swagger UI는 `GET /docs/`에서 제공한다.
+OpenAPI 문서는 `GET /openapi.json`, Swagger UI는 `GET /docs/`에서 제공한다. `GET /`는 Swagger UI로 리다이렉트한다.
 
 ```bash
 curl -H "Authorization: Bearer $CODEFLEET_API_TOKEN" http://localhost:3000/repositories

@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "application",
       "source_file": "src/server.ts",
-      "source_location": "L233"
+      "source_location": "L238"
     },
     {
       "id": "src_server_repositorysearch",
@@ -345,7 +345,7 @@
       "file_type": "code",
       "norm_label": "start()",
       "source_file": "src/server.ts",
-      "source_location": "L235"
+      "source_location": "L240"
     },
     {
       "id": "src_server_unavailable",
@@ -3179,7 +3179,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L168",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -3191,7 +3191,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L186",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -3203,7 +3203,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L205",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -3215,7 +3215,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L217",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -3227,7 +3227,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L217",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -3239,7 +3239,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L220",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
@@ -3263,7 +3263,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L236",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -3275,7 +3275,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L237",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -3287,7 +3287,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L240",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -3299,7 +3299,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L241",
+      "source_location": "L246",
       "weight": 1.0
     },
     {
@@ -3311,7 +3311,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L242",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -3323,7 +3323,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/server.ts",
-      "source_location": "L244",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -7096,7 +7096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L233",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -7107,7 +7107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/server.ts",
-      "source_location": "L235",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -7482,7 +7482,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "src/server.ts",
-      "source_location": "L244",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -7703,5 +7703,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5e948e07e61797f6b2d9fa42099af647b4fd5193"
+  "built_at_commit": "51104e7baf560c0ad202bc6c45b9b33e1213c172"
 }

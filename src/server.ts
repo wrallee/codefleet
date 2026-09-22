@@ -164,6 +164,11 @@ export function createServer(dependencies: ServerDependencies) {
       return;
     }
 
+    if (request.method === "GET" && pathname === "/") {
+      response.writeHead(308, { location: "/docs/" });
+      response.end();
+      return;
+    }
     if (request.method === "GET" && pathname === "/healthz") {
       writeJson(response, 200, { status: "ok" });
       return;

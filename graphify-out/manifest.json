@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "src/server.ts": {
-    "mtime": 1790045571.132351,
-    "seen": 1790045713.256863,
-    "ast_hash": "014e611b790e7aea86d30c224fae24f8",
+    "mtime": 1790046949.5524547,
+    "seen": 1790046968.6369069,
+    "ast_hash": "12d563cb620c2821d9a95b5968e4121d",
     "semantic_hash": ""
   },
   "test/environment.test.ts": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "test/server.test.ts": {
-    "mtime": 1790045571.1363509,
-    "seen": 1790045713.2568762,
-    "ast_hash": "70c1926e74ee41d35ec919f0e8899d2a",
+    "mtime": 1790046949.5524547,
+    "seen": 1790046968.6369214,
+    "ast_hash": "0a22d2318f31d57518e301c08c5604d0",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790045571.1363509,
-    "seen": 1790045713.2568789,
-    "ast_hash": "417d05e0239a37f5b5e2d4e8fd05f718",
+    "mtime": 1790046949.5524547,
+    "seen": 1790046968.6369247,
+    "ast_hash": "e6a1b2e47074148f40f870c2a83cc142",
     "semantic_hash": ""
   },
   "docs/plans/2026-09-17-runtime-registry-foundation.md": {
