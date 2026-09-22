@@ -20,12 +20,23 @@ export type SearchOutcome = Readonly<{
   warnings: readonly Readonly<{ repositoryId: string; code: string; message: string }> [];
 }>;
 
-function childEnvironment(): NodeJS.ProcessEnv {
-  return Object.fromEntries(
+const GIT_CREDENTIAL_HELPER = "!f() { test \"$1\" = get || exit 0; printf '%s\\n' \"username=$CODEFLEET_GIT_USERNAME\" \"password=$CODEFLEET_GIT_PASSWORD\"; }; f";
+
+function childEnvironment(environment: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
+  const child = Object.fromEntries(
     ["PATH", "HOME", "LANG", "LC_ALL", "SSH_AUTH_SOCK"]
-      .filter((key) => process.env[key] !== undefined)
-      .map((key) => [key, process.env[key]]),
+      .filter((key) => environment[key] !== undefined)
+      .map((key) => [key, environment[key]]),
   );
+  child.GIT_TERMINAL_PROMPT = "0";
+  if (environment.CODEFLEET_GIT_USERNAME && environment.CODEFLEET_GIT_PASSWORD) {
+    child.CODEFLEET_GIT_USERNAME = environment.CODEFLEET_GIT_USERNAME;
+    child.CODEFLEET_GIT_PASSWORD = environment.CODEFLEET_GIT_PASSWORD;
+    child.GIT_CONFIG_COUNT = "1";
+    child.GIT_CONFIG_KEY_0 = "credential.helper";
+    child.GIT_CONFIG_VALUE_0 = GIT_CREDENTIAL_HELPER;
+  }
+  return child;
 }
 
 const messages: Record<string, string> = {
@@ -95,6 +106,7 @@ export function createRepositoryService(options: Readonly<{
   dataDirectory: string;
   runCommand: RunCommand;
   maxConcurrentQueries?: number;
+  environment?: NodeJS.ProcessEnv;
 }>) {
   const { registry, graphify, runCommand } = options;
   const dataDirectory = resolve(registry.dataDirectory);
@@ -107,7 +119,7 @@ export function createRepositoryService(options: Readonly<{
     executable: "git",
     args,
     cwd,
-    env: childEnvironment(),
+    env: childEnvironment(options.environment ?? process.env),
     timeoutMs: 600_000,
     maxOutputBytes: 1_048_576,
       });

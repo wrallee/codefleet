@@ -45,10 +45,16 @@ test("기본 브랜치를 감지해 staging 색인을 활성 디렉터리로 교
       graphify: fixture.graphify,
       dataDirectory: fixture.registry.dataDirectory,
       runCommand: fixture.runCommand,
+      environment: { CODEFLEET_GIT_USERNAME: "git-reader", CODEFLEET_GIT_PASSWORD: "secret" },
     });
     await service.syncAll(config);
 
     assert.equal(fixture.commands[0]?.args.join(" "), "ls-remote --symref https://github.com/example/orders.git HEAD");
+    assert.equal(fixture.commands[0]?.env.CODEFLEET_GIT_USERNAME, "git-reader");
+    assert.equal(fixture.commands[0]?.env.CODEFLEET_GIT_PASSWORD, "secret");
+    assert.equal(fixture.commands[0]?.env.GIT_CONFIG_KEY_0, "credential.helper");
+    assert.match(fixture.commands[0]?.env.GIT_CONFIG_VALUE_0 ?? "", /CODEFLEET_GIT_PASSWORD/);
+    assert.equal(fixture.commands[0]?.env.GIT_TERMINAL_PROMPT, "0");
     assert.deepEqual(fixture.commands[1]?.args, ["check-ref-format", "--branch", "trunk"]);
     assert.deepEqual(fixture.commands[2]?.args.slice(0, 7), ["clone", "--depth=1", "--single-branch", "--no-tags", "--branch", "trunk", "--"]);
     const active = fixture.registry.getRepositoryIndex("example/orders");

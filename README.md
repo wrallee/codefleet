@@ -8,6 +8,7 @@ CodeFleet는 여러 Git 저장소를 Graphify로 색인하고 구조 기반 검�
 `config/repositories.json`에 `github.com` 또는 `github.gmarket.com`의 HTTPS/SSH clone
 URL을 등록한다. `id`를 생략하면 clone URL에서 `org/repo` 형식으로 생성한다. `branch`를
 생략하면 동기화 때 원격 HEAD를 감지하며, 감지에 실패해도 `main`이나 `master`를 추측하지 않는다.
+비공개 HTTPS 저장소는 `CODEFLEET_GIT_USERNAME`, `CODEFLEET_GIT_PASSWORD`를 설정한다.
 
 ```json
 {
