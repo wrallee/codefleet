@@ -45,7 +45,7 @@ test("기본 브랜치를 감지해 staging 색인을 활성 디렉터리로 교
       graphify: fixture.graphify,
       dataDirectory: fixture.registry.dataDirectory,
       runCommand: fixture.runCommand,
-      environment: { CODEFLEET_GIT_USERNAME: "git-reader", CODEFLEET_GIT_PASSWORD: "secret" },
+      environment: { CODEFLEET_GIT_USERNAME: "git-reader\n", CODEFLEET_GIT_PASSWORD: "secret\n" },
     });
     await service.syncAll(config);
 

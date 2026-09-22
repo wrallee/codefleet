@@ -30,8 +30,8 @@ function childEnvironment(environment: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
   );
   child.GIT_TERMINAL_PROMPT = "0";
   if (environment.CODEFLEET_GIT_USERNAME && environment.CODEFLEET_GIT_PASSWORD) {
-    child.CODEFLEET_GIT_USERNAME = environment.CODEFLEET_GIT_USERNAME;
-    child.CODEFLEET_GIT_PASSWORD = environment.CODEFLEET_GIT_PASSWORD;
+    child.CODEFLEET_GIT_USERNAME = environment.CODEFLEET_GIT_USERNAME.trim();
+    child.CODEFLEET_GIT_PASSWORD = environment.CODEFLEET_GIT_PASSWORD.trim();
     child.GIT_CONFIG_COUNT = "1";
     child.GIT_CONFIG_KEY_0 = "credential.helper";
     child.GIT_CONFIG_VALUE_0 = GIT_CREDENTIAL_HELPER;
