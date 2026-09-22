@@ -20,7 +20,7 @@ COPY src ./src
 COPY test ./test
 COPY test-fixtures ./test-fixtures
 RUN npm run check
-RUN /opt/graphify/bin/python -m py_compile src/graphify/worker.py
+RUN PYTHONPYCACHEPREFIX=/tmp/pycache /opt/graphify/bin/python -m py_compile src/graphify/worker.py
 RUN test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/LICENSE \
  && test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/LICENSE-MIT \
  && test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/NOTICE
