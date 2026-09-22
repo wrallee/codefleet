@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import { loadEnvironment } from "./config/environment.ts";
 import { loadRepositories } from "./config/repositories.ts";
 import { createGraphifyClient } from "./graphify/client.ts";
+import { openApiDocument, swaggerUiAssets, swaggerUiHtml, swaggerUiInitializer } from "./openapi.ts";
 import { runCommand } from "./process/run.ts";
 import { createRepositoryService, type SearchOutcome } from "./repositories/service.ts";
 import { openRegistry, type Registry } from "./registry/database.ts";
@@ -53,6 +54,15 @@ class RequestError extends Error {
 function writeJson(response: ServerResponse, status: number, value: unknown) {
   response.writeHead(status, { "content-type": "application/json; charset=utf-8" });
   response.end(JSON.stringify(value));
+}
+
+function writeDocument(response: ServerResponse, contentType: string, body: string | Buffer, cacheControl = "no-store") {
+  response.writeHead(200, {
+    "cache-control": cacheControl,
+    "content-type": contentType,
+    "content-security-policy": "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'",
+  });
+  response.end(body);
 }
 
 function writeRequestError(response: ServerResponse, status: number) {
@@ -161,6 +171,28 @@ export function createServer(dependencies: ServerDependencies) {
     if (request.method === "GET" && pathname === "/readyz") {
       const ready = dependencies.registry.isReady() && await dependencies.isGraphifyReady();
       writeJson(response, ready ? 200 : 503, { status: ready ? "ready" : "not_ready" });
+      return;
+    }
+    if (request.method === "GET" && pathname === "/openapi.json") {
+      writeJson(response, 200, openApiDocument);
+      return;
+    }
+    if (request.method === "GET" && pathname === "/docs") {
+      response.writeHead(308, { location: "/docs/" });
+      response.end();
+      return;
+    }
+    if (request.method === "GET" && pathname === "/docs/") {
+      writeDocument(response, "text/html; charset=utf-8", swaggerUiHtml);
+      return;
+    }
+    if (request.method === "GET" && pathname === "/docs/swagger-initializer.js") {
+      writeDocument(response, "text/javascript; charset=utf-8", swaggerUiInitializer);
+      return;
+    }
+    const swaggerAsset = request.method === "GET" ? swaggerUiAssets.get(pathname) : undefined;
+    if (swaggerAsset) {
+      writeDocument(response, swaggerAsset.contentType, swaggerAsset.body, "public, max-age=86400");
       return;
     }
     const protectedRoute = (request.method === "GET" && pathname === "/repositories")

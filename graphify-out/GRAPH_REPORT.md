@@ -1,17 +1,17 @@
-# Graph Report - graphify-api  (2026-09-22)
+# Graph Report - codefleet  (2026-09-22)
 
 ## Corpus Check
-- 36 files · ~18,053 words
+- 37 files · ~19,154 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 7 file(s) not represented in the graph (top: (none) 7)
+- Unclassified: 6 file(s) not represented in the graph (top: (none) 6)
 
 ## Summary
-- 229 nodes · 393 edges · 15 communities (12 shown, 3 thin omitted)
+- 245 nodes · 415 edges · 16 communities (14 shown, 2 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f551f303`
+- Built from commit: `5e948e07`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,12 +19,13 @@
 - package.json
 - compilerOptions
 - service.ts
-- database.ts
+- 공통 제약
 - CodeFleet 설계 명세
-- graphify-integration.test.ts
+- database.ts
 - Graphify 기반 CodeFleet API 설계
 - Graphify API 운영 안전성 보강 설계
 - Zoekt 연동 준비
+- graphify-integration.test.ts
 - AGENTS.md
 - process-child.mjs
 - server.ts
@@ -36,8 +37,8 @@
 1. `CodeFleet 설계 명세` - 18 edges
 2. `createRepositoryService()` - 17 edges
 3. `openRegistry()` - 15 edges
-4. `Graphify 기반 CodeFleet API 설계` - 13 edges
-5. `createServer()` - 12 edges
+4. `createServer()` - 13 edges
+5. `Graphify 기반 CodeFleet API 설계` - 13 edges
 6. `compilerOptions` - 11 edges
 7. `runCommand()` - 10 edges
 8. `start()` - 9 edges
@@ -45,8 +46,6 @@
 10. `Graphify API 운영 안전성 보강 설계` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `작업 2: SQLite 레지스트리 초기화` --references--> `openRegistry()`  [INFERRED]
-  docs/plans/2026-09-17-runtime-registry-foundation.md → src/registry/database.ts
 - `Task 4: 인증된 다중 저장소 HTTP 검색 API` --references--> `aborted()`  [INFERRED]
   docs/plans/2026-09-21-graphify-api-implementation.md → src/repositories/query-limit.ts
 - `Task 2: 검색 상한과 안정적인 오류 계약` --references--> `createRepositoryService()`  [INFERRED]
@@ -55,35 +54,37 @@
   docs/plans/2026-09-22-graphify-api-hardening.md → src/server.ts
 - `Task 3: readiness, sync 설정, non-root 런타임` --references--> `loadSyncEnvironment()`  [INFERRED]
   docs/plans/2026-09-22-graphify-api-hardening.md → src/config/environment.ts
+- `Task 3: readiness, sync 설정, non-root 런타임` --references--> `loadEnvironment()`  [INFERRED]
+  docs/plans/2026-09-22-graphify-api-hardening.md → src/config/environment.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (15 total, 3 thin omitted)
+## Communities (16 total, 2 thin omitted)
 
 ### Community 0 - "package.json"
-Cohesion: 0.11
-Nodes (18): description, devDependencies, @types/node, typescript, engines, node, name, private (+10 more)
+Cohesion: 0.08
+Nodes (23): dependencies, swagger-ui-dist, description, devDependencies, @types/node, typescript, engines, node (+15 more)
 
 ### Community 1 - "compilerOptions"
 Cohesion: 0.15
 Nodes (12): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, module, moduleResolution, noEmit, skipLibCheck, strict (+4 more)
 
 ### Community 2 - "service.ts"
-Cohesion: 0.17
-Nodes (17): ref_node_crypto, aborted(), createQueryLimit(), Queued, childEnvironment(), createRepositoryService(), defaultBranch(), errorCode() (+9 more)
+Cohesion: 0.16
+Nodes (18): ref_node_assert, ref_node_crypto, aborted(), createQueryLimit(), Queued, childEnvironment(), createRepositoryService(), defaultBranch() (+10 more)
 
-### Community 3 - "database.ts"
-Cohesion: 0.12
-Nodes (15): 공통 제약, 실행 기반과 레지스트리 구현 계획, 작업 1: TypeScript 실행 및 검증 환경, 작업 2: SQLite 레지스트리 초기화, 작업 3: 설정과 상태 확인 서버, 작업 4: 컨테이너와 사용 문서, Task 1: 불변 generation과 정확한 색인 provenance, RepositoryConfig (+7 more)
+### Community 3 - "공통 제약"
+Cohesion: 0.33
+Nodes (5): 공통 제약, 실행 기반과 레지스트리 구현 계획, 작업 1: TypeScript 실행 및 검증 환경, 작업 3: 설정과 상태 확인 서버, 작업 4: 컨테이너와 사용 문서
 
 ### Community 4 - "CodeFleet 설계 명세"
 Cohesion: 0.10
 Nodes (20): `codefleet_explore`, `codefleet_repositories`, CodeFleet 설계 명세, HTTP 엔드포인트, MCP 계약, 검증, 구조, 동시성과 프로세스 안전 (+12 more)
 
-### Community 5 - "graphify-integration.test.ts"
-Cohesion: 0.12
-Nodes (28): ref_node_assert, ref_node_child_process, ref_node_fs, ref_node_os, ref_node_path, ref_node_sqlite, ref_node_test, ref_node_url (+20 more)
+### Community 5 - "database.ts"
+Cohesion: 0.10
+Nodes (28): 작업 2: SQLite 레지스트리 초기화, Task 1: 불변 generation과 정확한 색인 provenance, ref_node_child_process, ref_node_events, ref_node_fs, ref_node_http, ref_node_os, ref_node_path (+20 more)
 
 ### Community 6 - "Graphify 기반 CodeFleet API 설계"
 Cohesion: 0.11
@@ -97,9 +98,13 @@ Nodes (19): Graphify 기반 CodeFleet API 구현 계획, Task 1: 정적 저장�
 Cohesion: 0.40
 Nodes (4): Zoekt 연동 준비, 목적, 예정 범위, 착수 조건
 
+### Community 9 - "graphify-integration.test.ts"
+Cohesion: 0.16
+Nodes (17): ref_node_test, ref_node_url, CHILD_ENV_KEYS, childEnvironment(), createGraphifyClient(), RunCommand, CommandError, CommandErrorCode (+9 more)
+
 ### Community 12 - "server.ts"
-Cohesion: 0.13
-Nodes (22): Task 4: 인증된 다중 저장소 HTTP 검색 API, ref_node_events, ref_node_http, Application, authenticate(), createReadinessProbe(), createServer(), readJsonBody() (+14 more)
+Cohesion: 0.14
+Nodes (21): Task 4: 인증된 다중 저장소 HTTP 검색 API, ref_node_module, openApiDocument, require, swaggerUiAssets, swaggerUiHtml, swaggerUiInitializer, Application (+13 more)
 
 ### Community 13 - "CodeFleet"
 Cohesion: 0.33
@@ -109,25 +114,29 @@ Nodes (5): API, CodeFleet, Repository configuration, Run, Verification
 Cohesion: 0.27
 Nodes (8): Graphify API 운영 안전성 보강 구현 계획, Task 2: 검색 상한과 안정적인 오류 계약, Task 3: readiness, sync 설정, non-root 런타임, 검토 중점, 공통 제약, commonEnvironment(), loadEnvironment(), loadSyncEnvironment()
 
+### Community 15 - "Third-party notices"
+Cohesion: 0.40
+Nodes (4): Graphify, Scarf, Swagger UI, Third-party notices
+
 ## Knowledge Gaps
-- **98 isolated node(s):** `name`, `version`, `private`, `description`, `type` (+93 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 117 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **104 isolated node(s):** `name`, `version`, `private`, `description`, `type` (+99 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 125 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `검토 중점` connect `environment.ts` to `database.ts`, `Graphify API 운영 안전성 보강 설계`?**
-  _High betweenness centrality (0.070) - this node is a cross-community bridge._
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
 - **Why does `Task 4: 실제 Graphify 회귀 검증과 문서 동기화` connect `Graphify API 운영 안전성 보강 설계` to `environment.ts`?**
-  _High betweenness centrality (0.056) - this node is a cross-community bridge._
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
-  _98 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _104 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `database.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12418300653594772 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `CodeFleet 설계 명세` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
-- **Should `graphify-integration.test.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.11794871794871795 - nodes in this community are weakly interconnected._
+- **Should `database.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.09957325746799431 - nodes in this community are weakly interconnected._
+- **Should `Graphify 기반 CodeFleet API 설계` be split into smaller, more focused modules?**
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

@@ -23,6 +23,7 @@ RUN npm run check
 RUN test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/LICENSE \
  && test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/LICENSE-MIT \
  && test -f /opt/graphify/lib/python*/site-packages/graphifyy-*.dist-info/licenses/NOTICE
+RUN npm prune --omit=dev
 
 FROM base
 
@@ -31,6 +32,7 @@ ENV NODE_ENV=production
 
 COPY package.json ./
 COPY config ./config
+COPY --from=verify /app/node_modules ./node_modules
 COPY --from=verify /app/src ./src
 RUN mkdir /data && chown node:node /data
 

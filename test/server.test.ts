@@ -94,6 +94,39 @@ test("GET /readyz는 열린 레지스트리에 준비 상태를 반환한다", a
   }
 });
 
+test("OpenAPI 문서와 자체 호스팅 Swagger UI를 제공한다", async () => {
+  const temporaryDirectory = mkdtempSync(join(tmpdir(), "codefleet-"));
+  const registry = openRegistry(join(temporaryDirectory, "data"));
+  const server = testServer(registry);
+
+  try {
+    const baseUrl = await listen(server);
+    const openApi = await fetch(`${baseUrl}/openapi.json`);
+    assert.equal(openApi.status, 200);
+    const document = await openApi.json() as Record<string, any>;
+    assert.equal(document.openapi, "3.1.0");
+    assert.deepEqual(Object.keys(document.paths), ["/healthz", "/readyz", "/repositories", "/search"]);
+    assert.equal(document.components.securitySchemes.bearerAuth.scheme, "bearer");
+
+    const redirect = await fetch(`${baseUrl}/docs`, { redirect: "manual" });
+    assert.equal(redirect.status, 308);
+    assert.equal(redirect.headers.get("location"), "/docs/");
+
+    const docs = await fetch(`${baseUrl}/docs/`);
+    assert.equal(docs.status, 200);
+    assert.match(await docs.text(), /swagger-initializer\.js/);
+
+    const bundle = await fetch(`${baseUrl}/docs/swagger-ui-bundle.js`);
+    assert.equal(bundle.status, 200);
+    assert.match(bundle.headers.get("content-type") ?? "", /^text\/javascript/);
+    assert.ok((await bundle.arrayBuffer()).byteLength > 100_000);
+  } finally {
+    await close(server);
+    registry.close();
+    rmSync(temporaryDirectory, { recursive: true, force: true });
+  }
+});
+
 test("GET /readyz는 닫힌 레지스트리에 서비스 불가 상태를 반환한다", async () => {
   const temporaryDirectory = mkdtempSync(join(tmpdir(), "codefleet-"));
   const registry = openRegistry(join(temporaryDirectory, "data"));

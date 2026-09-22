@@ -14,6 +14,12 @@
   "engines": {
     "node": ">=24"
   },
+  "dependencies": {
+    "swagger-ui-dist": "5.33.0"
+  },
+  "scarfSettings": {
+    "enabled": false
+  },
   "devDependencies": {
     "@types/node": "^24.13.5",
     "typescript": "^7.0.2"
